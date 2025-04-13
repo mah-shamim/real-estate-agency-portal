@@ -28,17 +28,12 @@ class Test extends CI_Controller
     {
         $gateway = Omnipay\Omnipay::create('Stripe');
 
-        /*
-         * Test account
-         * Private key sk_test_UDqES41N8Sm2Z735HQHgDYZo
-         * Public key pk_test_iqIPUr64csIseUtiWwYL1FQm
-         * 
-         */
+        
         
         $gateway->setApiKey('sk_test_UDqES41N8Sm2Z735HQHgDYZo');
         
         $formData = array('number' => '4242424242424242', 'expiryMonth' => '6', 'expiryYear' => '2018', 'cvv' => '123');
-        /* tok_1AmjKP2eZvKYlo2CBMsxNkbb */
+        
         /*try {*/
             $response = $gateway->purchase(array('amount' => '10.00', 'currency' => 'USD', 'card' => $formData))->send();
             
