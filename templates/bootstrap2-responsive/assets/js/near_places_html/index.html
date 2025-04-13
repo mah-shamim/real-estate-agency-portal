@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Near Places</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/themen.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Main title -->
+                    <a class="navbar-brand" href=".">Near Places</a>
+                </div>
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                    <!-- Main navigation -->
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a href="examples.html">Examples</a>
+                        </li>
+                        <li >
+                            <a href="options.html">Options</a>
+                        </li>
+                        <li >
+                            <a href="methods.html">Methods</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron bs-docs-header text-center">
+            <div class="container">
+              <h1>Near Places</h1>
+              <p class="lead">Near Places is a jQuery plugin that utilizes Google map components.</p>
+            </div>
+        </div>
+        <div class="container">
+
+
+            <h1 id="getting-started">Getting Started</h1>
+            <hr />
+            <h2 id="dependencies">Dependencies</h2>
+            <p>Requires jQuery v1.8.0+, Google map components <a href="https://github.com/googlemaps/v3-utility-library"> here </a>.</p>
+            <pre><code class="html">&lt;!-- Jquery --&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Googlr map --&gt;
+&lt;script src=&quot;http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&amp;&key={API_KEY}&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Googlr map Infobox --&gt;
+&lt;script src=&quot;js/map_infobox.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Googlr map Markerclusterer --&gt;
+&lt;script src=&quot;js/map_infobox.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+            <h2 id="install-with-bower">Install on page </h2>
+            <p>Add js and css files from plugin:</p>
+            <pre><code class="html">&lt;!-- Css --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/near_places.css&quot;&gt;
+
+&lt;!-- Js --&gt;
+&lt;script src=&quot;js/near_places.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+            <h1 id="usage">Usage</h1>
+            <hr />
+            <p>Create your <code>&lt;select&gt;</code> with the <code>.selectpicker</code> class. The data-api will automatically theme these elements.</p>
+            <pre><code class="html">&lt;div&gt; id=&quot;property-map-plugin&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+            <p>Options can be passed via data attributes or JavaScript.</p>
+            <pre><code class="js">var map_near = $('#property-map-plugin');
+    map_near.near_places();
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'})
+</code></pre>
+
+            <div class="text-muted">Does your organization use bootstrap-select? Open an issue, and include a link and logo, and you'll be added to the list.</div>
+        </div>
+        <div class="footer">
+            <div class="container text-center">
+                <p class="text-muted">All Right reserved © 2017</p>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>

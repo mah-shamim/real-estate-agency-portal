@@ -1,0 +1,18 @@
+#
+#In config 
+#$config['url_suffix'] = '';
+#
+#q2uri.php
+#$_SERVER['PATH_INFO']   = '/';
+#$_SERVER['REQUEST_URI'] = '/?search='.$_GET['search'];
+#$_SERVER['SCRIPT_NAME'] = '';
+#
+
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^(.*)\.htm$ /q2uri.php?search=$1 [L]
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+

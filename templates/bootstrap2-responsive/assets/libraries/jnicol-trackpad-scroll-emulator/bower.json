@@ -1,0 +1,29 @@
+{
+  "name": "trackpad-scroll-emulator",
+  "version": "1.0.8",
+  "homepage": "https://github.com/jnicol/trackpad-scroll-emulator",
+  "authors": [
+    "Jonathan Nicol"
+  ],
+  "description": "A jQuery plugin that emulates OS X trackpad-style scrollbars",
+  "main": "jquery.trackpad-scroll-emulator.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "scroll",
+    "scrollbar",
+    "jQuery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.1"
+  }
+}

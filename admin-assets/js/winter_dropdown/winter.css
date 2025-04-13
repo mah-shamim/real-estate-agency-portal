@@ -1,0 +1,56 @@
+
+.winter_dropdown
+{
+    width:215px;
+}
+
+.winter_dropdown button:first-child
+{
+    width:190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.winter_dropdown .list_container
+{
+    width:215px;
+    display:none;
+    position:absolute;
+    z-index: 9999;
+    background: white;
+}
+
+.winter_dropdown .list_scroll
+{
+    height:200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-left: 1px solid #ccc;
+}
+
+.winter_dropdown .list_scroll ul
+{
+    margin:0px;
+    padding:0px;
+}
+
+.winter_dropdown .list_scroll ul li
+{
+    list-style: none;
+    margin:0px;
+    padding:5px;
+    cursor: pointer;
+}
+
+.winter_dropdown .list_scroll ul li:hover
+{
+    background: #F0F0F0;
+}
+
+
+.winter_dropdown span.no_results
+{
+    margin:0px;
+    padding:5px;
+}
+

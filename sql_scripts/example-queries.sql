@@ -1,0 +1,1 @@
+UPDATE `treefield_lang` SET `title`=NULL,`path_title`=NULL,`address`=NULL,`body`=NULL,`keywords`=NULL,`description`=NULL,`slug`=NULL,`adcode1`=NULL,`adcode2`=NULL,`adcode3`=NULL,`adcode4`=NULL,`adcode5`=NULL,`adcode6`=NULL WHERE title='0'

@@ -1,0 +1,74 @@
+
+ul.top-small li a{
+    color:#D81212;
+}
+
+.head-wrapper {
+    background: #D81212;
+}
+
+.head-wrapper .navbar ul.nav > li > a:hover, .head-wrapper .navbar ul.nav > li.active > a {
+    background: #700A0A;
+}
+
+.simple-languages li.active a {
+    color: #D81212 !important;
+}
+
+ul.menu-onmap li.active, .wrap-search{
+    border-color:#D81212;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: #700A0A;
+}
+
+ul.menu-onmap li
+{
+    background: #D81212;
+}
+
+.wrap-bottom
+{
+    background: #D81212;
+}
+
+.thumbnail h3
+{
+    background:#D81212;
+}
+
+.btn-info
+{
+    background:#D81212;
+    border-color:#D81212;
+}
+
+.btn-info:hover
+{
+    background:#700A0A;
+}
+
+.label-info
+{
+    background-color:#D81212;
+}
+
+.agent .mail a
+{
+    color:#D81212;
+}
+
+.thumbnail.f_1
+{
+    border:1px solid #D81212;
+}
+
+strong.f_1
+{
+    color: #D81212;
+}
+
+#myCarousel ol.carousel-thumbs li.active a img, ol.carousel-thumbs li:hover a img {
+    border: 3px solid #D81212;
+}

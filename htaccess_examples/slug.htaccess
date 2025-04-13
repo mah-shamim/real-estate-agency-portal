@@ -1,0 +1,7 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /themes-customization
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.htm$ slug.php?uri=$1 [L]
+#RewriteRule ^(.*)$ slug.php?uri=$1 [L]

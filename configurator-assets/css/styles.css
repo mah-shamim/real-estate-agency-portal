@@ -1,0 +1,100 @@
+ul.nav li.dropdown:hover ul.dropdown-menu { display: block; }
+h1 a{ display: inline-block; background: url('../img/darth_vader.jpg') no-repeat; height: 70px; padding: 20px 0 0 90px; color: black; }
+h1 a:hover { text-decoration: none; color: black; }
+h2 a { color: black; } 
+
+/* h1, h2, h3 { font-family: georgia, serif; } */
+p.pubdate { font-style: italic; font-size: 0.9em; }
+
+.sidebar h3 { font-size: 1em; line-height: 1.2em; margin-bottom: 0; }
+.sidebar ul { margin-left: 0; list-style-type: none; }
+
+/* Example script */
+.bb-alert {
+    top: 10%;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    padding: 1em 1.3em;
+    position: fixed;
+    right: 50%;
+}
+
+.files-list 
+{ 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+}
+.files-list li 
+{
+    margin: 3px 3px 3px 0; 
+    padding: 1px; 
+    display:block;
+    float: left; 
+    width: 164px; 
+    height: 175px;
+    border:1px solid #E5E5E5;
+    cursor: move;
+    position:relative;
+}
+
+.files-list li.nobuttons
+{
+    height: 155px;
+}
+
+.files-list li .preview
+{
+    width: 160px; 
+    height: 120px;
+    text-align:center;
+    display:block;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.files-list li .filename
+{
+    text-align:center;
+    max-width:160px;
+    overflow: hidden;
+    padding: 0px 0px 2px 0px;
+}
+
+.files-list li .options-container
+{
+    text-align:center;
+}
+
+.files-list li:hover{
+    background: #F5F5F5;
+}
+
+.files-list li div.progress, .files-list li div.error
+{
+    position:absolute;
+    top:60px;
+    left:2px;
+}
+
+.center, table td.center, table th.center {
+    text-align: center;
+}
+
+ol.disable-move li div, .disable-move li
+{
+    cursor: default;
+}
+
+.break { page-break-before: always; }
+
+pre p
+{
+    position: relative;
+    margin:0px;
+    padding:0px;
+}
+
+
+

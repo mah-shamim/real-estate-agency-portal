@@ -1,0 +1,156 @@
+
+.winter_dropdown_tree
+{
+    min-width:215px;
+}
+
+.winter_dropdown_tree button:first-child
+{
+    min-width:190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.winter_dropdown_tree .list_container
+{
+    width:215px; 
+    display:none;
+    position:absolute;
+    z-index: 9999;
+    background: white;
+}
+
+.winter_dropdown_tree .list_scroll
+{
+    height:200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-left: 1px solid #ccc;
+}
+
+.winter_dropdown_tree .list_scroll ul
+{
+    margin:0px;
+    padding:0px;
+}
+
+.winter_dropdown_tree .list_scroll ul li
+{
+    list-style: none;
+    margin:0px;
+    padding:5px;
+    cursor: pointer;
+    border:0px;
+}
+
+.winter_dropdown_tree .list_scroll ul li:hover
+{
+    background: #F0F0F0;
+}
+
+
+.winter_dropdown_tree span.no_results
+{
+    margin:0px;
+    padding:5px;
+}
+
+.winter_dropdown_tree .list_container .input-group
+{
+    width:100%;
+}
+
+.winter_dropdown_tree button
+{
+    margin:0px;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgb(209, 209, 209);
+    line-height: 20px;
+    height:auto;
+    color:black;
+    background:white;   
+}
+
+.winter_dropdown_tree button.btn.btn-default.dropdown-toggle
+{
+    margin-left:-1px;
+    padding: 6px 8px 6px 8px;
+    display:inline-block;
+    right:auto;
+    top:0px;
+    width:auto;
+}
+
+.winter_dropdown_tree button.btn.btn-default.dropdown-toggle::after
+{
+    display:none;
+}
+
+.winter_dropdown_tree button span.glyphicon.glyphicon-menu-down
+{
+    font-size: 8px;
+}
+
+.winter_dropdown_tree input.form-control.search_term
+{
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    display:table-cell; 
+    padding:6px;
+}
+
+.winter_dropdown_tree .input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-left:0px;
+    display:table-cell;
+    top:0px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.winter_dropdown_tree .input-group-addon i
+{
+    margin:0px;
+    padding:0px;
+}
+
+.winter_dropdown_tree .input-group
+{
+    display:table;
+}
+
+div.form-group.search_field .winter_dropdown_tree,
+div.form-group.search_field .winter_dropdown_tree .list_container
+{
+    width: 100%;
+    position:relative;
+    min-width:0px;
+}
+
+div.form-group.search_field .winter_dropdown_tree .btn-group
+{
+    width: 100%;
+}
+
+div.form-group.search_field .winter_dropdown_tree button:first-child
+{
+    width: 80%;
+    min-width:0px;
+}
+
+div.form-group.search_field .winter_dropdown_tree button.btn.btn-default.dropdown-toggle
+{
+    width: 20%;
+}
+

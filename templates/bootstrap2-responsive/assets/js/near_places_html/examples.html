@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Examples</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/themen.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/near_places.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+        <!-- Start JS MAP  -->
+        <script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&amp;&key=AIzaSyCto8TKh6h14s0IMyhSb5Uk4Np-40pmJ2w&amp;&scale=2" type="text/javascript"></script>
+        <script type="text/javascript" src="js/map_infobox.js"></script>
+        <script type="text/javascript" src="js/markerclusterer.js"></script>
+        <script src="js/near_places.js"></script>
+        <!-- End JS MAP  -->
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Main title -->
+                    <a class="navbar-brand" href="index.html">Near Places</a>
+                </div>
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                    <!-- Main navigation -->
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="examples.html">Examples</a>
+                        </li>
+                        <li >
+                            <a href="options.html">Options</a>
+                        </li>
+                        <li >
+                            <a href="methods.html">Methods</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <section class="jumbotron">
+            <div class="container">
+                <h1>Examples</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix-top" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li class="main active">
+                            <a href="#basic-examples">Basic examples</a>
+                            <ul class="nav">
+                                <li><a href="#standard-map-custom-styles">Standard map with custom style</a></li>
+                                <li><a href="#standard-map-custom-zoom">Standard map with custom zoom</a></li>
+                                <li><a href="#standard-map-custom-radius">Standard map with custom radius</a></li>
+                                <li><a href="#standard-map-custom-translatable">Standard map with translatable text</a></li>
+                            </ul>
+                        </li>
+                        <li class="main ">
+                            <a href="#changed-marker">Change marker</a>
+                            <a href="#custom-marker-loc">Add custom Location</a>
+                            <ul class="nav">
+                            </ul>
+                        </li>
+                        <li class="main">
+                            <a href="#custom-category-loc">Add custom Category with location</a>
+                            <ul class="nav">
+                            </ul>
+                        </li>
+                    </ul>
+                </div></div>
+            <div class="col-md-9" role="main">
+                
+            <div class="section-ex">
+                <h1 id="basic-examples">Basic examples</h1>
+                <hr />
+                <h2 id="standard-map-boxes">Standart map</h2>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-1'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-1'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-1');
+    map_near.near_places();
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618]});</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-1');
+                    map_near.near_places();
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618]});
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="standard-map-custom-styles">Standart map with custom style</h2>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-2'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-2'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-2');
+    map_near.near_places({
+        'mapOptions': {
+                styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}],
+            }
+    });
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-2');
+                    map_near.near_places({
+                        'mapOptions': {
+                                styles: [{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}],
+                            }
+                    });
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="standard-map-custom-zoom">Standard map with custom zoom</h2>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-3'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-3'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-3');
+    map_near.near_places({
+        'mapOptions': {
+                'zoom' : 10,
+            }
+    });
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'}););</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-3');
+                    map_near.near_places({
+                        'mapOptions': {
+                                'zoom' : 10,
+                            }
+                    });
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="standard-map-custom-radius">Standard map with custom radius</h2>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-4'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-4'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-4');
+    map_near.near_places({
+        'mapOptions': {
+                'zoom' : 10,
+                'radius' : 50000,
+            }
+    });
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-4');
+                    map_near.near_places({
+                        'mapOptions': {
+                                'zoom' : 10,
+                                'radius' : 50000,
+                            }
+                    });
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="standard-map-custom-translatable">Standard map with example translate text to Croatian</h2>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-5'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-5'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-5');
+map_near.near_places({
+    'translatable': {
+            'Health' : 'Zdravlje',
+            'PetrolPump' : 'Benzinska crpka',
+            'Restaurant' : 'Restoran',
+            'ATMBank' : 'Bankomata',
+            'Store' : 'Dućan',
+            'Distance' : 'Udaljenost',
+            'Address' : 'Adresa',
+            'WalkingTime' : 'Vrijeme hodanja',
+            'Details' : 'Detalji',
+        }
+});
+map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-5');
+                    map_near.near_places({
+                        'translatable': {
+                                'Health' : 'Zdravlje',
+                                'PetrolPump' : 'Benzinska crpka',
+                                'Restaurant' : 'Restoran',
+                                'ATMBank' : 'Bankomata',
+                                'Store' : 'Dućan',
+                                'Distance' : 'Udaljenost',
+                                'Address' : 'Adresa',
+                                'WalkingTime' : 'Vrijeme hodanja',
+                                'Details' : 'Detalji',
+                            }
+                    });
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="changed-marker">Change marker</h2>
+                <div class="">
+                    <button class="btn" id="plugin-6-change-marker"> Change marker </button>
+                    <br/>
+                </div>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-6'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-6'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-6');
+    map_near.near_places();
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+
+    $('#plugin-6-change-marker').on('click',function(){
+        map_near.near_places('setMarker', {ltng :[45.812204, 15.898712], 'address':'HR-10000'});
+    })</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-6');
+                    map_near.near_places();
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                    
+                    $('#plugin-6-change-marker').on('click',function(){
+                        map_near.near_places('setMarker', {ltng :[45.812204, 15.898712], 'address':'HR-10000'});
+                    })
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="custom-marker-loc">Add custom Location</h2>
+                <div class="">
+                    <br/>
+                </div>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-7'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-7'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-7');
+    map_near.near_places();
+    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+
+    // add Custom location
+    
+    map_near.near_places('addLocation', {ltng :[45.812635, 15.917279], 'title':'Your title', 'icon':'Custom marker url', 'address': 'Defined address'});
+    
+    // Delete custom Places
+    map_near.near_places('clearCustomPlaces');
+    </code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-7');
+                    map_near.near_places();
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                    
+                    map_near.near_places('addLocation', {ltng :[45.811141, 15.921699]});
+                    map_near.near_places('addLocation', {ltng :[45.810273, 15.917064], 'address':'TozPenkala-Glinamol Ul. Poljačak 56, HR-10000'});
+                    map_near.near_places('addLocation', {ltng :[45.810141, 15.924699], 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'});
+                    map_near.near_places('addLocation', {ltng :[45.813615, 15.916299], 'title':'Pizza', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'});
+                    map_near.near_places('addLocation', {ltng :[45.810655, 15.918259], 'title':'Panda', 'icon':'https://cdn2.iconfinder.com/data/icons/fatcow/32x32/emotion_face_panda.png'});
+                </script>
+            </div>
+                
+            <div class="section-ex">
+                <h2 id="custom-category-loc">Add custom Category with location</h2>
+                <div class="">
+                    <br/>
+                </div>
+                <div class="bs-docs-example">
+                    <div class="" id='property-map-plugin-8'></div>
+                    <br/>
+                </div>
+                <p class="">HTML:</p>
+                <pre>
+<code class="html">   
+&lt;div class="" id='property-map-plugin-8'&gt;&lt;/div&gt;</code>
+                </pre>
+                <p class="">JS:</p>
+                <pre>
+                    <code class="html">    
+var map_near = $('#property-map-plugin-8');
+map_near.near_places();
+map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+
+var  markers_array = [
+    {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.813615, 15.916299], 'title':'Panda', 'address':'Rogin ul. 28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.819141, 15.929699], 'title':'Pizza', 'address':'Roginina ul. 15-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.810655, 15.918259], 'title':'Pizza', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}
+];
+
+var  markers_array2 = [
+    {ltng:[45.811141, 15.926099], 'title':'Shop', 'address':'Roginina ul. 12-28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+    {ltng:[45.813615, 15.915299], 'title':'Shop', 'address':'Rogin ul. 28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+    {ltng:[45.814141, 15.929699], 'title':'Shop', 'address':'Roginina ul. 15-28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+    {ltng:[45.812655, 15.917259], 'title':'Shop', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'}
+];
+
+/* Add new category and locations into categories */
+/*
+param.title - Title of category
+param.piza_index - key should be uniq
+param.icon  - (option) url for icon
+*/
+
+// add New category Piza
+map_near.near_places('addCustomCategory',{'title':'Piza', 'index':'piza_index', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'} );
+
+
+// add lcoation into category with index "piza_index"
+map_near.near_places('addLocationTo',{'index':'piza_index', 'location': {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}});
+
+// add lcoation into category with index "piza_index" via array
+$.each(markers_array, function(key,val) {
+    map_near.near_places('addLocationTo',{'index':'piza_index', 'location': val});
+})
+
+// add New category Shop
+map_near.near_places('addCustomCategory',{'title':'Shop', 'index':'shop_index', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'} );
+
+//add lcoation into category with index "piza_index" via array
+$.each(markers_array2, function(key,val) {
+    map_near.near_places('addLocationTo',{'index':'shop_index', 'location': val});
+})
+// Clear  Location from Custom category
+/*map_near.near_places('clearCustomCategory',{'index':'shop_index'} );*/</code>
+                </pre>
+                <script>
+                    var map_near = $('#property-map-plugin-8');
+                    map_near.near_places();
+                    map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+                    
+                    var  markers_array = [
+                        {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+                        {ltng:[45.813615, 15.916299], 'title':'Panda', 'address':'Rogin ul. 28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+                        {ltng:[45.819141, 15.929699], 'title':'Pizza', 'address':'Roginina ul. 15-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+                        {ltng:[45.810655, 15.918259], 'title':'Pizza', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}
+                    ];
+
+                    var  markers_array2 = [
+                        {ltng:[45.811141, 15.926099], 'title':'Shop', 'address':'Roginina ul. 12-28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+                        {ltng:[45.813615, 15.915299], 'title':'Shop', 'address':'Rogin ul. 28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+                        {ltng:[45.814141, 15.929699], 'title':'Shop', 'address':'Roginina ul. 15-28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+                        {ltng:[45.812655, 15.917259], 'title':'Shop', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'}
+                    ];
+
+                    /* Add new category and locations into categories */
+                    /*
+                    param.title - Title of category
+                    param.piza_index - key should be uniq
+                    param.icon  - (option) url for icon
+                    */
+
+                    // add New category Piza
+                    map_near.near_places('addCustomCategory',{'title':'Piza', 'index':'piza_index', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'} );
+
+
+                    // add lcoation into category with index "piza_index"
+                    map_near.near_places('addLocationTo',{'index':'piza_index', 'location': {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}});
+
+                    // add lcoation into category with index "piza_index" via array
+                    $.each(markers_array, function(key,val) {
+                        map_near.near_places('addLocationTo',{'index':'piza_index', 'location': val});
+                    })
+
+                    // add New category Shop
+                    map_near.near_places('addCustomCategory',{'title':'Shop', 'index':'shop_index', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'} );
+
+                    //add lcoation into category with index "piza_index" via array
+                    $.each(markers_array2, function(key,val) {
+                        map_near.near_places('addLocationTo',{'index':'shop_index', 'location': val});
+                    })
+                    // Clear  Location from Custom category
+                    /*map_near.near_places('clearCustomCategory',{'index':'shop_index'} );*/
+                </script>
+            </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container text-center">
+                <p class="text-muted">All Right reserved © 2017</p>
+            </div>
+        </div>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/theme.js"></script>
+        
+    </body>
+</html>

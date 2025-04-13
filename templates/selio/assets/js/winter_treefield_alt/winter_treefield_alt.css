@@ -1,0 +1,27 @@
+
+.winter_dropdown_treeselect_alt
+{
+    display: inline-block;
+    position: relative;
+}
+
+.winter_dropdown_treeselect_alt select
+{
+    display: block;
+    clear:both;
+    margin: 0px 10px 10px 0px;
+    cursor: pointer;
+}
+
+.winter_dropdown_treeselect_alt .winter_dropdown_treeselect_alt_container {
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.winter_dropdown_treeselect_alt .loader-spiner_alt {
+    float: left;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -12px;
+}

@@ -1,0 +1,77 @@
+
+
+ul.top-small li a{
+    color:#5F3B67;
+}
+
+.head-wrapper {
+    background: #5F3B67;
+    border-top: 2px solid #876A88;
+}
+
+.head-wrapper .navbar ul.nav > li > a:hover, .head-wrapper .navbar ul.nav > li.active > a {
+    background: #876A88;
+}
+
+.simple-languages li.active a {
+    color: #5F3B67 !important;
+}
+
+ul.menu-onmap li.active, .wrap-search{
+    border-color:#5F3B67;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: #876A88;
+}
+
+ul.menu-onmap li
+{
+    background: #5F3B67;
+}
+
+.wrap-bottom
+{
+    background: #5F3B67;
+}
+
+.thumbnail h3
+{
+    background:#5F3B67;
+}
+
+.btn-info
+{
+    background:#5F3B67;
+    border-color:#5F3B67;
+}
+
+.btn-info:hover
+{
+    background:#876A88;
+}
+
+.label-info
+{
+    background-color:#5F3B67;
+}
+
+.agent .mail a
+{
+    color:#5F3B67;
+}
+
+.thumbnail.f_1
+{
+    border:1px solid #5F3B67;
+}
+
+strong.f_1
+{
+    color: #5F3B67;
+}
+
+#myCarousel ol.carousel-thumbs li.active a img, ol.carousel-thumbs li:hover a img {
+    border: 3px solid #5F3B67;
+}
+

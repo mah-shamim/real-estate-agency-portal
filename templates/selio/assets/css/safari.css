@@ -1,0 +1,25 @@
+.banner,.pager-sec,.pager-sec,.bfr:before,.discover-propt,.main-banner-sec.hp6,.landing-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner {
+    background: url("../images/banner/1.jpg");
+}
+
+.pager-sec {
+    background-image: url(../images/resources/pager-bg.jpg);
+}
+
+.bfr:before {
+    background-image: url(../images/pg-bef.png);
+}
+
+.discover-propt {
+    background-image: url(../images/resources/discov-bg.jpg);
+}
+
+.main-banner-sec.hp6 {
+    background-image: url(../images/resources/banner-img2.jpg);
+}

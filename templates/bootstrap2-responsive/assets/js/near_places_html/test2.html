@@ -1,0 +1,49 @@
+<!-- Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+
+<!-- Googlr map -->
+<script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&&key=AIzaSyCto8TKh6h14s0IMyhSb5Uk4Np-40pmJ2w"></script>
+
+<!-- Googlr map Infobox -->
+<script src="js/map_infobox.js"></script>
+
+<!-- Googlr map Markerclusterer -->
+<script src="js/map_infobox.js"></script>
+
+
+<!-- Css -->
+<link rel="stylesheet" href="css/near_places.css">
+
+<!-- Js -->
+<script src="js/near_places.js"></script>
+<div class="" id='property-map-plugin-2'></div>
+
+<script>
+var map_near = $('#property-map-plugin-2');
+map_near.near_places({
+  'mapOptions': {
+            styles: [{ featureType: "poi", stylers: [{ visibility: "off" } ]},{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}],
+        }
+});
+
+map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+
+
+var  markers_array = [
+    {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.813615, 15.916299], 'title':'Panda', 'address':'Rogin ul. 28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.819141, 15.929699], 'title':'Pizza', 'address':'Roginina ul. 15-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.810655, 15.918259], 'title':'Pizza', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}
+];
+ 
+// add lcoation into default category (default_park,default_health,default_petrolpump,default_atmbank,default_store)
+$.each(markers_array, function(key,val) {
+    map_near.near_places('addLocationTo',{'index':'default_park', 'location': val});
+})
+ 
+// Clear  Location from Custom category
+/*map_near.near_places('clearCustomCategory',{'index':'shop_index'} );*/
+ 
+</script>
+
+
