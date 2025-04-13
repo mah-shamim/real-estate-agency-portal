@@ -12,10 +12,12 @@
         {/not_logged}
         {is_logged_user}
         <ul class="nav pull-left top-small">
-        <?php if(file_exists(APPPATH.'controllers/admin/booking.php')):?>
-          <li><a href="{myreservations_url}#content"><i class="icon-shopping-cart"></i> {lang_Myreservations}</a></li>
-        <?php endif; ?>
+        <?php if($this->session->userdata('type') != 'VISITOR'):?>
+          <?php if(file_exists(APPPATH.'controllers/admin/booking.php')):?>
+            <li><a href="{myreservations_url}#content"><i class="icon-shopping-cart"></i> {lang_Myreservations}</a></li>
+          <?php endif; ?>
           <li><a href="{myproperties_url}#content"><i class="icon-list"></i> {lang_Myproperties}</a></li>
+        <?php endif; ?>
         <?php if(file_exists(APPPATH.'controllers/admin/savesearch.php')): ?>
           <li><a href="{myresearch_url}#content"><i class="icon-filter"></i> {lang_Myresearch}</a></li>  
         <?php endif; ?>

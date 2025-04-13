@@ -193,7 +193,7 @@
                                 </div>
                     
                                 <div class="form-group">
-                                    <label class="col-lg-2 control-label"><?php echo lang_check('Currency Format')?></label>
+                                    <label class="col-lg-2 control-label"><?php echo lang_check('Currency Format')?><br> <?php echo lang_check('Example format on')?> '950150.80'</label>
                                     <div class="col-lg-10">
                                         <?php
                                             $currencies = [];
@@ -288,6 +288,10 @@
                                             $currencies['VEB'] = 'Venezuela, Bolivar';
                                             $currencies['VND'] = 'Viet Nam, Dong';
                                             $currencies['ZWD'] = 'Zimbabwe Dollar';
+
+                                            array_walk($currencies, function (&$item, $key) {
+                                              $item = "$item (".sw_money_format('950150.80',$key).')';
+                                            }); 
                                         ?>
                                         <?php echo form_dropdown('currency_format', $currencies, set_value('currency_format', isset($settings['currency_format'])?$settings['currency_format']:'EUR'), 'class="form-control"')?>
                                     </div>

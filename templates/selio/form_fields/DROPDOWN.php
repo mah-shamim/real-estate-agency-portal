@@ -17,11 +17,53 @@
     $f_id = $field->id;
     $class_add = $field->class;
     $values_arr = ${'options_values_arr_'.$f_id};
-    
+    $val = search_value($f_id.$direction);
+
+
+    if($f_id == 4) {
+        $values_arr = ${'options_values_arr_4'};
+        $CI = &get_instance();
+
+        if(!function_exists('_get_purpose')) {
+            function _get_purpose($CI)
+            {
+                if(isset($CI->select_tab_by_title))
+                if($CI->select_tab_by_title != '')
+                {
+                    $CI->data['purpose_defined'] = $CI->select_tab_by_title;
+                    return $CI->select_tab_by_title;
+                }
+                
+                if(isset($CI->data['is_purpose_sale'][0]['count']))
+                {
+                    $CI->data['purpose_defined'] = lang('Sale');
+                    return lang('Sale');
+                }
+                
+                if(isset($CI->data['is_purpose_rent'][0]['count']))
+                {
+                    $CI->data['purpose_defined'] = lang('Rent');
+                    return lang('Rent');
+                }
+                
+                if(search_value(4))
+                    return search_value(4);
+                
+                return '';
+                
+            }
+        }
+        
+        $purpose = _get_purpose($CI);
+        $purpose = array_search(strtolower($purpose), array_map('strtolower', $values_arr));
+        if($purpose !== FALSE) {
+            $val =$values_arr[$purpose];
+        }
+    }
+
     if(function_exists('sw_filter_search_slidetoggle')) 
     sw_filter_search_slidetoggle();
 ?>
-
 <div class="form_field <?php echo $class_add; ?> sf_input">
     <div class="form-group  field_search_<?php echo _ch($f_id); ?>" style="<?php _che($field->style); ?>">
 
@@ -34,7 +76,7 @@
                 <?php endif;?>
                 <i class="fa fa-angle-down"></i>
             </div>
-            <input type="hidden" id="search_option_<?php echo _ch($f_id)._ch($direction,''); ?>" name="search_option_<?php echo _ch($f_id)._ch($direction,''); ?>"  value="<?php echo search_value($f_id.$direction); ?>" />
+            <input type="hidden" id="search_option_<?php echo _ch($f_id)._ch($direction,''); ?>" name="search_option_<?php echo _ch($f_id)._ch($direction,''); ?>"  value="<?php echo $val; ?>" />
             <ul class="dropeddown">
                 <?php reset($values_arr); if(key($values_arr)=='' && key($values_arr) !=0):?>
                     <li><?php echo current($values_arr);?></li>

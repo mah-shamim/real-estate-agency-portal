@@ -793,10 +793,12 @@ class Treefield_m extends MY_Model {
         $this->_get_all_childs($field_id, 0, $childs);
         
         //Delete childs
-        $this->db->where_in('treefield_id', $childs);
-        $this->db->delete('treefield_lang'); 
-        $this->db->where_in('id', $childs);
-        $this->db->delete('treefield'); 
+        if(!empty($childs)) {
+            $this->db->where_in('treefield_id', $childs);
+            $this->db->delete('treefield_lang'); 
+            $this->db->where_in('id', $childs);
+            $this->db->delete('treefield'); 
+        }
     }
         
     public function get_all_childs($field_id, $treefield_id, &$childs)

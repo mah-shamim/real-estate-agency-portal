@@ -77,7 +77,10 @@
                     <?php endif;?>   
                     <?php if($this->session->flashdata('error')):?>
                     <p class="label label-important validation"><?php echo $this->session->flashdata('error')?></p>
-                    <?php endif;?>            
+                    <?php endif;?> 
+                    <?php if(isset($_GET['translate']) && $_GET['translate'] == 'google' && $this->gtranslation->__get('apiKey') == ''):?>
+                      <p class="label label-important validation"><?php echo lang_check('Please enter google api key in file application\libraries\GTranslation.php ');?></p>
+                    <?php endif;?>           
                     <hr />
                     <!-- Form starts.  -->
                     <?php echo form_open(NULL, array('class' => 'form-horizontal', 'role'=>'form'))?>     
@@ -88,7 +91,6 @@
                                         <?php 
                                         
                                         $translated_value = '';
-                                        
                                         if(!empty($language_translations_current[$key]) && $language_translations_current[$key] != $value)
                                         {
                                             $translated_value = $language_translations_current[$key];
@@ -100,7 +102,7 @@
                                             {
                                                 $translated_value = $this->mymemorytranslation->translate($value, 'en', $lang_code);
                                             }
-                                            else if(isset($_GET['translate']) && $_GET['translate'] == 'google')
+                                            else if(isset($_GET['translate']) && $_GET['translate'] == 'google' && $this->gtranslation->__get('apiKey') != '')
                                             {
                                                 $translated_value = $this->gtranslation->translate($value, 'en', $lang_code);
                                             }

@@ -11,6 +11,8 @@ class GTranslation
     
     // Your commercial google translate server API key
     private $apiKey = '';
+    
+    private $callsCount=0;
 
     public function __construct($params = array())
     {
@@ -42,6 +44,17 @@ class GTranslation
     
     function translate_commercial_api($word, $from, $to)
     {
+        
+        $this->callsCount++;
+        
+        if(config_item('limit_curl_calls') !== FALSE)
+        {
+            if($this->callsCount > config_item('limit_curl_calls'))
+            {
+                return "";
+            }
+        }
+        
         $url = 'https://www.googleapis.com/language/translate/v2?key=' . $this->apiKey . '&q=' . rawurlencode($word) . '&source='.$from.'&target='.$to;
     
         $handle = curl_init($url);
@@ -58,6 +71,17 @@ class GTranslation
     
     public function translate($word, $from, $to)
     {
+        
+        $this->callsCount++;
+        
+        if(config_item('limit_curl_calls') !== FALSE)
+        {
+            if($this->callsCount > config_item('limit_curl_calls'))
+            {
+                return "";
+            }
+        }
+        
         $CI =& get_instance();
         $CI->load->helper('text');
         
@@ -79,6 +103,10 @@ class GTranslation
         }
         
         return $this->translate_api($word, $from, $to);
+    }
+
+    function __get($prop) {
+        return $this->$prop;
     }
 
 }

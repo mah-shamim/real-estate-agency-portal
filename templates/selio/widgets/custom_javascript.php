@@ -1,4 +1,6 @@
 <?php _widget('custom_popup');?>
+
+<?php if(config_item('custom_mobile_footer_menu_enable') === TRUE): ?>
 <div class="wdk_mobile_footer_menu">
     <a href="#" title="Home">
         <i class="fa fa-home" aria-hidden="true"></i>
@@ -47,6 +49,7 @@
         });
     </script>
 </div>
+<?php endif;?>
 
 <div class="se-pre-con"></div>
 

@@ -2,21 +2,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>{page_title}</title>
-    <meta name="description" content="{page_description}" />
-    <meta name="keywords" content="{page_keywords}" />
-    <meta name="author" content="" />
     <link rel="shortcut icon" href="<?php echo $website_favicon_url;?>" type="image/png" />
     <link rel="image_src" href="assets/img/logo.png" />
     
     <link rel="alternate" type="application/rss+xml" title="RSS" href="<?php echo site_url('api/rss/'.$lang_code); ?>" />
     <link rel="canonical" href="<?php echo slug_url(uri_string());?>" />
+        
     
-    <?php if(isset($slideshow_property_images[0]['url'])): ?>
-    <meta property="og:image" content="<?php echo $slideshow_property_images[0]['url']; ?>" />
-    <?php else: ?>
-    <meta property="og:image" content="assets/img/logo-transparent-og.png" />
-    <?php endif; ?>
-    <meta property="og:title" content="{page_title}" />
+    <!-- SEO -->
+    <!-- For Google -->
+    <meta name="description" content="{page_description}" />
+    <meta name="keywords" content="{page_keywords}" />
+    <meta name="author" content="" />
+    <meta name="application-name" content="" />
+    <?php
+        echo generate_alternate_meta();
+    ?>
+
+    <!-- For Facebook -->
+    <meta property="fb:app_id" content="" />
+    <meta property="og:site_name" content="<?php _che($settings_websitetitle, '');?>" />
+    <meta property="og:title" content="<?php _che($settings_websitetitle, '');?> - {page_title}" />
+
+    <?php if(isset($page_images) && !empty($page_images)):?>
+    <meta property="og:image" content="<?php _che($page_images[0]->url);?>" />
+    <?php else:?>
+    <meta property="og:image" content="<?php _che($website_logo_url);?>" />
+    <?php endif;?>
+
+    <meta property="og:url" content="<?php echo current_url(); ?>" />
+    <meta property="og:description" content="{page_description}" />
+
+    <!-- For Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="<?php _che($settings_websitetitle, '');?> - {page_title}" />
+    <meta name="twitter:description" content="{page_description}" />
+
+    <?php if(isset($page_images) && !empty($page_images)):?>
+    <meta name="twitter:image" content="<?php _che($page_images[0]->url);?>" />
+    <?php else:?>
+    <meta name="twitter:image" content="<?php _che($website_logo_url);?>" />
+    <?php endif;?>
+    <!-- END SEO -->
     
     <?php if(config_db_item('multi_domains_enabled') === TRUE): ?>
     <?php foreach($this->language_m->db_languages_code_obj as $lang_obj): ?>

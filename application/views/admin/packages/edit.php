@@ -81,6 +81,9 @@
                                   <label class="col-lg-2 control-label"><?php echo lang('Days limit')?></label>
                                   <div class="col-lg-10">
                                     <?php echo form_input('package_days', set_value('package_days', $package->package_days), 'class="form-control" id="input_package_days" placeholder="'.lang('Days limit').'"')?>
+                                    <?php if(file_exists(APPPATH.'controllers/paypalrest.php') && !_empty(config_db_item('recurring_client_id'))): ?>
+                                    <p class=""><?php echo lang_check('For paypal recurring payments max 365 days')?></p>
+                                    <?php endif;?>
                                   </div>
                                 </div>
                                 

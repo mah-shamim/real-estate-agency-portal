@@ -101,6 +101,8 @@ class Admin_Controller extends MY_Controller
                              
         $CI->acl_config['USER'] = array('imageeditor', 'order', 'upload_estate', 'upload', 'upload_field', 'upload_user');
         
+        $CI->acl_config['VISITOR'] = array('imageeditor', 'order', 'upload_estate', 'upload', 'upload_field', 'upload_user');
+        
         if(config_db_item('agent_reservation_rates_enabled') === TRUE)
         {
             $CI->acl_config['AGENT'][] = 'booking';

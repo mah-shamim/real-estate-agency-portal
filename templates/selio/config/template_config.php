@@ -64,5 +64,6 @@ $config['enable_num_amenities_listing'] = TRUE;
 $config['enable_num_featured_limit'] = TRUE;
 
 
+$config['custom_mobile_footer_menu_enable'] = TRUE;
 
 ?>

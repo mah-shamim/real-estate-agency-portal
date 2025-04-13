@@ -51,6 +51,7 @@ class gd {
             $width = @imagesx($image);
             $height = @imagesy($image);
 
+
         } elseif (is_array($image)) {
             $key = key($image);     // Get the current key
             $width = current($image); 
@@ -61,6 +62,7 @@ class gd {
             $image = imagecreatetruecolor($width, $height);
 
         } elseif (false !== (list($width, $height, $type) = @getimagesize($image))) {
+                      
             $image =
                 ($type == IMAGETYPE_GIF)      ? @imagecreatefromgif($image)  : (
                 ($type == IMAGETYPE_WBMP)     ? @imagecreatefromwbmp($image) : (
@@ -70,13 +72,15 @@ class gd {
                 ($type == IMAGETYPE_XBM)      ? @imagecreatefromxbm($image)  : false
             )))));
 
+          
             if ($type == IMAGETYPE_PNG)
                 imagealphablending($image, false);
+
         }
 
         $return = (
-            is_resource($image) &&
-            (get_resource_type($image) == "gd") &&
+            ($image instanceof GdImage
+		        || is_resource( $image ) && 'gd' === get_resource_type( $image )) &&
             isset($width) &&
             isset($height) &&
             (preg_match('/^[1-9][0-9]*$/', $width) !== false) &&

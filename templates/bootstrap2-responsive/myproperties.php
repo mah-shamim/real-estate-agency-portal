@@ -18,6 +18,7 @@
 <a id="content"></a>
 <div class="wrap-content">
     <div class="container">
+    <?php if($this->session->userdata('type') != 'VISITOR'):?>
         <div class="row-fluid">
             <div class="span12">
             <a id="content"></a>
@@ -204,7 +205,7 @@
         
         <?php endif; ?>
         
-        <?php if(file_exists(APPPATH.'controllers/admin/packages.php') && config_item('def_package') !== FALSE): ?>
+        <?php if($this->session->userdata('type') != 'VISITOR' && file_exists(APPPATH.'controllers/admin/packages.php') && config_item('def_package') !== FALSE): ?>
         
         <div class="row-fluid">
             <div class="span12">
@@ -329,8 +330,21 @@
         </div>
         
         <?php endif; ?>
+        <?php endif; ?>
         
-        <?php if(!empty($settings_withdrawal_details)):?>
+        <?php if($this->session->userdata('type') == 'VISITOR'):?>
+        <div class="row-fluid">
+            <div class="span12">
+            <h2><?php echo lang_check('Welcome');?></h2>
+            <div class="property_content">
+            <?php echo lang_check('This is dash panel');?>
+            </div>
+            </div>
+        </div>
+        <?php endif;?>
+        
+        <?php if($this->session->userdata('type') != 'VISITOR' && 
+ !empty($settings_withdrawal_details)):?>
         <div class="row-fluid">
             <div class="span12">
             <h2>{lang_WithdrawalDetails}</h2>
@@ -341,7 +355,7 @@
             </div>
         </div>
         <?php endif;?>
-        
+        <?php if($this->session->userdata('type') != 'VISITOR'):?>
         <?php if(isset($settings_activation_price) && isset($settings_featured_price) &&
                  $settings_activation_price > 0 || $settings_featured_price > 0): ?>
         <div class="row-fluid">
@@ -358,6 +372,7 @@
             </div>
             </div>
         </div>
+        <?php endif;?>
         <?php endif;?>
         
         <?php if(false):?>

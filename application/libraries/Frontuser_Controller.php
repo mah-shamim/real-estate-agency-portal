@@ -243,7 +243,7 @@ class Frontuser_Controller extends MY_Controller
         $this->data['not_logged'][] = array('count'=>'1');
         if($this->user_m->loggedin() == TRUE)
         {
-            if($this->session->userdata('type') == 'USER')
+            if($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'VISITOR')
             {
                 $this->data['is_logged_user'][] = array('count'=>'1');
                 $this->data['not_logged'] = array();
@@ -322,7 +322,7 @@ class Frontuser_Controller extends MY_Controller
                         $this->data['page_edit_url'] = site_url('admin/user/edit/'.$CI->uri->segment(2)); 
                 }
              // if USER VISITOR   
-            } elseif($this->session->userdata('type') == 'USER') {
+            } elseif($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'VISITOR') {
                 if($CI->uri->segment(1) == 'property') {
                     $this->data['estate'] = $this->estate_m->get_dynamic($CI->uri->segment(2));
                     if($this->data['estate']->agent == $this->session->userdata('id')) 
@@ -408,7 +408,7 @@ class Frontuser_Controller extends MY_Controller
         {
     	    $dashboard = 'admin/dashboard';
             
-            if($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'AGENT')
+            if($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'AGENT' || $this->session->userdata('type') == 'VISITOR')
             {
                 // LOGIN USER, OK
             }

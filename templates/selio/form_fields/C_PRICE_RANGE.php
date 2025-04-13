@@ -11,6 +11,8 @@ if($results_obj and !empty($results_obj) && isset($results_obj[0])) {
 }
 $field_data = $CI->option_m->get_field_data(36, $lang_id);
 
+//$max_price = 250000;
+
 $f_id = $field->id;
 $placeholder = _ch(${'options_name_'.$f_id});
 $class_add = $field->class;
@@ -48,14 +50,13 @@ $suf = $field_data->suffix;
 $pre = $field_data->prefix;
 if(function_exists('sw_filter_search_slidetoggle')) 
 sw_filter_search_slidetoggle();
-
 ?>
 <div class="form_field form_field_sw_range <?php echo _ch($class_add); ?>">
     <div class="form-group">
         <div class="scale-range sw_scale_range" id="nonlinear-price">
             <div class="hidden config-range"
               data-min="0"
-              data-max="<?php echo _ch($max_price, '');?>"
+              data-max="<?php echo preg_replace("/[^0-9]/", '', show_price($max_price, $pre, $suf, $lang_id)) ;?>"
               data-sufix="<?php echo show_price('', '', $suf, $lang_id);?>"
               data-prefix="<?php echo show_price('', $pre, '', $lang_id);?>"
               data-infinity="false"
@@ -68,7 +69,7 @@ sw_filter_search_slidetoggle();
             </div>
             <div class="scale-range-value">
                 <span class="scale-range-label"><?php echo lang_check('Price');?></span>
-                <?php //echo _ch__('from','nexos');?> 
+                <?php //echo _ch__('from','nexos');?>
                 <span class="nonlinear-min"></span> -
                 <?php //echo _ch__('to','nexos');?> 
                 <span class="nonlinear-max"></span>
