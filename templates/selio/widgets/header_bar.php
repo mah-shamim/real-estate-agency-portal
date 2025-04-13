@@ -19,10 +19,12 @@ Widget-preview-image: /assets/img/widgets_preview/header_bar.webp
             {is_logged_user}
             <div class="col-xl-12 col-12 d-none d-lg-block d-sm-none d-md-none">
                 <div class="header-address">
-                    <?php if(file_exists(APPPATH.'controllers/admin/booking.php')):?>
-                    <a href="{myreservations_url}#content"><i class="fa fa-shopping-cart"></i><span> <?php _l('Myreservations');?></span></a>
+                    <?php if($this->session->userdata('type') != 'VISITOR'):?>
+                        <?php if(file_exists(APPPATH.'controllers/admin/booking.php')):?>
+                        <a href="{myreservations_url}#content"><i class="fa fa-shopping-cart"></i><span> <?php _l('Myreservations');?></span></a>
+                        <?php endif; ?>
+                        <a href="{myproperties_url}#content"><i class="fa fa-list"></i> <span><?php _l('Myproperties');?></span></a>
                     <?php endif; ?>
-                         <a href="{myproperties_url}#content"><i class="fa fa-list"></i> <span><?php _l('Myproperties');?></span></a>
                     <?php if(file_exists(APPPATH.'controllers/admin/savesearch.php')): ?>
                     <a href="{myresearch_url}#content"><i class="fa fa-filter"></i><span> <?php _l('Myresearch');?></span></a>  
                     <?php endif; ?>

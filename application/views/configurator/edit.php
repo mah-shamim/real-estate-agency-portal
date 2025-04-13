@@ -124,7 +124,7 @@
     <div class="control-group warning">
         <label class="control-label" for="codecanyon_code"><?php echo lang_check('codecanyon_code')?></label>
         <div class="controls">
-            <?php echo form_input('codecanyon_code', set_value('codecanyon_code', ''))?> 
+            <?php echo form_input('codecanyon_code', set_value('codecanyon_code', ''))?>
         </div>
     </div>
     <div class="control-group">

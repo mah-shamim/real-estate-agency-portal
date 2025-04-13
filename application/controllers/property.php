@@ -579,6 +579,7 @@ class Property extends Frontend_Controller
                 $slideshow_image = array();
                 $slideshow_image['num'] = $num;
                 $slideshow_image['filename'] = $file->filename;
+                $slideshow_image['alt'] = $file->alt;
                 $slideshow_image['url'] = str_replace(' ', '%20', base_url('files/'.$file->filename));
                 $slideshow_image['first_active'] = '';
                 if($num==0)$slideshow_image['first_active'] = 'active';

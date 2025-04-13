@@ -37,14 +37,16 @@ Widget-preview-image: /assets/img/widgets_preview/header_main_panel.webp
                         <div class="d-inline my-2 my-lg-0">
                             {is_logged_user}
                             <ul class="navbar-nav no-margin d-lg-none d-xl-none">
-                                <?php if(file_exists(APPPATH.'controllers/admin/booking.php')):?>
-                                <li class="nav-item signin-btn">
-                                <a class="btn btn-clear" href="{myreservations_url}#content"><i class="fa fa-shopping-cart"></i><span> <?php _l('Myreservations');?></span></a>
-                                </li>
+                                <?php if($this->session->userdata('type') != 'VISITOR'):?>
+                                    <?php if(file_exists(APPPATH.'controllers/admin/booking.php')):?>
+                                    <li class="nav-item signin-btn">
+                                    <a class="btn btn-clear" href="{myreservations_url}#content"><i class="fa fa-shopping-cart"></i><span> <?php _l('Myreservations');?></span></a>
+                                    </li>
+                                    <?php endif; ?>
+                                    <li class="nav-item signin-btn">
+                                        <a class="btn btn-clear" href="{myproperties_url}#content"><i class="fa fa-list"></i> <span><?php _l('Myproperties');?></span></a>
+                                    </li>
                                 <?php endif; ?>
-                                <li class="nav-item signin-btn">
-                                     <a class="btn btn-clear" href="{myproperties_url}#content"><i class="fa fa-list"></i> <span><?php _l('Myproperties');?></span></a>
-                                </li>
                                 <?php if (file_exists(APPPATH . 'controllers/admin/savesearch.php')): ?>
                                     <li class="nav-item signin-btn">
                                         <a class="btn btn-clear" href="{myresearch_url}#content"><i class="fa fa-filter"></i><span> <?php _l('Myresearch'); ?></span></a>  

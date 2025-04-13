@@ -24,6 +24,12 @@ class M_pdf {
         $this->CI->load->model('language_m');
         $this->CI->load->model('settings_m');
         $this->CI->load->model('user_m');
+        
+        
+        
+        $this->CI->load->helper('url');
+        $this->CI->load->helper('form');
+        $this->CI->load->helper('text');
         /* end  include */
         $this->prefix = FCPATH;
         $this->prefix_url = FCPATH;
@@ -54,6 +60,12 @@ class M_pdf {
         }
         if(!file_exists($this->prefix.'files/strict_cache/'.$filename)) {
             $f = $this->file_get_contents_curl($url_img);
+            
+            if(strpos($f, 'request is invalid') !== false)
+            {
+               return false;
+            }
+            
             file_put_contents($this->prefix.'files/strict_cache/'.$filename, $f);
         }
         
@@ -85,6 +97,13 @@ class M_pdf {
         }*/
         return $str;
     }
+    
+   public function clean($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+   $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+
+   return preg_replace('/-+/', ' ', $string); // Replaces multiple hyphens with single one.
+}
 
     public function generate_by_property($listing_id = '', $lang_code = 'en', $api_key = null, $lang_id = '') {
 
@@ -132,6 +151,7 @@ class M_pdf {
         }
 
         $_listing = $_listing[0];
+
         $json_obj = json_decode($_listing->json_object);
         foreach ($_listing as $key => $value) {
             if (is_string($value))
@@ -208,7 +228,7 @@ class M_pdf {
         $html = array();
         
         $html['title'] = _ch($json_obj->field_10);
-        $html['address'] = _ch($_listing->address);
+        $html['address'] = $this->clean(_ch($_listing->address));
         $html['gps'] = _ch($_listing->gps);
         
         $html_images='';
@@ -349,7 +369,9 @@ class M_pdf {
         if (!empty($api_key) && !empty($_listing->gps)) {
             $src = $this->set_image_by_link('https://www.mapquestapi.com/staticmap/v5/map?key=' . $api_key . '&zoom=10&size=715,300&center=' . str_replace(' ', '', $_listing->gps) . '&imagetype=jpeg&locations=' . str_replace(' ', '', $_listing->gps) . '');
 
-            $html['map_img'] = '<img src="'.$src.'" class="map-img" alt="">';
+           
+         if(!empty($src))
+            $html['map_img'] = '<img src="'.$src.'" class="map-img">';
         }
         
         
@@ -379,7 +401,7 @@ class M_pdf {
         
         // uncomment for use only utf-8
         
-        /* uncomment if output return PDF error
+        /* uncomment if output return PDF error 
          ob_clean();
         header('Content-type: application/pdf');
         header('Content-Transfer-Encoding: binary');
@@ -402,6 +424,9 @@ class M_pdf {
         $mpdf->autoVietnamese = true;
         $mpdf->autoLangToFont = true;
         $mpdf->autoArabic = true;
+        $mpdf->showImageErrors = false;
+        
+
         $mpdf->WriteHTML($output);
         $mpdf->Output($filename, 'I');
         exit();

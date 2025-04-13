@@ -126,6 +126,15 @@ if ( ! function_exists('anti_spam_field'))
                                                 <a href="<?php echo $item['url']; ?>" title="<?php echo _ch($item['option_10']); ?>">
                                                     <div class="img-block">
                                                         <div class="overlay"></div>
+                                                        <?php if(_ch($item['option_38'], false) && _ch($item['option_38'], false) !='empty'):?>
+                                                        <?php
+                                                            // check for version with category related marker
+                                                            $badge=_ch($item['option_38'], false);
+                                                            $badge=strtolower($badge);
+                                                            $badge= url_title_cro(str_replace(' ','_',$badge));
+                                                            echo "<span class='listing_badge badge-".($badge)."'><span class='lab'>"._ch($item['option_38'], false)."</span></span>";
+                                                        ?>
+                                                        <?php endif;?>
                                                         <img src="<?php echo _simg($item['thumbnail_url'], '851x678', true); ?>" alt="<?php echo _ch($item['option_10']); ?>" class="img-fluid">
                                                         <div class="rate-info">
                                                                 <?php if (!empty($item['option_36']) || !empty($item['option_37'])): ?>

@@ -54,7 +54,7 @@ function get_numeric_val(&$string_val)
         $val_numeric = floatval($value_n);
     }
     
-    if(abs($val_numeric) > 2147483647) {
+    if(!empty($val_numeric) && abs($val_numeric) > 2147483647) {
         $val_numeric = NULL;
     }
     
@@ -403,12 +403,14 @@ function price_format($value, $lang_id=NULL)
     
     $value = sw_money_format($value, $currency_format);
 
-    if(substr($value, -3, 3) === ",00") {
-        $value = substr($value, 0, -3);
-    }
-
-    if(substr($value, -3, 3) === ".00") {
-        $value = substr($value, 0, -3);
+    if(!empty($value)) {
+        if(substr($value, -3, 3) === ",00") {
+            $value = substr($value, 0, -3);
+        }
+        
+        if(substr($value, -3, 3) === ".00") {
+            $value = substr($value, 0, -3);
+        }
     }
 
     return $value;
@@ -1680,9 +1682,11 @@ if ( ! function_exists('get_ol_pages_tree'))
                 {
                     $item['template'] = $custom_templates_names[$item['template']];
                 }
+
+                $page_title = (!empty($item['navigation_title'])) ? $item['navigation_title'] : $item['title'];
               
     			$str .= '<li id="list_' . $item['id'] .'" rel='.$parent_id.'>';
-    			$str .= '<div class="" alt="'.$item['id'].'" ><i class="icon-file-alt"></i>&nbsp;&nbsp;' . strip_tags($item['title']) .'&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">'.$item['template'].'</span>';
+    			$str .= '<div class="" alt="'.$item['id'].'" ><i class="icon-file-alt"></i>&nbsp;&nbsp;' . strip_tags($page_title) .'&nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-warning">'.$item['template'].'</span>';
                 if($item['type'] == 'ARTICLE')
                     $str .= '&nbsp;<span class="label label-info">'.lang_check($item['type']).'</span>';
                 if($item['is_visible'] == '0')
@@ -3321,13 +3325,12 @@ if(!function_exists('sw_money_format')){
         $currencies['CNY'] = array(2, '.', ',');          //  China Yuan Renminbi
         $currencies['COP'] = array(2, ',', '.');          //  Colombian Peso
         $currencies['CRC'] = array(2, ',', '.');          //  Costa Rican Colon
-        $currencies['HRK'] = array(2, ',', '.');          //  Croatian Kuna
         $currencies['CUC'] = array(2, '.', ',');          //  Cuban Convertible Peso
         $currencies['CUP'] = array(2, '.', ',');          //  Cuban Peso
         $currencies['CYP'] = array(2, '.', ',');          //  Cyprus Pound
         $currencies['CZK'] = array(2, '.', ',');          //  Czech Koruna
         $currencies['DKK'] = array(2, ',', '.');          //  Danish Krone
-        $currencies['DOP'] = array(2, '.', ',');          //  Dominican Peso
+        $currencies['DOP'] = array(2, '.', ',');          //  Dominican Peso   
         $currencies['XCD'] = array(2, '.', ',');          //  East Caribbean Dollar
         $currencies['EGP'] = array(2, '.', ',');          //  Egyptian Pound
         $currencies['SVC'] = array(2, '.', ',');          //  El Salvador Colon
@@ -3437,7 +3440,7 @@ if(!function_exists('sw_money_format')){
         }
         else
         {
-            if(is_intval($floatcurr))
+            if(is_intval($floatcurr) && isset($currencies[$curr]))
                 return number_format($floatcurr, $currencies[$curr][0], $currencies[$curr][1], $currencies[$curr][2]);
         }
     }
@@ -3560,5 +3563,136 @@ if(!function_exists('sw_is_intval'))
             return FALSE;
     
         return TRUE;
+    }
+}
+
+
+function generate_alternate_meta ()
+{
+    $CI =& get_instance();
+    $property_data = NULL;
+    $array = $CI->language_m->get_array_by(array('is_frontend'=>1));
+
+    if(sw_count($array) == 1)
+        return '';
+    
+    if(empty($CI->data['listing_uri']))
+    {
+        $listing_uri = 'property';
+    }
+    else
+    {
+        $listing_uri = $CI->data['listing_uri'];
+    }
+    
+    $default_base_url = config_item('base_url');
+    $default_index_page = config_item('index_page');
+    $default_lang_code = $CI->language_m ->get_default();
+
+    $str = '';
+    foreach ($array as $item) {
+
+        if($CI->data['lang_code'] == $item['code']) {
+            continue;
+        }
+
+        $custom_domain_enabled=false;
+        if(config_db_item('multi_domains_enabled') === TRUE)
+        {
+            if(!empty($item['domain']) && substr_count($item['domain'], 'http') > 0)
+            {
+                $domain = $item['domain'];
+                
+                if(substr_count($domain, 'index.php/') > 0)
+                {
+                    $domain = substr($domain, 0, strpos($domain, 'index.php/'));
+                    $CI->config->set_item('base_url', $domain);
+                    $CI->config->set_item('index_page', '');
+                }
+                else
+                {
+                    $custom_domain_enabled=true;
+                    $CI->config->set_item('base_url', $item['domain']);
+                }
+            }
+            else
+            {
+                $CI->config->set_item('base_url', $default_base_url);
+            }
+        }
+        
+        if($CI->uri->segment(1) == $listing_uri)
+        {
+            $property_title = '';
+            if($property_data === NULL)
+                $property_data = $CI->estate_m->get_dynamic($CI->uri->segment(2));
+            
+            if(isset($property_data->{'option10_'.$item['id']}))
+                $property_title = $property_data->{'option10_'.$item['id']};
+            
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url($listing_uri.'/'.$CI->uri->segment(2).'/'.$item['code'].'/'.url_title_cro($property_title), '', true).'" />';
+        }
+        else if($CI->uri->segment(1) == 'showroom')
+        {
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url('showroom/'.$CI->uri->segment(2).'/'.$item['code']).'" />';
+        }
+        else if($CI->uri->segment(1) == 'profile')
+        {
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url('profile/'.$CI->uri->segment(2).'/'.$item['code'], '', true).'" />';
+        }
+        else if($CI->uri->segment(1) == 'propertycompare')
+        {
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url('propertycompare/'.$CI->uri->segment(2).'/'.$item['code'], '', true).'" />';
+        }
+        else if($CI->uri->segment(1) == 'treefield')
+        {
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url('treefield/'.$item['code'].'/'.$CI->uri->segment(3).'/'.$CI->uri->segment(4), '', true).'" />';
+        }
+        else if(is_numeric($CI->uri->segment(2)))
+        {
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url($item['code'].'/'.$CI->uri->segment(2), 'page_m', true).'" />';
+        }
+        else if($CI->uri->segment(2) != '')
+        {
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.slug_url($CI->uri->segment(1).'/'.$CI->uri->segment(2).'/'.$item['code'].'/'.$CI->uri->segment(4)).'" />';
+        }
+        else
+        {
+            $url_lang_code = $item['code'];
+            if($custom_domain_enabled)
+            {
+                $url_lang_code='';
+            }
+            else if($default_lang_code == $item['code'])
+            {
+                $url_lang_code = base_url();
+            }
+            $str.='<link rel="alternate" hreflang="'.$item['code'].'" href="'.$url_lang_code.'" />';
+        }
+    }
+    
+    $CI->config->set_item('base_url', $default_base_url);
+    $CI->config->set_item('index_page', $default_index_page);
+    
+    return $str;
+}
+
+if ( ! function_exists('sw_normalize_number'))
+{
+    function sw_normalize_number($value = '')
+    {
+        if(empty($value))return '';
+
+        if(strpos($value,',') !== FALSE && strpos($value,'.') !== FALSE) {
+            if(substr($value, -3, 1) == ",") {
+                // Replace dots with empty string
+                $value = str_replace('.', '', $value);
+                // Replace comma with dot
+                $value = str_replace(',', '.', $value);
+            } elseif(substr($value, -3, 1) == ".") {
+                $value = str_replace(',', '.', $value);
+            }
+        }
+        return $value;
     }
 }

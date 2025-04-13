@@ -106,24 +106,28 @@ class Sitemap {
         
         foreach($properties as $estate_obj)
         {
+
+            $content.= '<url>'."\n".
+            '	<loc>'.slug_url($this->data['listing_uri'].'/'.$estate_obj->id.'/'.$default_lang_code.'/'.(isset($options[$default_lang_id][$estate_obj->id][10])?url_title_cro($options[$default_lang_id][$estate_obj->id][10], '-', TRUE):''), 'estate_m').'</loc>'."\n".
+            $last_mod.
+            '	<changefreq>monthly</changefreq>'."\n".
+            '	<priority>0.5</priority>'."\n".
+                            
+            $last_mod = '';
+            if(!empty($estate_obj->date_modified))
+                $last_mod = '	<lastmod>'.date('c',strtotime($estate_obj->date_modified)).'</lastmod>'."\n";
+
             foreach($langs as $lang_code=>$lang)
             {
                 if(!empty($lang['domain']))
                     $this->CI->config->set_item('base_url', $lang['domain']);
-                
-                $last_mod = '';
-                if(!empty($estate_obj->date_modified))
-                    $last_mod = '	<lastmod>'.date('c',strtotime($estate_obj->date_modified)).'</lastmod>'."\n";
 
-                $content.= '<url>'."\n".
-                        	'	<loc>'.slug_url($this->data['listing_uri'].'/'.$estate_obj->id.'/'.$lang['code'].'/'.(isset($options[$lang['id']][$estate_obj->id][10])?url_title_cro($options[$lang['id']][$estate_obj->id][10], '-', TRUE):''), 'estate_m').'</loc>'."\n".
-                        	$last_mod.
-                        	'	<changefreq>monthly</changefreq>'."\n".
-                        	'	<priority>0.5</priority>'."\n".
-                        	'</url>'."\n";
-                            
+                $content.= '   <xhtml:link  rel="alternate" hreflang="'.$lang['code'].'" href="'.slug_url($this->data['listing_uri'].'/'.$estate_obj->id.'/'.$lang['code'].'/'.(isset($options[$lang['id']][$estate_obj->id][10])?url_title_cro($options[$lang['id']][$estate_obj->id][10], '-', TRUE):''), 'estate_m').'"/>'."\n";
+              
                 $this->CI->config->set_item('base_url', $base_url);
             }
+
+            $content.= '</url>'."\n";
         }
         
         // [Showroom START] //

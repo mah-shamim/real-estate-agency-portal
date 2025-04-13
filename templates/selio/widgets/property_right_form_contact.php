@@ -1,6 +1,7 @@
 <?php
+
 /* get from listings */
-if(_ch($estate_data_option_67, false))
+if(_ch($estate_data_option_67, false) && false)
     $agent_name_surname = $estate_data_option_67;
 
 if(_ch($estate_data_option_68, false))
@@ -34,6 +35,9 @@ if(_ch($estate_data_option_68, false))
         <?php endif;?>
         <div class="contct-nf">
             <h3><a href="<?php  _che($agent_url);?>" title='<?php  _che($agent_name_surname);?>'><?php  _che($agent_name_surname);?></a></h3>
+            <?php if(_ch($estate_data_option_67, false)):?>
+                <h4 class="company_name"><?php  _che($estate_data_option_67);?></h4>
+            <?php endif;?>
             <h4>{agent_address}</h4>
             <span><i class="la la-phone"></i>{agent_phone}</span>
             <span><i class="la la-envelope-o"></i><a href="mailto:<?php  _che($agent_mail);?>?subject=<?php _l('Estateinqueryfor');?>: {estate_data_id}, {page_title}" title="<?php  _che($agent_mail);?>" class=""><?php  _che($agent_mail);?></a></span>

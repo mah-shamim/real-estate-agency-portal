@@ -58,7 +58,7 @@ class User_m extends MY_Model {
 	public function __construct(){
 		parent::__construct();
         
-        $this->user_types = array('ADMIN'=>lang_check('ADMIN'), 'AGENT'=>lang_check('AGENT'), 'USER'=>lang_check('USER'));
+        $this->user_types = array('ADMIN'=>lang_check('ADMIN'), 'AGENT'=>lang_check('AGENT'), 'USER'=>lang_check('USER'), 'VISITOR'=>lang_check('Visitor2'));
         $this->user_type_color = array('ADMIN'=>'danger', 'AGENT'=>'warning', 'USER'=>'success');
 	
         if(config_db_item('enable_additional_roles') === TRUE)
@@ -113,7 +113,7 @@ class User_m extends MY_Model {
         
         if(sw_count($user))
         {   
-            if($user->activated == FALSE && ($user->type == 'USER' || $user->type == 'AGENT'))
+            if($user->activated == FALSE && ($user->type == 'USER' || $user->type == 'AGENT' || $user->type == 'VISITOR'))
             {
                 // User and not activated
             }
@@ -191,7 +191,7 @@ class User_m extends MY_Model {
 
 
             if(sw_count($user))
-            if($user->activated == FALSE && ($user->type == 'USER' || $user->type == 'AGENT'))
+            if($user->activated == FALSE && ($user->type == 'USER' || $user->type == 'AGENT' || $user->type == 'VISITOR'))
                 {
                     return TRUE;
                 }

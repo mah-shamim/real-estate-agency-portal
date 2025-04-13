@@ -46,6 +46,7 @@
                 <?php endif;?>
             </div> <!-- /. widget --> 
             <?php endif;?>
+            <?php if($this->session->userdata('type') != 'VISITOR'):?>
             <div class="widget-panel">
                 <div class="widget-header header-styles">
                     <h2 class="title"><?php echo lang_check('Myproperties'); ?></h2>
@@ -182,7 +183,9 @@
                         </div>
                 </div>
             </div> <!-- /. widget -->   
-            <?php if(file_exists(APPPATH.'controllers/admin/packages.php') && !empty($packages)): ?>
+            <?php endif;?>     
+            
+            <?php if($this->session->userdata('type') != 'VISITOR' && file_exists(APPPATH.'controllers/admin/packages.php') && !empty($packages)): ?>
             <div class="widget-panel">
                 <div class="widget-header header-styles">
                     <h2 class="title"><?php echo lang_check('Mypackage'); ?></h2>
@@ -321,7 +324,17 @@
                 </div>
             </div> 
             <?php endif;?>
-
+            <?php if($this->session->userdata('type') == 'VISITOR'):?>
+            <div class="widget-panel">
+                <div class="widget-header header-styles">
+                    <h2 class="title"><?php echo lang_check('Welcome');?></h2>
+                </div>
+                <div class="content-box">
+                <?php echo lang_check('This is dash panel');?>
+                </div>
+            </div> 
+            <?php endif;?>
+            <?php if($this->session->userdata('type') != 'VISITOR'):?>
             <div class="widget-panel">
                 <div class="widget-header header-styles">
                     <h2 class="title"><?php echo lang_check('WithdrawalDetails'); ?></h2>
@@ -331,6 +344,7 @@
                     <?php _l('WithdrawalDetailsNotice');?>
                 </div>
             </div> 
+            <?php endif;?>
         </div>
             
             

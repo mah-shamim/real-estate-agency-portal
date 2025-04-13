@@ -834,7 +834,9 @@ class Estate_m extends MY_Model {
         if(!empty($repository_id))
         {
             $files = $this->file_m->get_by(array('repository_id'=>$repository_id));
-            
+
+            $video_ext = array('webp','mp4','wmv','3gp','m4v','flv','mkv','webm','mpg','mpeg');
+
             $image_repository = array();
             foreach($files as $key_f=>$file_row)
             {
@@ -844,6 +846,10 @@ class Estate_m extends MY_Model {
                     if(empty($data['image_filename']))
                         $data['image_filename'] = $file_row->filename;
                         
+                    $image_repository[] = $file_row->filename;
+                } elseif(config_db_item('enable_video_on_result_card') && file_exists(FCPATH.'files/'.$file_row->filename) && in_array(pathinfo($file_row->filename, PATHINFO_EXTENSION),$video_ext)){
+                    if(empty($data['image_filename']))
+                        $data['image_filename'] = $file_row->filename;
                     $image_repository[] = $file_row->filename;
                 }
             }

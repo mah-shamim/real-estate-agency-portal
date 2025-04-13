@@ -3424,13 +3424,13 @@ input.form-spc {
 }
 
 .widget-reviews .rating>label:before {
-    content: "\f318";
     margin: 2px;
-    font-weight: 400;
     font-size: 18px;
-    font-family: LineAwesome;
     display: inline-block;
     color: #aeb4b6;
+    font-family: 'Line Awesome Free';
+    font-weight: 900 !important;
+    content: "\f005";
 }
 
 .widget-reviews .rating>label {

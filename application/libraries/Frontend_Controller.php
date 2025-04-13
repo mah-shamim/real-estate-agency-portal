@@ -497,7 +497,7 @@ class Frontend_Controller extends MY_Controller
         $this->data['not_logged'][] = array('count'=>'1');
         if($this->user_m->loggedin() == TRUE)
         {
-            if($this->session->userdata('type') == 'USER')
+            if($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'VISITOR')
             {
                 $this->data['is_logged_user'][] = array('count'=>'1');
                 $this->data['not_logged'] = array();
@@ -575,7 +575,7 @@ class Frontend_Controller extends MY_Controller
                         $this->data['page_edit_url'] = site_url('admin/user/edit/'.$CI->uri->segment(2)); 
                 }
              // if USER VISITOR   
-            } elseif($this->session->userdata('type') == 'USER') {
+            } elseif($this->session->userdata('type') == 'USER' || $this->session->userdata('type')== 'VISITOR') {
                 if($CI->uri->segment(1) == 'property') {
                     $this->data['estate'] = $this->estate_m->get_dynamic($CI->uri->segment(2));
                     if($this->data['estate']->agent == $this->session->userdata('id')) 
@@ -765,6 +765,7 @@ class Frontend_Controller extends MY_Controller
             $estate['counter_views'] = $estate_arr->counter_views;
             $estate['estate_data_id'] = $estate_arr->id;
             $estate['image_repository'] = $estate_arr->image_repository;
+            $estate['image_filename'] = $estate_arr->image_filename;
             $estate['icons'] = array();
             $estate['is_favorite'] = FALSE;
             if(isset($favorites_list[$estate_arr->id]))
@@ -783,7 +784,7 @@ class Frontend_Controller extends MY_Controller
                     $estate['option_'.$key1] = $row1;
                     
                     if(is_numeric($row1))
-                        $estate['option_'.$key1] = (int)$row1;
+                        $estate['option_'.$key1] = (float)$row1;
                     
                     $estate['option_chlimit_'.$key1] = character_limiter(strip_tags($row1), 80);
                     $estate['option_icon_'.$key1] = '';

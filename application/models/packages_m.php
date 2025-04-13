@@ -4,6 +4,7 @@ class Packages_m extends MY_Model {
     
     protected $_table_name = 'packages';
     protected $_order_by = 'id';
+
     public $rules_admin = array(
         'package_name' => array('field'=>'package_name', 'label'=>'lang:Package name', 'rules'=>'trim|required'),
         'num_listing_limit' => array('field'=>'num_listing_limit', 'label'=>'lang:Num listing limit', 'rules'=>'trim|required|is_natural'),
@@ -11,7 +12,7 @@ class Packages_m extends MY_Model {
         'num_amenities_limit' => array('field'=>'num_amenities_limit', 'label'=>'lang:Num amenities limit', 'rules'=>'trim|is_natural'),
         'num_featured_limit' => array('field'=>'num_featured_limit', 'label'=>'lang:Num featured limit', 'rules'=>'trim|is_natural'),
         'package_price' => array('field'=>'package_price', 'label'=>'lang:Package price', 'rules'=>'trim|numeric|xss_clean'),
-        'package_days' => array('field'=>'package_days', 'label'=>'lang:Days limit', 'rules'=>'trim|is_natural'),
+        'package_days' => array('field'=>'package_days', 'label'=>'lang:Days limit', 'rules'=>'trim|is_natural|greater_than[0]'),
         'currency_code' => array('field'=>"currency_code", 'label'=>'lang:Currency code', 'rules'=>'trim|required|xss_clean'),
         'show_private_listings' => array('field'=>"show_private_listings", 'label'=>'lang:Show private listings', 'rules'=>'trim|xss_clean'),
         'user_type' => array('field'=>"user_type", 'label'=>'lang:User type', 'rules'=>'trim|xss_clean'),

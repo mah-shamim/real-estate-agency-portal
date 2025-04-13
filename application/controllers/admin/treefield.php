@@ -432,17 +432,25 @@ class Treefield extends Admin_Controller
                             {
                                 $date_prepare = array();
                                 $date_prepare['treefield_id'] = $treefield_id;
-                                $date_prepare['value'] =  substr($root->item(0)->getElementsByTagName($key)->item(0)->nodeValue,5);
-                                $date_prepare['value_path'] = substr($root->item(0)->getElementsByTagName($key)->item(0)->nodeValue,5);
+
+                                if(preg_match('/^[0-9]+$/', substr($root->item(0)->getElementsByTagName($key)->item(0)->nodeValue,0,5))) {
+                                    $date_prepare['value'] =  substr($root->item(0)->getElementsByTagName($key)->item(0)->nodeValue,5);
+                                    $date_prepare['value_path'] = substr($root->item(0)->getElementsByTagName($key)->item(0)->nodeValue,5);
+                                } else {
+                                    $date_prepare['value'] =  $root->item(0)->getElementsByTagName($key)->item(0)->nodeValue;
+                                    $date_prepare['value_path'] = $root->item(0)->getElementsByTagName($key)->item(0)->nodeValue;
+                                }
+
                                 $date_prepare['language_id'] = $lang_obj->id;
                                 $data_rates_lang[] = $date_prepare;
+
                             }
                          $this->db->insert_batch('treefield_lang', $data_rates_lang);
                          $level++;
                     }
                     continue;
                 }
-                
+
                 /* end root */
                 
                 /* state */
@@ -454,15 +462,19 @@ class Treefield extends Admin_Controller
                 /* fetch states and county */
                 foreach ($states_array as $k=>$v) {
                     if(!$v->nodeName || !$v->nodeValue) continue;
-                    
-                    if(preg_match('/^'.substr($v->nodeName,2).'/', $v->nodeValue))
+                  
                     if($k==0) {
-                        $state= substr($v->nodeValue,5);
+                        if(preg_match('/^[0-9]+$/', substr($v->nodeValue,0,5))) {
+                            $state= substr($v->nodeValue,5);
+                        } else {
+                            $state= $v->nodeValue;
+                        }
+                      
                     } else {
-                       //$county_arr[]=substr($v->nodeValue,5);  
                        $county_arr[]=$v->nodeValue;  
                     }
                 }
+
                 /* end fetch states and county */
                 
                 /* state insert */
@@ -513,15 +525,21 @@ class Treefield extends Admin_Controller
                         $date_prepare['treefield_id'] = $treefield_id;
                         //$date_prepare['value'] =substr($county,5);
                         // $county = substr($county,5);
-                        $value_explode = explode(',', substr($county,5));
-                        $date_prepare['value'] = $value_explode[0];
-                        
-                        if(isset($value_explode[1]) || empty($value_explode[1])) {
-                            $value_explode[1]='';
+
+                        if(preg_match('/^[0-9]+$/', substr($county,0,5))) {
+                            $value_explode = explode(',', substr($county,5));
+                            $date_prepare['value'] = $value_explode[0];
+                                                   
+                            if(isset($value_explode[1]) || empty($value_explode[1])) {
+                                $value_explode[1]='';
+                            }
+                            $date_prepare['keywords'] =','.$value_explode[1];
+                        } else {
+                            $date_prepare['value'] = $county;
+                            $date_prepare['keywords'] =','.$county;
                         }
-                        
+
                         $date_prepare['value_path'] = $state.'-'.$date_prepare['value'];
-                        $date_prepare['keywords'] =','.$value_explode[1];
                         $date_prepare['language_id'] = $lang_obj->id;
                         $data_rates_lang[] = $date_prepare;
                     }

@@ -265,7 +265,7 @@ class Frontend extends Frontend_Controller
         {
     	    $dashboard = 'admin/dashboard';
             
-            if($this->session->userdata('type') == 'USER')
+            if($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'VISITOR')
             {
                 // LOGIN USER, OK
             }
@@ -2314,7 +2314,7 @@ class Frontend extends Frontend_Controller
         {
     	    $dashboard = 'admin/dashboard';
             
-            if($this->session->userdata('type') == 'USER')
+            if($this->session->userdata('type') == 'USER' || $this->session->userdata('type') == 'VISITOR')
             {
                 if(config_item('enable_restricted_mode') === TRUE)
                 {
@@ -4304,8 +4304,10 @@ class Frontend extends Frontend_Controller
             if(!empty($post_option['location']))
                 $this->data['search_option_location'] = $post_option['location'];
         }
+        
 
         $this->g_post_option = &$post_option;
+
 
         // [/JSON_SEARCH]
 
@@ -4627,6 +4629,23 @@ class Frontend extends Frontend_Controller
         }
         /* [/Search configuration] */
 
+        if(isset($this->data['options_values_arr_4'])) {
+            $purpose = $this->_get_purpose();
+            $purpose = array_search(strtolower($purpose), array_map('strtolower', $this->data['options_values_arr_4']));
+            if($purpose !== FALSE && isset($this->data['options_values_arr_4'][$purpose])) {
+                $this->g_post_option['4'] = $this->data['options_values_arr_4'][$purpose];
+            } elseif($purpose) {
+                $this->g_post_option['4'] = $purpose;
+            }
+        }
+
+        if(isset($this->data['options_values_arr_79'])) {
+            $this->load->model('treefield_m');
+            if($this->treefield_m->id_by_path(79, $lang_id, $this->data['page_title'])) {
+                $this->g_post_option['79'] = $this->data['page_title'].' -';
+            }
+        }
+
         /* [Get paginated results] */
         $config['total_rows'] = $this->estate_m->count_get_by($where, false, NULL, 'property.is_featured DESC, '.$order, 
                                                NULL, $search_array);
@@ -4849,7 +4868,7 @@ class Frontend extends Frontend_Controller
             
             $this->email->from($this->data['settings_noreply'], lang_check('Web page'));
             $this->email->to($this->data['settings_email']);
-            
+            $this->email->reply_to($data['email']);
             $this->email->subject(lang_check('Message from real-estate web'));
             
             if(isset($_POST['question']))
@@ -4874,6 +4893,7 @@ class Frontend extends Frontend_Controller
                 $data['name_surname'] = $data_t['firstname'];
                 $data['phone'] = $data_t['phone'];
                 $data['mail'] = $data_t['email'];
+                $data['question'] = $data_t['question'];
             }
             
             unset($_POST['captcha'], $_POST['captcha_hash']);
