@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>{title}</title>
+        <style>
+            
+            body {
+                font-family: 'XBRiyaz';
+            }
+            
+            .header {
+                margin-bottom: 15px;
+            }
+            
+            .header .title {
+                font-size: 22px;
+                margin-bottom: 0;
+            }
+            
+            .header .gps,
+            .header .address {
+                font-size: 16px;
+                margin-top: 0;
+            }
+            
+            .images {
+                margin: 0 -1.5%;
+                margin-bottom: 15px;
+            }
+            
+            .images div {
+                width: 30%;
+                margin: 0 1.5%;
+                float: left;
+            }
+            
+            .section {
+                margin-bottom: 15px;
+            }
+            
+            .section .title {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            
+            table.overview {
+                width: 100%;
+                border-style: solid;
+                border-bottom: 1px solid #000;
+                border-right: 1px solid #000;
+                border-spacing: 0;
+            }
+            
+            table.overview td {
+                border-top: 1px solid #000;
+                border-left: 1px solid #000;
+                text-align: center;
+                padding: 10px 5px;
+                width: 33.33333%;
+            }
+            
+            table.overview td.even {
+                background: #b8cfe5;
+            }
+            
+            table.overview td {
+                font-size: 16px;
+            }
+            
+            .d-table {
+                margin: 0 -1%;
+            }
+            
+            .d-table div {
+                width: 23%;
+                margin: 0 1%;
+                float: left;
+                margin-bottom: 8px;
+            }
+            
+            .d-table-img1 {
+                height: 15px;
+                margin-right: 5x;
+            }
+            
+            
+            .d-table-img2 {
+                height: 10px;
+                margin-right: 10x;
+            }
+
+            #footer {
+                position: absolute;
+                bottom: 2cm;
+                left: 1cm;
+                right: 1cm;
+            }
+            
+            .footer-table {
+                width: 100%;
+            }
+            
+            .footer-table td {
+                width: 50%;
+            }
+            
+            .footer-table td.side-right {
+                text-align: right;
+            }
+            
+            .t_title {
+                font-size: 18px;
+            }
+
+            .footer-slick {
+                height: 220px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="title"><b>{title}</b></h1>
+            <div class="address">{address}</div>
+            <div class="gps">{gps}</div>
+        </header>
+        <div class="images">
+            {images}
+        </div>
+        <div class="description">{description}</div>
+        <br/>
+        <div class="section overview">
+            <h2 class="title"><b>{option_name_1}</b></h2>
+            {table}
+        </div>
+        
+        {section_options_21}
+        {section_options_52}
+        {section_options_43}
+
+        <div class="map">
+            {map_img}
+        </div>
+        
+        <div class='footer-slick'>
+        </div>
+        
+        <div id="footer" class='footer'>
+            <table class="footer-table">
+                <tr>
+                    <td class="side-left">
+                        {agent_details}
+                    </td>
+                    <td class="side-right">
+                        {contact_details}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

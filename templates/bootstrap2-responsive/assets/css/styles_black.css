@@ -1,0 +1,143 @@
+
+ul.top-small li a{
+    color:black;
+}
+
+.head-wrapper {
+    background: black;
+    border-top: 2px solid #464745;
+}
+
+.head-wrapper .navbar ul.nav > li > a:hover, .head-wrapper .navbar ul.nav > li.active > a {
+    background: #464745;
+}
+
+.simple-languages li.active a {
+    color: black !important;
+}
+
+ul.menu-onmap li.active, .wrap-search{
+    border-color:black;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    background: #464745;
+}
+
+ul.menu-onmap li
+{
+    background: black;
+}
+
+.wrap-bottom
+{
+    background: black;
+}
+
+.thumbnail h3
+{
+    background:black;
+}
+
+.btn-info
+{
+    background:black;
+    border-color:black;
+}
+
+.btn-info:focus
+{
+    background:black;
+    border-color:black;
+}
+
+.btn-info i.icon-edit,
+.btn-info i.icon-shopping-cart,
+.btn-info i.icon-plus
+{
+    background-image: url("../img/glyphicons-halflings-white.png");
+}
+
+.btn-info:hover
+{
+    background:#464745;
+}
+
+.label-info
+{
+    background-color:black;
+}
+
+.agent .mail a
+{
+    color:black;
+}
+
+.thumbnail.f_1
+{
+    border:1px solid black;
+}
+
+strong.f_1
+{
+    color: black;
+}
+
+#myCarousel ol.carousel-thumbs li.active a img, ol.carousel-thumbs li:hover a img {
+    border: 3px solid black;
+}
+
+/* [START] Custom logo over map, codecanyon example */
+
+.head-wrapper .logo
+{
+    display: none;
+}
+
+.head-wrapper .navbar.pull-left
+{
+    padding-left: 60px;
+}
+
+.head-wrapper .logo-over
+{
+    display: inline;
+}
+
+.head-wrapper a.logo-over img {
+      position: absolute;
+      z-index: 1000;
+}
+
+
+.navbar .nav > li > a, .navbar .nav > li:first-child > a {
+    padding: 10px 25px 8px;
+}
+
+div.simple-languages {
+    padding-bottom: 5px;
+    padding-top: 4px;
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 978px) {
+    
+.head-wrapper .navbar.pull-left
+{
+    padding-left:0px;
+}
+
+.head-wrapper a.logo-over img {
+      position: relative;
+      padding:5px;
+}
+
+}
+
+div.lang_menu_wrapper .btn-group {
+    margin: 2px 0 0 0;
+}
+
+/* [END] Custom logo over map, codecanyon example */
+
+

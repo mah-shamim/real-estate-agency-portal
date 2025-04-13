@@ -1,0 +1,781 @@
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+.header-social {
+    text-align: left;
+}
+
+.header .navbar-brand {
+    margin-right: 0;
+}
+
+.drop-menu {
+    border-right: 1px solid #e0e1e6;
+    border-left: 0;
+}
+
+.intro-thumb h6 {
+    padding-left: 0;
+    padding-right: 15px;
+}
+
+.intro-img {
+    padding: 0 15px 0 0;
+}
+
+.intro-thumb {
+    margin-right: 0;
+    margin-left: 27px;
+}
+
+.intro-thumb:last-child {
+    margin-right: 0;
+}
+
+.card .img-block h5,
+.map-box .rate-info > h5 {
+    float: right;
+}
+
+.card .img-block span,
+.map-box .rate-info > span {
+    float: left;
+}
+
+.rate-info {
+    padding: 20px 24px;
+}
+
+.pull-left {
+    float: right;
+}
+
+.pull-right {
+    float: left;
+}
+
+.popular-cities .card .card-body h4 {
+    float: right;
+}
+
+.popular-cities .card .card-body p {
+    float: left;
+}
+
+.popular-cities .card .card-body i {
+    right: auto;
+    left: 24px;
+}
+
+.bottom-list ul li:before {
+    left: auto;
+    right: -4px;
+}
+
+.bottom-list ul li a {
+    padding-left: 0;
+    padding-right: 23px;
+}
+
+.bottom-list ul li a:hover {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.bottom-desc p {
+    padding-right: 0;
+    padding-left: 15px;
+}
+
+.footer-social {
+    text-align: left;
+}
+
+.header .navbar-brand {
+    margin-right: 0;
+    margin-left: 69px;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0;
+    margin-right: .255em;
+}
+
+.header .navbar-nav .nav-item.signin-btn {
+    margin-right: 0;
+    margin-left: 25px;
+}
+
+.banner-search {
+    padding: 0px 10px 0px 7px;
+}
+
+.banner-search .btn i {
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+.header .navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    text-align: right;
+}
+
+.form-cp .form-field {
+    float: right;
+}
+
+.form-cp > a {
+    float: left;
+}
+
+.form-cp .form-field .input-field {
+    float: right;
+}
+
+.fb-btn i {
+    padding-right: 0;
+    padding-left: 17px;
+}
+
+.post-nfo li,
+.post-nfo li a {
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.post-nfo li i {
+    padding-right: 0;
+    padding-left: 6px;
+}
+
+.post_info > a {
+    float: right;
+}
+
+.blog-grid-posts .post_info > a i {
+    padding-left: 0;
+    padding-right: 6px;
+}
+
+.apartment-sec .rate-info h5 {
+    padding: 0 16px 0 0;
+}
+
+.apartment-sec .card_bod_full .card-footer a.plf {
+    float: left;
+    padding: 0 17px 0 0;
+}
+
+.card-footer a i {
+    padding: 0 0 0 3px;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+.cm-info {
+    padding: 0 19px 0 0;
+}
+
+.card .card-body p i {
+    margin: 0 0 0 4px;
+}
+
+.card .card-body ul li:last-child {
+    border-right: 1px solid #ddd;
+}
+
+.card .card-body ul li:first-child {
+    border-right: 0;
+}
+
+.card .card-body ul li:first-child {
+    padding: 0 0 0 17px;
+}
+
+.agent_info > strong i {
+    padding: 0 0 0 7px;
+}
+
+.banner_text .card .card-footer > a i {
+    padding: 0 6px 0 0;
+}
+
+.banner_text .card .card-body ul li:first-child {
+    padding: 0 0 0 17px;
+}
+
+.banner_text .rate-info > h5 {
+    float: right;
+}
+
+.banner_text .rate-info > span {
+    float: left;
+}
+
+.comment-info > p {
+    padding: 35px 92px 34px 50px;
+}
+
+.comment-info:before {
+    left: auto;
+    right: 27px;
+}
+
+.bannner_text {
+    float: right;
+}
+
+.btn-default.st1 {
+    float: right;
+}
+
+.banner.hp7 .more-feat {
+    float: right;
+}
+
+.banner.hp7 .feat-srch .form_field {
+    float: left;
+}
+
+.banner.hp7 .more-feat h3 {
+    float: right;
+}
+
+.more-feat i {
+    padding: 0 0 0 10px;
+}
+
+.banner.hp7 .more-feat {
+    padding: 0 8px 0 0;
+}
+
+.features_list ul li {
+    float: right;
+}
+
+.input-field > label {
+    float: right;
+}
+
+.input-field > label span {
+    float: right;
+}
+
+.input-field > label small {
+    float: right;
+    padding: 0 13px 0 0;
+}
+
+.cont-links li a i,
+.cont-links li span i {
+    padding: 0 0 0 7px;
+}
+
+.socio-links li {
+    margin: 0 0 0 17px;
+}
+
+.contact-agent {
+    padding: 0 25px 0 0;
+}
+
+.pager-sec-details > h3 {
+    float: right;
+}
+
+.pager-sec-details > ul {
+    float: left;
+}
+
+.pager-sec-details > ul li:before {
+    left: auto;
+    right: 100%;
+}
+
+.pager-sec-details > ul li {
+    padding: 0 15px 0 11px;
+}
+
+.pager-sec-details > ul li:last-child {
+    padding-left: 0;
+    padding-right: 15px;
+}
+
+.about-info > a {
+    float: right;
+}
+
+.blog-standard .post-nfo li a {
+    margin: 0;
+}
+
+.widget-search form button {
+    right: auto;
+    left: 11px;
+}
+
+.widget-catgs ul li a {
+    float: right;
+}
+
+.widget-catgs ul li > span {
+    float: left;
+}
+
+.widget-catgs ul li a i {
+    padding: 0 0 0 14px;
+}
+
+.ps-info {
+    padding: 0 19px 0 0;
+}
+
+.blg-info {
+    padding: 0 27px 0 0;
+}
+
+.bg-links li:before {
+    left: auto;
+    right: 0;
+}
+
+.bg-links li {
+    padding: 0 19px 0 0;
+}
+
+.blog-single-post > blockquote {
+    padding: 2px 18px 1px 0;
+    border-left: 0;
+    border-right: 3px solid #6a7be7;
+}
+
+.post-share > a i {
+    padding: 0 8px 0 0;
+}
+
+.cm-reply {
+    right: auto;
+    left: 0;
+}
+
+.contact_form > form button {
+    float: right;
+}
+
+.contact_info {
+    padding: 0 20px 0 0;
+}
+
+.cont_info li i {
+    padding: 0 0 0 10px;
+}
+
+.social_links li {
+    margin: 0 0 0 17px;
+}
+
+.support-info {
+    padding: 0 20px 0 0;
+}
+
+.half-map-sec #map-container.fullwidth-home-map {
+    left: auto;
+    right: 0;
+}
+
+.half-map-sec .banner-search .form_field {
+    padding-left: 0;
+}
+
+.half-map-sec .widget-property-search {
+    padding: 34px 35px 0 50px;
+}
+
+.sortby {
+    float: right;
+}
+
+.view-change {
+    float: left;
+}
+
+.opt-slect > select {
+    padding: 0 0 0 26px;
+}
+
+.opt-slect > i {
+    right: auto;
+    left: 0;
+}
+
+.half-map-sec .list_products > .row > .col-lg-6:nth-child(2n+1) {
+    padding-left: 15px;
+    padding-right: 0;
+}
+
+.half-map-sec .list_products > .row > .col-lg-6:nth-child(2n) {
+    padding-left: 0;
+    padding-right: 15px;
+}
+
+.half-map-sec .listing-directs {
+    padding: 0 35px 0 50px;
+}
+
+.half-map-sec .banner-search .form_field {
+    padding-right: 9px;
+    padding-left: 0;
+}
+
+.more-feat {
+    float: right;
+}
+
+.half-map-sec .banner-search .form_field:nth-child(2) {
+    padding-left: 0;
+    padding-right: 0;
+    float: left;
+}
+
+.half-map-sec .banner-search .form_field.full {
+    padding: 0;
+}
+
+.view-change ul li {
+    margin: 0 0 0 4px;
+}
+
+.view-change ul li:last-child {
+    margin-left: 0;
+}
+
+.drop-menu {
+    text-align: right;
+}
+
+.drop-menu .select i {
+    float: left;
+    right: auto;
+    left: 10px;
+}
+
+.drop-menu .select i {
+    margin-top: 3px;
+}
+
+.sidebar {
+    padding: 0 20px 0 0;
+}
+
+.card_bod_full .card-footer a.plf {
+    padding: 0 17px 0 0;
+}
+
+.property-hd-sec .rate-info {
+    float: left;
+    text-align: left;
+}
+
+.property-hd-sec .card-body {
+    float: right;
+}
+
+.property-hd-sec .rate-info > h5 {
+    margin: 0 0 0 22px;
+}
+
+.property-single-page-content .sidebar {
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+.contct-nf {
+    padding: 0 23px 0 0;
+}
+
+.contct-nf > span i {
+    padding: 0 0 0 7px;
+}
+
+.property-pg-left {
+    padding: 0 0 0 10px;
+}
+
+.details-info ul li {
+    float: right;
+}
+
+.star-rating {
+    float: left;
+}
+
+.wd-posts {
+    float: right;
+}
+
+.cm-info-sec {
+    float: right;
+}
+
+.comments-dv .cm-img {
+    float: right;
+}
+
+.comments-dv .comment-section .cm-info {
+    float: right;
+}
+
+.rating-lst {
+    float: right;
+    padding: 0 24px 0 0;
+}
+
+.rev-hd > h3 {
+    float: right;
+}
+
+.ps-info > span i {
+    padding: 0 0 0 5px;
+}
+
+.property-hd-sec .card .card-body ul li:first-child,
+.list-products .card .card-body ul li:first-child {
+    padding-right: 0;
+    padding-left: 15px;
+}
+
+.header-address a i {
+    margin: 0 0 0 9px;
+}
+
+.card .card-footer a .la-heart-o {
+    padding: 0 0 0 2px;
+}
+
+.header-address a span {
+    margin: 0 0 0 29px;
+}
+
+.social-links {
+    float: right;
+}
+
+.social-links li {
+    margin: 0 0 0 17px;
+}
+
+.post-share > a {
+    float: left;
+}
+
+.currency-selector .drop-menu,
+.language-selector .drop-menu {
+    float: left;
+}
+
+.currency-selector .drop-menu .select,
+.language-selector .drop-menu .select {
+    float: left;
+}
+
+.currency-selector .drop-menu .dropeddown,
+.language-selector .drop-menu .dropeddown {
+    left: 0;
+    right: auto;
+}
+
+.currency-selector .drop-menu .select span img,
+.language-selector .drop-menu .select span img {
+    padding: 0 0 0 10px;
+}
+
+.currency-selector .drop-menu .dropeddown li img,
+.language-selector .drop-menu .dropeddown li img {
+    padding: 0 0 0 10px;
+}
+
+.mr-auto,
+.mx-auto {
+    margin-left: auto!important;
+    margin-right: initial!important;
+}
+
+.header .dropdown-toggle::after {
+    left: -2px;
+}
+
+.header .navbar-nav .nav-item .dropdown-menu {
+    right: 0;
+    left: initial;
+}
+
+.drop-menu .select {
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.card .resul-items > span.item,
+.card .resul-items > span.property-card-value {
+    border-left: 1px solid #ddd;
+    border-right: 0;
+}
+
+.card .resul-items > span.item:last-child,
+.card .resul-items > span.property-card-value:last-child {
+    border-left: 0;
+    border-right: 0;
+}
+
+.card .resul-items span.property-card-value:first-child {
+    padding-right: 0;
+    padding-left: 17px;
+}
+
+.card .card-footer a .la-heart-o {
+    padding: 0 0 0 1px;
+}
+
+.card_bod_full {
+    border-left: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card_bod_full .card-footer a.plf {
+    padding: 0 0 0 17px;
+}
+
+.contact-agent {
+    padding: 0 0 0 25px;
+}
+
+.banner-search.top-search .form_field .drop-menu,
+.banner-search.top-search .form_field.sf_input .form-control {
+    border-right: 1px solid #e0e1e6;
+    border-left: 0;
+}
+
+.banner-search.top-search .form_field:first-child .drop-menu,
+.banner-search.top-search .form_field.sf_input:first-child .form-control {
+    border-right: 0;
+}
+
+.pager-sec-details > ul li:first-child {
+    padding-left: 15px;
+}
+
+.widget-property-search .banner-search.sw_search_primary .form-control,
+.widget-property-search .banner-search.sw_search_primary .drop-menu {
+    border: 1px solid #e0e1e6;
+}
+
+.banner-search .form_field.srch-btn {
+    width: initial;
+}
+
+.side .banner-search {
+    width: initial;
+}
+
+.widget_search form input {
+    padding-right: 45px;
+}
+
+.pr-0,
+.px-0 {
+    padding-right: 15px !important;
+    padding-left: 0!important;
+}
+
+.post_info ul.post-nfo li {
+    margin: 0px 0px 0px 20px;
+}
+
+@media (max-width: 1199px) {
+    .half-map-sec .widget-property-search .banner-search {
+        margin-right: -4.5px;
+        margin-left: -4.5px;
+        width: inherit;
+        float: none;
+    }
+
+    .half-map-sec .banner-search .feat-srch .form_field:nth-child(2),
+    .half-map-sec .banner-search .form_field.full,
+    .half-map-sec .banner-search .form_field:nth-child(2),
+    .half-map-sec .banner-search .form_field:nth-child(4),
+    .half-map-sec .banner-search .form_field {
+        padding-right: 4.5px;
+        padding-left: 4.5px;
+    }
+}
+
+
+.slick-slide {
+    float: left !important;
+}
+
+body div.form-group.search_field .winter_dropdown_tree button:first-child div.form-group.search_field .winter_dropdown_tree button:first-child, div.form-group .winter_dropdown_tree button:first-child,
+.top-search div.form-group .winter_dropdown_tree button.btn.btn-default.dropdown-toggle, .top-search div.form-group .winter_dropdown_tree button:first-child,
+.subscribe-content .section-heading {
+    text-align: right;
+}
+
+.subscribe-content .form_field {
+    float: right;
+}
+
+.placeholder-container .footer-placeholder {
+    right: initial;
+    left: -62px;
+}
+
+.sect-post-slider .ps-list {
+    right: initial;
+    left: 49px;
+}
+
+.sect-post-slider .slick-slide .content {
+    left: initial;
+    right: 50px;
+}
+
+.bottom-list.widget-follow-us {
+    float: left;
+}
+
+.sec-about-features.zebra-section {
+    direction: ltr;
+}
+
+[dir='rtl'] .slick-slide {
+    float: left;
+}
+
+.contact-form .checkbox-field.input-field input[type="checkbox"] + label span {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+div.form-group .winter_dropdown_tree button.btn.btn-default.dropdown-toggle .glyphicon:after {
+    right: 0;
+    left: 27px;
+}
+
+.footer-list i {
+    margin-left: 12px;
+    margin-right: 0;
+}
+
+body .top-search .winter_dropdown_tree {
+    border-left: 0;
+    border-right: 1px solid #e0e1e6;
+    padding-right: 20px;
+}
+
+div.form-group .winter_dropdown_tree button:first-child {
+    padding-right: 18px;
+}

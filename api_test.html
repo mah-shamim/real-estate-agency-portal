@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>PHP Upload Test</title>
+    </head>
+    <body>
+        <form action="http://localhost/themes-customization/index.php/tokenapi/submission/" method="POST" enctype="multipart/form-data">
+            <input type="text" name="token" value="16ff66de19fadd5cd945da092e0b8b21"/><br />
+            <input type="text" name="lang_code" value="en"/><br />
+            <input type="text" name="input_address" value="Vukovar"/><br />
+            <input type="text" name="input_title" value="nice home"/><br />
+            <input type="text" name="input_4" value="nice home"/><br />
+            <input type="text" name="input_description" value="my description"/><br />
+            <input type="text" name="input_36" value="10000"/><br /> 
+            <input type="text" name="property_id" value=""/><br />
+            <br />
+            <input type="file" name="files[]" /><br />
+            <input type="file" name="files[]" /><br />
+            <br />
+            <input type="submit" name="submit" value="Click to Upload"/>
+        </form>
+    </body>
+</html>

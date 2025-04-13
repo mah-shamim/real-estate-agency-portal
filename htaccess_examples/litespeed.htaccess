@@ -1,0 +1,11 @@
+
+
+<IfModule LiteSpeed>
+    CacheEnable public
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^GET|HEAD$
+    RewriteCond %{HTTP_HOST} ^my-website.com [NC]
+    RewriteCond %{REQUEST_URI} !login|admin|register|post|cron
+    RewriteCond %{QUERY_STRING} !nocache
+    RewriteRule .* - [E=Cache-Control:max-age=300]
+</IfModule>

@@ -1,0 +1,4 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^(.*)\.htm$ /q2uri.php?search=$1 [NC]
+

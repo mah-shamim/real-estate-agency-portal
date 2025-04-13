@@ -1,0 +1,876 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>Real estate point - Real estate agency portal system</title>
+	
+	<meta name="description" content="Modern real estate portal application build with multilingual support, robust, user-friendly and easy-customizations in mind. has a purpose to showcase property listings, custom fiels for properties and easy  template-ing. Backend is fully responsive so no matter what device you use, it always looks nice! Elegant content management system with logical page structure is also embedded.">
+	<meta name="author" content="sanljiljan">
+	<meta name="copyright" content="sanljiljan">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2015-05-28T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_3.png);}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-real-estate-point">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#quick_start_guide" title="Quick start guide">Quick start guide</a></li>
+			<li><a href="#working_modes" title="Working modes">Working modes</a></li>
+			<li><a href="#server_requirements" title="Server requirements">Server requirements</a></li>
+			<li><a href="#custom_database_configuration" title="Custom database configuration">Custom database configuration</a></li>
+			<li><a href="#translations" title="Translations">Translations</a></li>
+			<li><a href="#templates" title="Templates">Templates</a></li>
+			<li><a href="#page_templates" title="Page templates">Page templates</a></li>
+			<li><a href="#property_template" title="Property template">Property template</a></li>
+			<li><a href="#results_template" title="Results template">Results template</a></li>
+			<li><a href="#search_engine_optimizations" title="Search engine optimizations">Search engine optimizations</a></li>
+			<li><a href="#public_api_rss" title="Public API & RSS">Public API & RSS</a></li>
+			<li><a href="#addons_custom_coding" title="Addons & Custom coding">Addons & Custom coding</a></li>
+			<li><a href="#support" title="Support">Support</a></li>
+			<li><a href="#hosting_suggestion" title="Hosting suggestion">Hosting suggestion</a></li>
+			<li><a href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright sanljiljan 2015<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Real estate point</h1>
+	<h2>Real estate agency portal system</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/06/2014</li>
+	<li>latest update: 05/28/2015</li>
+	<li>by: sanljiljan</li>
+	<li><a href="http://iwinter.com.hr/support/">iwinter.com.hr/support/</a></li>
+	
+	</ul>
+	<p>Thank you for purchasing my application. If you have any questions that are beyond the scope of this help file, please feel free to check rich knowledge base with many tips & tricks or submit support ticket on website: http://iwinter.com.hr/support/. Thanks so much!</p>
+	</section>
+	
+	<section id="quick_start_guide">
+	<div class="page-header"><h3>Quick start guide</h3><hr class="notop"></div>
+<ol>
+	<li>
+		Create empty MySQL database with utf8_unicode_ci charset</li>
+	<li>
+		<span id="result_box" lang="en"><span class="hps">Please extract archive and copy</span> all files &amp; folders <span class="hps">to your web server &quot;www&quot; directory</span>.<br>
+		<em>If you using Cpanel faster way is to upload zip on server via file manager and extract directly on server</em></span></li>
+	<li>
+		Open web server public url and <span class="short_text" id="result_box" lang="en"><span class="hps">configuration </span><span class="hps">will appear</span></span>.</li>
+	<li>
+		<span id="result_box" lang="en"><span class="hps">Enter database name, username, password</span></span>.</li>
+	<li>
+		Click on &quot;Save&quot; and you will get login and links info (Please save this info because it&#39;s unique).</li>
+</ol>
+</section>
+<section id="working_modes">
+	<div class="page-header"><h3>Working modes</h3><hr class="notop"></div>
+<p>
+	<span class="short_text" id="result_box" lang="en"><span class="hps">Applications </span><span class="hps">supports 2</span> <span class="hps">modes</span></span>:</p>
+<ul>
+	<li>
+		<strong>cms</strong><br>
+		<em>Content management, with all <span class="short_text" id="result_box" lang="en"><span class="hps">functionality</span></span></em></li>
+	<li>
+		<strong>demo</strong><br>
+		<em>With all changes disabled</em><br>
+		&nbsp;</li>
+</ul>
+<p>
+	After first configuration, you can change mode in &quot;application/config/cms_config.php&quot;, variable $config[&#39;app_type&#39;].</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="server_requirements">
+	<div class="page-header"><h3>Server requirements</h3><hr class="notop"></div>
+<p>
+	PHP version 5.2 or newer</p>
+<p>
+	MySQL (4.1+)</p>
+</section>
+<section id="custom_database_configuration">
+	<div class="page-header"><h3>Custom database configuration</h3><hr class="notop"></div>
+<p>
+	If you want to change database, you can found configuration in &quot;/application/config/production/database.php&quot;.</p>
+<pre class="prettyprint lang-php linenums">
+<span class="com">// Examples: default, mysql</span>
+<span class="pln">$active_group </span><span class="pun">=</span><span class="pln"> </span><span class="str">&#39;mysql&#39;</span><span class="pun">;</span>
+
+$db[&#39;mysql&#39;][&#39;hostname&#39;] = &#39;localhost&#39;;
+$db[&#39;mysql&#39;][&#39;username&#39;] = &#39;&#39;;
+$db[&#39;mysql&#39;][&#39;password&#39;] = &#39;&#39;;
+$db[&#39;mysql&#39;][&#39;database&#39;] = &#39;&#39;;
+$db[&#39;mysql&#39;][&#39;dbdriver&#39;] = &#39;mysql&#39;;
+$db[&#39;mysql&#39;][&#39;dbprefix&#39;] = &#39;&#39;;
+$db[&#39;mysql&#39;][&#39;pconnect&#39;] = FALSE;
+$db[&#39;mysql&#39;][&#39;db_debug&#39;] = FALSE;
+$db[&#39;mysql&#39;][&#39;cache_on&#39;] = FALSE;
+$db[&#39;mysql&#39;][&#39;cachedir&#39;] = &#39;&#39;;
+$db[&#39;mysql&#39;][&#39;char_set&#39;] = &#39;utf8&#39;;
+$db[&#39;mysql&#39;][&#39;dbcollat&#39;] = &#39;utf8_general_ci&#39;;
+$db[&#39;mysql&#39;][&#39;swap_pre&#39;] = &#39;&#39;;
+$db[&#39;mysql&#39;][&#39;autoinit&#39;] = TRUE;
+$db[&#39;mysql&#39;][&#39;stricton&#39;] = FALSE;</pre>
+<p>
+	MySQL Example is available, but you can change to PostgreSQL or other supported.</p>
+<p>
+	Codeigniter supports: MySQL (4.1+), MySQLi, MS SQL, Postgres, Oracle, and ODBC.</p>
+<p>
+	More details about database configuration you can find at: <a href="http://ellislab.com/codeigniter/user-guide/database/configuration.html">http://ellislab.com/codeigniter/user-guide/database/configuration.html</a></p>
+</section>
+<section id="translations">
+	<div class="page-header"><h3>Translations</h3><hr class="notop"></div>
+<p>
+	<span class="short_text" id="result_box" lang="en"><span class="hps">Script contains file translation and content translation (saved in database). With each version script supports more translations, in version 1.5.4 12 translations are cooming with script, sometimes few words are not translated (because of version different so should be translated by you).</span></span></p>
+<p>
+	<span class="short_text" lang="en"><span class="hps">Many guides and instructions can be found also in knowledge base: <a href="http://iwinter.com.hr/support/?s=translate" target="_blank">http://iwinter.com.hr/support/?s=translate</a></span></span></p>
+<h2>
+	<span class="short_text" lang="en"><span class="hps">Automatic translation via administration:</span></span></h2>
+<p>
+	Login to admin-&gt;Settings-&gt;languages-&gt;Add language-&gt;enter for example &lsquo;russian&rsquo; and code to for example &lsquo;ru&rsquo;.</p>
+<div>
+	<b>For frontend you can translate files via administration for your langauge:</b></div>
+<p>
+	Admin-&gt;Settings-&gt;Languages-&gt;Translate files for wanted language-&gt;frontend_template_lang.php-&gt;translate missing fields</p>
+<div>
+	<em>*Hint: You can also use auto translation feature (button on top) using Google or MyMemory API</em></div>
+<p>
+	<b>Also can be translated manually via file:</b><br>
+	templates\bootstrap2-responsive\language\{wanted_language}\frontend_template_lang.php</p>
+<p>
+	<b>For backend you can translate files via administration for your langauge:</b></p>
+<p>
+	Admin-&gt;Settings-&gt;Languages-&gt;Translate files-&gt;Translate min. all fields in backend_base_lang.php</p>
+<p>
+	<b>Also can be translated manually via file:</b><br>
+	application\language\{wanted_language}\backend_base_lang.php</p>
+<h2>
+	To translate website content (saved in database):</h2>
+<ol>
+	<li>
+		Login to admin</li>
+	<li>
+		Pages-&gt;Edit every page-&gt;click on tab &ldquo;your_language&rdquo; and translate all values</li>
+	<li>
+		Real Estates-&gt;Fields-&gt;Edit every Field-&gt;click on tab &ldquo;your_language&rdquo; and translate all values<br>
+		<span style="color: #800000;"><em>*hint: After changes you should edit-&gt;save again all your properties, specially for purpose field!</em></span></li>
+	<li>
+		Real Estates-&gt;Manage-&gt;Edit every property-&gt;click on tab &ldquo;your_language&rdquo; and translate all values</li>
+</ol>
+<h2>
+	<span class="short_text" lang="en"><span class="hps">Manual translation via file editing (old):</span></span></h2>
+<p>
+	<strong><span id="result_box" lang="en"><span class="hps">If you</span> <span class="hps">want to add</span> <span class="hps">a new language for backend,</span> <span class="hps">it is necessary to</span> copy one of languages folder inside</span></strong></p>
+<p>
+	&quot;/application/language&quot; (just cca. 270 lines to translate) and &quot;/system/language&quot; (<span id="result_box" lang="en"><span class="hps">* might be already</span> <span class="hps">translated</span></span>)</p>
+<p>
+	change folder name and <span id="result_box" lang="en"><span class="hps">translate the</span> <span class="hps">files</span> <span class="hps">within the directory.</span></span></p>
+<p>
+	<strong><span id="result_box" lang="en"><span class="hps">If you</span> <span class="hps">want to add</span> <span class="hps">a new language for frontend,</span> <span class="hps">it is necessary to</span> copy one of languages folder inside</span></strong></p>
+<p>
+	&quot;/application/language&quot; (can stay in english if you don&#39;t need it in backend), &quot;/system/language&quot; (<span id="result_box" lang="en"><span class="hps">* might be already</span> <span class="hps">translated</span></span>) and &quot;/templates/{theme}/language&quot; (just cca. 40 lines to translate).</p>
+<p>
+	change folder name and <span id="result_box" lang="en"><span class="hps">translate the</span> <span class="hps">files</span> <span class="hps">within the directory.</span></span></p>
+<p>
+	And in all &quot;backend_base_lang.php&quot; language files add new language if not exists at line after 27. for example:</p>
+<pre class="prettyprint lang-php linenums">
+$lang[&#39;canadian&#39;] = &quot;Canadian&quot;;</pre>
+<p>
+	In Admin interface add language:</p>
+<p>
+	<img alt="" src="assets/images/image_1.jpg"></p>
+<div class="alert alert-info">
+	<em><span id="result_box" lang="en"><span class="hps">*Hint: </span><span class="hps">System folder</span> <span class="hps">might be already</span> <span class="hps">translated,</span> <span class="hps">Google</span> <span class="hps atn">for &quot;</span><span>Codeigniter</span> <span class="hps">translations&quot;</span></span></em></div>
+<p>
+	<em><span lang="en"><span class="hps">You can find more about codeigniter translations at: </span></span><a href="http://ellislab.com/codeigniter/user-guide/libraries/language.html">http://ellislab.com/codeigniter/user-guide/libraries/language.html</a></em></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="templates">
+	<div class="page-header"><h3>Templates</h3><hr class="notop"></div>
+<p>
+	<span id="result_box" lang="en"><span class="hps">There is </span><span class="hps">example theme </span><span class="hps">available</span> <span class="hps">in the</span> <span class="hps atn">directory &quot;/</span><span>templates/{theme}&quot;.</span></span></p>
+<ul>
+	<li>
+		<span lang="en"><span>&quot;page_{template}.php&quot; </span></span>is used for page templates</li>
+	<li>
+		<span lang="en"><span>&quot;components/{component}.php&quot;</span></span> can be used as sub-template part that are used more times</li>
+	<li>
+		There is also &quot;property.php&quot;, &quot;results.php&quot; and simmilar templates</li>
+</ul>
+<p>
+	<span class="short_text" id="result_box" lang="en"><span class="hps">If you want to customize template will be best</span> <span class="hps">to copy</span> <span class="hps">and modify</span> <span class="hps">one of example templates.</span></span></p>
+<p>
+	Template language files can be found in &quot;/languages/{language_name}&quot; folder.</p>
+<p>
+	Template configuration file can be found in &quot;/config/template_config.php&quot; folder.</p>
+<p>
+	<strong>How to use?</strong></p>
+<p>
+	Application use Standard simple Codeigniter Template Parser Class and alternative PHP syntax, <span id="result_box" lang="en"><span class="hps">slowly we replacing</span> <span class="hps">all pseudo variables with alternative</span> <span class="hps">PHP</span> <span class="hps">syntax</span> because it&#39;s more easier to customize and bit fester</span>:</p>
+<p>
+	http://ellislab.com/codeigniter/user-guide/libraries/parser.html</p>
+<p>
+	Variable pairs example:</p>
+<pre class="prettyprint lang-html linenums">
+<strong>{slideshow_images}</strong>
+     &lt;img src=&quot;<strong>{url}</strong>&quot; /&gt;
+<strong>{/slideshow_images}</strong></pre>
+<p>
+	And alternative PHP syntax also can be used:</p>
+<pre class="prettyprint lang-html linenums">
+<strong>&lt;?foreach(slideshow_images as $img):?&gt;</strong>
+     &lt;img src=&quot;<strong>&lt;?=<strong>$img[&#39;url&#39;]</strong>?&gt;</strong>&quot; /&gt;
+<strong>&lt;?endforeach;?&gt;</strong></pre>
+<p>
+	All about parameters, you will find in next sections. Of course probably there is few hidden parameters or some &quot;tricks&quot; how to fetch something special so take a look into example template files for it.</p>
+<p>
+	You can switch theme in Administration interface, Page template can be switched on page editing:</p>
+<p>
+	<img alt="" src="assets/images/image_2.jpg"></p>
+</section>
+<section id="page_templates">
+	<div class="page-header"><h3>Page templates</h3><hr class="notop"></div>
+<p>
+	Parameters usable in page_* files.</p>
+<p>
+	<strong>Standard page parameters:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{page_id}
+{page_slug}
+{page_navigation_title}
+{page_title}
+{page_keywords}
+{page_description}
+{page_body}
+{page_template}
+{lang_code}
+{page_current_url}
+{homepage_url}
+{ajax_load_url}
+</pre>
+<p>
+	<strong>Component parameters:</strong></p>
+<p>
+	Parameters that represents sub-templates in &quot;/components&quot; folder, for example:</p>
+<pre class="prettyprint lang-php linenums">
+{template_head}</pre>
+<p>
+	<strong>Language parameters:</strong></p>
+<p>
+	Language fields can be entered in &quot;/language/{language}/frontend_template_lang.php&quot; file and used as language parameter, for example:</p>
+<pre class="prettyprint lang-php linenums">
+{lang_#} // # represents key in PHP array
+
+// Examples
+{lang_DateASC}
+{lang_DateDESC}
+{lang_Noestates}</pre>
+<div class="alert alert-info">
+	* Other # keys can be found in &quot;/language/{language}/frontend_template_lang.php&quot; file.</div>
+<p>
+	<strong>Slideshow parameters:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{slideshow_images}
+    {num} //returns image num 0,1,2...n
+    {first_active} //returns &quot;active&quot; if this is first image
+    {url}
+{/slideshow_images}</pre>
+<p>
+	<strong>Settings parameters:</strong></p>
+<p>
+	There is standard settings parameter that just return string, {settings_#} and {has_settings_#} that can be used to check if parameter is not empty string.</p>
+<pre class="prettyprint lang-plain linenums">
+{settings_address}
+{settings_gps}
+{settings_email}
+{settings_template}
+{settings_tracking}
+{settings_address_footer}
+{settings_phone}
+{settings_fax}
+{settings_email}
+
+{has_settings_address} ... {/has_settings_address}
+{has_settings_gps} ... {/has_settings_gps}
+{has_settings_email} ... {/has_settings_email}
+{has_settings_template} ... {/has_settings_template}
+{has_settings_tracking} ... {/has_settings_tracking}</pre>
+<p>
+	<strong>Other widgets and helpers parameters:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{print_menu} // print main menu
+{print_lang_menu} // print lang menu
+{year} // return year
+{lang_code} // return lang code
+</pre>
+<p>
+	<strong>First real estates results to show on homepage or other pages:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{has_no_results}
+Message that no results found
+{/has_no_results}
+
+{results}
+    {thumbnail_url}
+    {url} // url to property page
+    {address}
+    {data}
+    {gps}
+    {repository_id}
+    {is_featured}
+    {option_#} // # represents key of option, can be found in Admin-&gt;Estates-&gt;Options
+    {options_name_#} // where each option have #num before name
+{/results}
+
+{pagination_links} // return pagination links
+</pre>
+<p>
+	<strong>Real estates for map on top:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{all_estates_center} // Calculated map center coordinates
+
+{all_estates}
+    {gps} // Coordinates
+    {thumbnail_url}
+    {address}
+    {option_#} // # represents key of option
+    {url}
+{/all_estates}</pre>
+<p>
+	<strong>Search form parameters:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{purpose_rent_active} // return &quot;active&quot; if template filename contains rent
+{purpose_sale_active} // return &quot;active&quot; if template filename contains sale
+
+{options_name_#} // Option names
+{options_values_#} // Option values for &lt;select&gt;&lt;option&gt;
+
+// # represents key of option, can be found in Admin-&gt;Estates-&gt;Options
+// where each option have #num before name</pre>
+<pre class="prettyprint lang-php linenums">
+//Usable lang parameters
+{lang_Sale}
+{lang_Rent}
+{lang_CityorCounty}
+{lang_Search}</pre>
+<p>
+	<strong>Agents:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{all_agents}
+    {image_url}
+    {name_surname}
+    {phone}
+    {mail}
+    {address}
+{/all_agents}</pre>
+<p>
+	<strong>Page images and documents:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{has_page_images}
+{page_images}
+    {url}
+    {filename}
+    {thumbnail_url}
+{/page_images}
+{/has_page_images}
+
+{has_page_documents}
+{page_documents}
+    {url}
+    {filename}
+{/page_documents}
+{/has_page_documents}
+</pre>
+<p>
+	<strong>Contact form based on Administration settings:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{validation_errors}
+{form_sent_message}
+
+{form_error_firstname} // return &quot;error&quot;, usable for error class on input
+{form_value_firstname} // return value for specific input, on validation error
+
+{form_error_email}
+{form_value_email}
+
+{form_error_phone}
+{form_value_phone}
+
+{form_error_message}
+{form_value_message}
+
+//Other usable
+{has_settings_email} ... {/has_settings_email}
+{page_current_url}</pre>
+<p>
+	If you want to add more, currently not available data to template you can edit &quot;application/controllers/frontend.php&quot;, index method. Just add data to $this-&gt;data array and it will be available with {array_key}.</p>
+<p>
+	More about tamplates and about codeigniter you can found at CodeIgniter user guide <a href="http://ellislab.com/codeigniter/user-guide/libraries/parser.html">http://ellislab.com/codeigniter/user-guide/libraries/parser.html</a></p>
+</section>
+<section id="property_template">
+	<div class="page-header"><h3>Property template</h3><hr class="notop"></div>
+<p>
+	Parameters usable in property file.</p>
+<p>
+	<strong>Standard page parameters, based on property data:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{page_id}
+{page_slug}
+{page_navigation_title}
+{page_title}
+{page_keywords}
+{page_description} // Property description
+{page_body} // Property content
+{page_template}
+{lang_code}
+{page_current_url}
+{homepage_url}
+{ajax_load_url}
+
+{estate_image_url} // first property image
+{estate_data_gps}
+{estate_data_address}
+{estate_data_id}
+</pre>
+<p>
+	<strong>Component parameters:</strong></p>
+<p>
+	Parameters that represents sub-templates in &quot;/components&quot; folder, for example:</p>
+<pre class="prettyprint lang-php linenums">
+{template_head}</pre>
+<p>
+	<strong>Language parameters:</strong></p>
+<p>
+	Language fields can be entered in &quot;/language/{language}/frontend_template_lang.php&quot; file and used as language parameter, for example:</p>
+<pre class="prettyprint lang-php linenums">
+{lang_#} // # represents key in PHP array
+
+// Examples
+{lang_DateASC}
+{lang_DateDESC}
+{lang_Noestates}</pre>
+<div class="alert alert-info">
+	* Other # keys can be found in &quot;/language/{language}/frontend_template_lang.php&quot; file.</div>
+<p>
+	<strong>Slideshow parameters (for property):</strong></p>
+<pre class="prettyprint lang-php linenums">
+{slideshow_images}
+    {num} //returns image num 0,1,2...n
+    {first_active} //returns &quot;active&quot; if this is first image
+    {url}
+{/slideshow_images}</pre>
+<p>
+	<strong>Settings parameters:</strong></p>
+<p>
+	There is standard settings parameter that just return string, {settings_#} and {has_settings_#} that can be used to check if parameter is not empty string.</p>
+<pre class="prettyprint lang-plain linenums">
+{settings_address}
+{settings_gps}
+{settings_email}
+{settings_template}
+{settings_tracking}
+{settings_address_footer}
+{settings_phone}
+{settings_fax}
+{settings_email}
+
+{has_settings_address} ... {/has_settings_address}
+{has_settings_gps} ... {/has_settings_gps}
+{has_settings_email} ... {/has_settings_email}
+{has_settings_template} ... {/has_settings_template}
+{has_settings_tracking} ... {/has_settings_tracking}</pre>
+<p>
+	<strong>Other widgets and helpers parameters:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{print_menu} // print main menu
+{print_lang_menu} // print lang menu
+{year} // return year
+{lang_code} // return lang code
+</pre>
+<p>
+	<strong>Real estates for map on top:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{all_estates_center} // Calculated map center coordinates
+
+{all_estates}
+    {gps} // Coordinates
+    {thumbnail_url}
+    {address}
+    {option_#} // # represents key of option
+    {url}
+{/all_estates}</pre>
+<p>
+	<strong>Search form parameters:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{options_name_#} // Option names
+{options_values_#} // Option values for &lt;select&gt;&lt;option&gt;
+
+// # represents key of option, can be found in Admin-&gt;Estates-&gt;Options
+// where each option have #num before name</pre>
+<pre class="prettyprint lang-php linenums">
+//Usable lang parameters
+{lang_Sale}
+{lang_Rent}
+{lang_CityorCounty}
+{lang_Search}</pre>
+<p>
+	<strong>Property images:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{has_page_images}
+{page_images}
+    {url}
+    {filename}
+    {thumbnail_url}
+{/page_images}
+{/has_page_images}
+</pre>
+<p>
+	<strong>Enquire form based on agent Administration settings:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{validation_errors}
+{form_sent_message}
+
+{form_error_firstname} // return &quot;error&quot;, usable for error class on input
+{form_value_firstname} // return value for specific input, on validation error
+
+{form_error_email}
+{form_value_email}
+
+{form_error_phone}
+{form_value_phone}
+
+{form_error_address}
+{form_value_message}
+
+{form_error_message}
+{form_value_message}
+
+//Other usable
+{has_settings_email} ... {/has_settings_email}
+{page_current_url}</pre>
+<p>
+	Property options/amenities:</p>
+<pre class="prettyprint lang-php linenums">
+{category_options_#}  // # represents key of category option
+{is_checkbox} // if type is checkbox
+    {option_value}
+    {option_name}
+{/is_checkbox}
+{is_dropdown} // if type is dropdown
+    {option_value}
+    {option_name}
+{/is_dropdown}
+{is_text} // if type is text
+    {option_value}
+    {option_name}
+{/is_text}
+{/category_options_#}
+
+// You can also access directly to option:
+{estate_data_option_#} // # represents key of option
+</pre>
+<p>
+	Property agent data:</p>
+<pre class="prettyprint lang-php linenums">
+{has_agent}
+    {agent_name_surname}
+    {agent_phone}
+    {agent_mail}
+    {agent_address}
+    {agent_image_url}
+{/has_agent}</pre>
+<p>
+	If you want to add more, currently not available data to template you can edit &quot;application/controllers/frontend.php&quot;, property method. Just add data to $this-&gt;data array and it will be available with {array_key}.</p>
+<p>
+	More about tamplates and about codeigniter you can found at CodeIgniter user guide <a href="http://ellislab.com/codeigniter/user-guide/libraries/parser.html">http://ellislab.com/codeigniter/user-guide/libraries/parser.html</a></p>
+</section>
+<section id="results_template">
+	<div class="page-header"><h3>Results template</h3><hr class="notop"></div>
+<p>
+	Parameters usable in results file.</p>
+<p>
+	<strong>Language parameters:</strong></p>
+<p>
+	Language fields can be entered in &quot;/language/{language}/frontend_template_lang.php&quot; file and used as language parameter, for example:</p>
+<pre class="prettyprint lang-php linenums">
+{lang_#} // # represents key in PHP array
+
+// Examples
+{lang_DateASC}
+{lang_DateDESC}
+{lang_Noestates}</pre>
+<div class="alert alert-info">
+	* Other # keys can be found in &quot;/language/{language}/frontend_template_lang.php&quot; file.</div>
+<p>
+	<strong>Real estates results to show:</strong></p>
+<pre class="prettyprint lang-php linenums">
+{has_no_results}
+Message that no results found
+{/has_no_results}
+
+{results}
+{has_view_grid} // for grid view
+    {thumbnail_url}
+    {url} // url to property page
+    {address}
+    {data}
+    {gps}
+    {repository_id}
+    {is_featured}
+    {option_#} // # represents key of option, can be found in Admin-&gt;Estates-&gt;Options
+    {option_chlimit_#} // character limit for description to show in results
+    {options_name_#} // where each option have #num before name
+{/has_view_grid}
+{has_view_list} // for list view
+    {thumbnail_url}
+    {url} // url to property page
+    {address}
+    {data}
+    {gps}
+    {repository_id}
+    {is_featured}
+    {option_#} // # represents key of option, can be found in Admin-&gt;Estates-&gt;Options
+    {options_name_#} // where each option have #num before name
+{/has_view_list}
+{/results}
+
+{pagination_links} // return pagination links
+</pre>
+<p>
+	<strong>View options</strong></p>
+<pre class="prettyprint lang-php linenums">
+{view_grid_selected} // returns selected if view is grid type, usable for css class
+{view_list_selected} // returns selected if view is list type
+{order_dateASC_selected} // returns selected if dateASC order type is selected, usable for css class
+{order_dateDESC_selected} // returns selected if dateDESC order type is selected, usable for css class</pre>
+<p>
+	If you want to add more, currently not available data to template you can edit &quot;application/controllers/frontend.php&quot;, ajax method. Just add data to $this-&gt;data array and it will be available with {array_key}.</p>
+<p>
+	More about tamplates and about codeigniter you can found at CodeIgniter user guide <a href="http://ellislab.com/codeigniter/user-guide/libraries/parser.html">http://ellislab.com/codeigniter/user-guide/libraries/parser.html</a></p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="search_engine_optimizations">
+	<div class="page-header"><h3>Search engine optimizations</h3><hr class="notop"></div>
+<p>
+	If you want best seo principles like just content title in URL, without &quot;index.php&quot; in URI, you need to:</p>
+<p>
+	<strong>Rename &quot;seo.htaccess&quot; file to &quot;.htaccess&quot;.</strong></p>
+<p>
+	In &quot;application/config/config.php&quot; change:</p>
+<p>
+	$config[&#39;index_page&#39;] = &#39;index.php&#39;;</p>
+<p>
+	to</p>
+<p>
+	$config[&#39;index_page&#39;] = &#39;&#39;;</p>
+<p>
+	<strong>Application also support XML sitemap, URL for sitemap: your-domain.com/sitemap.xml</strong></p>
+<p>
+	Also don&#39;t forget to check in knowledge base for some tricks etc.: <a href="http://iwinter.com.hr/support/?s=seo" target="_blank">http://iwinter.com.hr/support/?s=seo</a></p>
+</section>
+<section id="public_api_rss">
+	<div class="page-header"><h3>Public API & RSS</h3><hr class="notop"></div>
+<h2>
+	RSS feeds are available on link:</h2>
+<p>
+	<strong>URL:</strong>&nbsp; your-domain.com/index.php/api/rss/{lang_code}/{limit_properties}/{offset_properties}</p>
+<h2>
+	Public JSON API to search data from external application:</h2>
+<p>
+	Example call: your-domain.com/index.php/api/json/en?</p>
+<p>
+	Supported uri parameters, for pagination:<br>
+	$limit_properties=20<br>
+	$offset_properties=0<br>
+	<br>
+	Supported query parameters:<br>
+	options_hide<br>
+	v_rectangle_ne=46.3905, 16.8329<br>
+	v_rectangle_sw=45.9905, 15.999<br>
+	search={&quot;search_option_smart&quot;:&quot;yellow&quot;,&quot;v_search_option_2&quot;:&quot;Apartment&quot;}<br>
+	<br>
+	Complete example:<br>
+	index.php/api/json/en/20/0?options_hide&amp;search={&quot;search_option_smart&quot;:&quot;cestica&quot;}&amp;v_rectangle_ne=46.3905, 16.8329&amp;v_rectangle_sw=45.9905, 15.999<br>
+	Example for &quot;from&quot;:<br>
+	{&quot;v_search_option_36_from&quot;:&quot;60000&quot;}<br>
+	Example for indeed value:<br>
+	{&quot;v_search_option_4&quot;:&quot;Sale and Rent&quot;}</p>
+<h2>
+	<span id="result_box" lang="en"><span class="hps">Currently system use</span> <span class="hps">JSON</span> AJAX <span class="hps">interface</span> <span class="hps">for search and pagination</span><span class="hps">:</span></span></h2>
+<p>
+	<strong>URL:</strong>&nbsp; your-domain.com/index.php/frontend/ajax/{lang_code}/{page_id}/{pagination_offset}</p>
+<p>
+	<strong>JSON main results:</strong></p>
+<pre class="prettyprint lang-js linenums">
+{
+    print: &quot;HTML for print&quot;
+    order: &quot;Order info&quot;
+    lang_id: &quot;Language id&quot;
+    results: [array of real estates objects]
+}</pre>
+<p>
+	Real estates object</p>
+<pre class="prettyprint lang-js linenums">
+{
+    id
+    gps
+    is_featured
+    address
+    repository_id
+    date
+    option_#
+}</pre>
+</section>
+<section id="addons_custom_coding">
+	<div class="page-header"><h3>Addons & Custom coding</h3><hr class="notop"></div>
+<h2>
+	Addons</h2>
+<p>
+	Before you start with custom coding you should know that I always building something additional and currently have many modules like:</p>
+<p>
+	News/Blog pro<br>
+	Packages<br>
+	Booking &amp; availability calender<br>
+	Ads module<br>
+	And many more...</p>
+<p>
+	<strong>Also take a look in my codecanyon portfolio:</strong><br>
+	<a href="http://codecanyon.net/user/sanljiljan/portfolio" target="_blank">http://codecanyon.net/user/sanljiljan/portfolio</a></p>
+<p>
+	<strong>Or my services list:</strong></p>
+<p>
+	<a href="http://iwinter.com.hr/support/?page_id=1870" target="_blank">http://iwinter.com.hr/support/?page_id=1870</a></p>
+<h2>
+	Customizations</h2>
+<p>
+	<span id="result_box" lang="en"><span class="hps alt-edited">Knowledge of the</span> <span class="hps">CodeIgniter</span> <span class="hps">PHP Framework</span> <span class="hps">is required.</span></span></p>
+<p>
+	<span id="result_box" lang="en"><span class="hps">CodeIgniter</span> <span class="hps">is a very simple</span> <span class="hps">framework</span> <span class="hps">with the best</span> <span class="hps">documentation</span> <span class="hps">ever</span> <span class="hps">seen,</span> <span class="hps">so you</span> <span class="hps alt-edited">can easy learn it</span><span class="hps">.</span></span></p>
+<p>
+	<span lang="en"><span class="hps">Look at </span></span><a href="http://ellislab.com/codeigniter/user-guide">http://ellislab.com/codeigniter/user-guide</a></p>
+<p>
+	You can also change local path in index.php, line 24 to select ENVIRONMENT configuration.</p>
+<p>
+	<strong>Don&#39;t forget to check our rich knowledge base: <a href="http://iwinter.com.hr/support/" target="_blank">http://iwinter.com.hr/support/</a></strong></p>
+</section>
+<section id="support">
+	<div class="page-header"><h3>Support</h3><hr class="notop"></div>
+<p>
+	Now we have special website made for support, frequency questions for customizations, guides for basic CSS/HTML, tips &amp; tricks etc.: http://iwinter.com.hr/support</p>
+<p>
+	If you have any question that are beyond the scope of this help file, please feel free to check&nbsp; our support instructions:</p>
+<p>
+	http://codecanyon.net/item/real-estate-agency-portal/6539169/support</p>
+</section>
+<section id="hosting_suggestion">
+	<div class="page-header"><h3>Hosting suggestion</h3><hr class="notop"></div>
+<p>
+	<strong>Regarding hosting providers, my scripts are tested on:</strong></p>
+<p>
+	<a href="https://www.a2hosting.com/refer/59624" target="_blank"><img alt="a2_hosting_logo" class="alignnone size-full wp-image-1721" height="45" src="assets/images/image_4.png" width="171"></a></p>
+<p>
+	And my suggestion if you decide to purchase by other hosting provider, <strong>please save your money/time and don&rsquo;t buy from godaddy</strong>, goddady is good for domains but not for hosting because of many configuration limitations!</p>
+</section>
+<section id="sources_and_credits">
+	<div class="page-header"><h3>Sources and Credits</h3><hr class="notop"></div>
+<p>
+	I&#39;ve used the following files and services as listed:</p>
+<ol>
+	<li>
+		<strong><a href="http://www.php.net">PHP</a></strong></li>
+	<li>
+		<strong><a href="http://ellislab.com/codeigniter">CodeIgniter</a></strong></li>
+	<li>
+		<strong><a href="http://www.jquery.com">jQuery</a></strong></li>
+	<li>
+		<strong><a href="http://twitter.github.com/bootstrap/">Bootstrap</a></strong></li>
+	<li>
+		<strong><a href="http://blueimp.github.com/jQuery-File-Upload/">jQuery File Upload</a></strong></li>
+	<li>
+		<strong><strong><strong><strong><a href="http://www.sxc.hu/">Stock.XCHNG (Example images)</a></strong></strong></strong></strong></li>
+	<li>
+		<strong><a href="http://www.flickr.com/photos/daryl_mitchell">http://www.flickr.com/photos/daryl_mitchell</a> (Example images)</strong></li>
+	<li>
+		<strong><a href="http://www.flickr.com/photos/58842866@N08">http://www.flickr.com/photos/58842866@N08</a> (Example images)</strong></li>
+	<li>
+		<strong><a href="http://www.flickr.com/photos/pnwra">http://www.flickr.com/photos/pnwra</a> (Example images)</strong></li>
+	<li>
+		<a href="http://rxa.li/documenter"><strong><strong><strong><strong><strong>The Documenter</strong></strong></strong></strong></strong></a></li>
+</ol>
+<p>
+	<strong><strong>Thank you so much for purchasing this application. I&#39;d be glad to help you if you have any questions relating to this app. No guarantees, but I will do my best to help.</strong></strong></p>
+</section>
+
+	</div>
+</body>
+</html>

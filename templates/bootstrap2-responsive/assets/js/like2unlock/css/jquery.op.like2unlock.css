@@ -1,0 +1,506 @@
+/**
+* Like 2 Unlock for jQuery
+* @copyright: Paul Kashtanoff (from OnePress), 2012
+* http://codecanyon.net/item/plus-one-2-unlock-for-jquery/3112957
+*/
+
+/*
+* -----------------------------------------
+* Common styles
+* -----------------------------------------
+*/
+
+/*
+* Error that is rised when the locker is setup incorrect.
+*/
+.ui-facebook-locker-error {
+    display: block !important;
+    padding: 20px !important;
+    font: normal normal 400 12px/18px "PT Sans", sans-serif !important;
+    background-color: #ffebe8 !important;
+    border: 1px solid #dd3c10 !important;
+    text-align: left !important;
+    text-shadow: none !important;
+    margin: 20px 0 !important;
+    color: #000 !important;
+}
+
+/*
+* Fonts
+*/
+
+/* all text except the timer */
+.ui-locker-facebook, .ui-locker-facebook .ui-locker-text {
+    font: normal normal 400 14px/20px;
+    font-family: "Helvetica", "Arial", sans-serif;
+    text-align: left;
+}
+/* timer text */
+.ui-locker-facebook .ui-locker-timer,
+.ui-locker-facebook .ui-locker-timer * {
+	font: normal normal 400 12px/12px "Helvetica";
+    font-family: "Helvetica", "Arial", sans-serif;
+	text-transform: lowercase;
+}
+.ui-locker-facebook .ui-locker-timer-counter {
+    font-weight: bold;
+}
+
+/**
+* -----------------------------------------
+* Locker base classes
+* -----------------------------------------
+*/
+
+.ui-locker-facebook {
+    position: relative !important;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    background-color: #F9F9F9;
+    padding: 25px;
+    margin: 20px auto !important;
+    min-width: 320px;
+
+    /* max width, change it or remove if you want */
+    max-width: 600px;
+}
+.ui-locker-facebook .fb-like {
+    float: none !important;
+}
+.ui-locker-facebook .ui-locker-text {
+    padding: 0 0 5px 0;
+}
+.ui-locker-facebook.ui-locker-inverse .ui-locker-text {
+    padding: 6px 0 0 0;
+}
+.ui-locker-facebook p {
+    margin: 0px;
+}
+.ui-locker-facebook .ui-locker-buttons {
+    margin-top: 3px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* remove the popup comment box */
+
+.ui-locker-facebook .fb-like span {
+    height: 24px !important;
+    overflow: hidden;
+}
+.ui-locker-facebook .ui-facebook-like-button_count .fb-like span {
+    height: 20px !important;
+}
+.ui-locker-facebook .ui-facebook-like-box_count .fb-like span {
+    height: 63px !important;
+}
+
+/*
+* Helper tools
+*/
+
+/* Close Icon */
+
+.ui-locker-facebook .ui-locker-close-icon {
+    background: url("../img/close-dark.png") 50% 50% no-repeat;
+    width: 16px;
+    height: 16px;
+    float: right;	
+    opacity: 0.1;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10);
+    margin-right: 2px;
+    margin-top: 2px;
+    cursor: pointer;
+    position: relative;
+    top: -18px;
+    left: 18px;
+}
+.ui-locker:hover .ui-locker-close-icon {
+    opacity: 0.2;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+}
+.ui-locker-facebook .ui-locker-close-icon:hover {
+    opacity: 0.8;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+
+/* Timer */
+
+.ui-locker-facebook .ui-locker-timer {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    z-index: 10;
+}
+.ui-locker-facebook.no-button .ui-locker-timer {
+    color: #000;
+}
+
+/* Overlay that appears when a user is not logged in */
+
+.ui-locker-facebook .ui-locker-overlay, 
+.ui-locker-facebook .ui-locker-overlay-message {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    background-color: #fff;
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.ui-locker-facebook .ui-locker-overlay {
+    height: 100%;
+    width: 100%;
+}
+.ui-locker-facebook .ui-locker-overlay-message {
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    z-index: 11;
+    margin-left: -150px;
+    text-align: center;
+    background-color: #f6f6f6;
+    padding: 15px;
+}
+.ui-locker-facebook .ui-locker-overlay-button {
+    width: 150px;
+    height: 23px;
+    background: url("../img/facebook_signin.png") 0px 0px repeat no-repeat;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.ui-locker-facebook .ui-locker-overlay-button:hover {
+    background-position: 0px -24px;
+}
+
+.ui-locker-facebook.ui-locker-mobile .ui-locker-overlay-message {
+    top: 14px;
+}
+
+/* Loading */
+
+.ui-locker-loading-holder {
+    background: transparent url("../img/loading.gif") 50% 50% no-repeat;
+    height: 100px;
+}
+
+/*
+* -----------------------------------------
+* Preset styles
+* -----------------------------------------
+*/
+
+/** 
+* Facebook Style
+*/
+
+.ui-locker-facebook-style  
+{
+    background-color: transparent;
+    padding: 0px;
+}
+.ui-locker-facebook-style .ui-locker-overlay {
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+.ui-locker-facebook-style .ui-locker-overlay-message {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; 
+}
+ .ui-locker-facebook-style .ui-locker-outer-wrap
+{
+    -webkit-border-radius: 9px;
+    -moz-boder-radius: 9px;
+    border-radius: 9px;
+    
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0x 0px 13px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 13px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 13px 0px;
+}
+ .ui-locker-facebook-style .ui-locker-inner-wrap
+{
+    padding: 10px;
+    background-color: #868686;
+    
+    -webkit-border-radius: 9px;
+    -moz-boder-radius: 9px;
+    border-radius: 9px;
+}
+ .ui-locker-facebook-style .ui-locker-text 
+{
+    padding: 9px 40px 8px 13px;
+    background: #6D84B4;
+    color: #fff;
+    border: 1px solid #3B5998;
+    
+    -webkit-border-top-left-radius: 7px;
+    -webkit-border-top-right-radius: 7px;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-topright: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    
+     -moz-text-shadow: 1px 1px 1px #3B5998;
+     -webkit-text-shadow: 1px 1px 1px #3B5998;
+     text-shadow: 1px 1px 1px #3B5998;
+     
+    -webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.3);   
+    -moz-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.3); 
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.3);
+}
+ .ui-locker-facebook-style .ui-locker-buttons 
+{
+    padding: 11px 13px 9px 13px;
+    margin-top: 0px;
+    
+    border: 1px solid #555;
+    border-top: 0px;
+    background: #fff;
+    
+    -webkit-border-bottom-right-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-bottomright: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+ .ui-locker-facebook-style .ui-locker-close-icon 
+{
+    top: 10px;
+    left: -10px;
+    opacity: 0.4;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=4);
+}
+ .ui-locker-facebook-style:hover  .ui-locker-close-icon
+{
+    opacity: 0.5;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+ .ui-locker-facebook-style .ui-locker-close-icon:hover 
+{
+    opacity: 0.8;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+ .ui-locker-facebook-style .ui-locker-timer
+{
+    bottom: 14px;
+    right: 15px;
+}
+  .ui-locker-facebook-style.ui-locker-mozilla .ui-locker-button,
+  .ui-locker-facebook-style.ui-locker-msie .ui-locker-button {
+    width: 79px;
+}
+
+/** 
+* Facebook Style Plane
+*/
+
+ .ui-locker-facebook-style-plane  {
+    background-color: #fff;
+    border: 10px solid #868686;
+    padding: 0px;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+ .ui-locker-facebook-style-plane  .ui-locker-close-icon {
+    top: 0px;
+    left: 0px;
+}
+ .ui-locker-facebook-style-plane .ui-locker-text,
+ .ui-locker-facebook-style-plane .ui-locker-text * {
+    color: #FFFFFF;
+    font-size: 14px;
+    line-height: 24px;
+}
+ .ui-locker-facebook-style-plane .ui-locker-text {
+    display: block;
+    background-color: #6D84B4;
+    border-bottom: 0px none currentColor;
+    border-left: 1px solid #3B5998;
+    border-right: 1px solid #3B5998;
+    border-top: 1px solid #3B5998;
+    padding: 6px 10px !important;
+}
+ .ui-locker-facebook-style-plane.ui-locker-block.ui-locker-inverse .ui-locker-text {
+    padding: 7px 10px 6px 10px !important;  
+    border-top: 0px none currentColor;
+    border-bottom: 1px solid #3B5998;
+}
+ .ui-locker-facebook-style-plane .ui-locker-close-icon 
+{
+    opacity: 0.4;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=4);
+}
+ .ui-locker-facebook-style-plane:hover .ui-locker-close-icon
+{
+    opacity: 0.5;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+ .ui-locker-facebook-style-plane .ui-locker-close-icon:hover 
+{
+    opacity: 0.8;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+ .ui-locker-facebook-style-plane .ui-locker-buttons {
+    padding: 10px 10px 8px 10px;
+}
+
+/** 
+* Breeze
+*/
+
+.ui-locker-breeze  {
+    background: #EBEEF4;
+    padding: 0px;
+}
+.ui-locker-breeze .ui-locker-close-icon {
+    top: 0px;
+    left: 0px;  
+    opacity: 0.3;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=4);
+}
+.ui-locker-breeze.ui-locker-block:hover .ui-locker-close-icon
+{
+    opacity: 0.4;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+.ui-locker-breeze .ui-locker-close-icon:hover 
+{
+    opacity: 0.8;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}
+.ui-locker-breeze .ui-locker-text,
+.ui-locker-breeze .ui-locker-text * {
+    color: #FFFFFF;
+}
+.ui-locker-breeze .ui-locker-text {
+    display: block;
+    background-color: #6D84B4;
+    padding: 10px 13px !important;
+}
+.ui-locker-breeze .ui-locker-hint {
+    color: #fff;
+}
+.ui-locker-breeze .ui-locker-buttons {
+    padding: 13px;
+}
+.ui-locker-breeze.ui-locker-block.no-button .ui-locker-timer {
+    color: #fff;
+}
+.ui-locker-breeze .ui-locker-overlay-message {
+    background-color: #6D84B4;
+    color: #fff;
+}
+
+/** 
+* Facebook Airiness
+*/
+
+.ui-locker-airiness  {
+    background: #FFFFFF;
+    border: 1px solid #C4CDE0;
+    padding: 0px;
+
+    -webkit-box-shadow: rgba(100, 100, 100, 0.15) 0px 2px 9px 0px;
+    -moz-box-shadow: rgba(100, 100, 100, 0.15) 0px 2px 9px 0px;
+    box-shadow: rgba(100, 100, 100, 0.15) 0px 2px 9px 0px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.ui-locker-airiness  .ui-locker-close-icon {
+    top: 0px;
+    left: 0px;	
+}
+.ui-locker-airiness .ui-locker-inner-wrap  {
+    padding: 5px;
+}
+.ui-locker-airiness .ui-locker-text,
+.ui-locker-airiness .ui-locker-text * {
+    color: #808080;
+}
+.ui-locker-airiness .ui-locker-text {
+    display: block;
+    padding: 8px 7px !important;
+    padding-bottom: 5px !important;
+}
+.ui-locker-airiness.ui-locker-block.ui-locker-inverse .ui-locker-text {
+    display: block;
+    padding: 8px 7px !important;
+    padding-bottom: 5px !important;
+}
+.ui-locker-airiness .ui-locker-buttons {
+    padding: 11px 10px 8px 10px;
+    background: #EDEFF4;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.ui-locker-airiness.ui-locker-block.ui-locker-inverse .ui-locker-buttons {
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.ui-locker-airiness .ui-locker-timer {
+    right: 11px;
+    bottom: 9px;
+}
+.ui-locker-airiness.ui-locker-block.no-button .ui-locker-timer {
+    color: #808080;
+    right: 5px;
+    bottom: 5px;
+}
+.ui-locker-airiness.ui-locker-mobile .ui-locker-overlay-message {
+    top: 5px;
+}
+
+/*
+* Classic Style [obsolete].
+* You can remove it if you don't use this theme.
+*/
+.ui-locker-classic .ui-locker-close-icon {
+    top: 0px;
+    left: 0px;	
+}
+.ui-locker-classic .ui-locker-timer {
+    right: 8px;
+    bottom: 5px;
+}
+.ui-locker-classic  {
+    background-color: transparent;
+    padding: 0px 4px;
+}
+.ui-locker-classic .ui-locker-outer-wrap{
+    background-color: #F9F9F9;
+    padding: 20px;
+
+    -webkit-box-shadow: rgba(0, 0, 0, 0.258) 0px 2px 9px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.258) 0px 2px 9px 0px;
+    box-shadow: rgba(0, 0, 0, 0.258) 0px 2px 9px 0px;
+}
+

@@ -1,0 +1,1404 @@
+/*!
+ * Bootstrap Form Helpers
+ *
+ * Copyright 2013 Vincent Lamanna, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built by @vincent lamanna.
+ */
+
+[class^="custom-icon-"], [class*=" custom-icon-"] {
+    background-image: url("../img/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}
+
+.custom-icon-flag-AD, .custom-icon-flag-AE, .custom-icon-flag-AF, .custom-icon-flag-AG, .custom-icon-flag-AI, .custom-icon-flag-AL, .custom-icon-flag-AM, .custom-icon-flag-AN, .custom-icon-flag-AO, .custom-icon-flag-AQ, .custom-icon-flag-AR, .custom-icon-flag-AS, .custom-icon-flag-AT, .custom-icon-flag-AU, .custom-icon-flag-AW, .custom-icon-flag-AX, .custom-icon-flag-AZ, .custom-icon-flag-BA, .custom-icon-flag-BB, .custom-icon-flag-BD, .custom-icon-flag-BE, .custom-icon-flag-BG, .custom-icon-flag-BH, .custom-icon-flag-BI, .custom-icon-flag-BJ, .custom-icon-flag-BL, .custom-icon-flag-BM, .custom-icon-flag-BN, .custom-icon-flag-BO, .custom-icon-flag-BR, .custom-icon-flag-BS, .custom-icon-flag-BT, .custom-icon-flag-BW, .custom-icon-flag-BY, .custom-icon-flag-BZ, .custom-icon-flag-CA, .custom-icon-flag-CD, .custom-icon-flag-CF, .custom-icon-flag-CG, .custom-icon-flag-CH, .custom-icon-flag-CI, .custom-icon-flag-CL, .custom-icon-flag-CM, .custom-icon-flag-CN, .custom-icon-flag-CO, .custom-icon-flag-CR, .custom-icon-flag-CV, .custom-icon-flag-CY, .custom-icon-flag-CZ, .custom-icon-flag-DJ, .custom-icon-flag-DK, .custom-icon-flag-DM, .custom-icon-flag-DO, .custom-icon-flag-DZ, .custom-icon-flag-EC, .custom-icon-flag-EE, .custom-icon-flag-EG, .custom-icon-flag-EH, .custom-icon-flag-ER, .custom-icon-flag-ES, .custom-icon-flag-ET, .custom-icon-flag-EU, .custom-icon-flag-FI, .custom-icon-flag-FJ, .custom-icon-flag-FK, .custom-icon-flag-FM, .custom-icon-flag-FO, .custom-icon-flag-FR, .custom-icon-flag-FX, .custom-icon-flag-GF, .custom-icon-flag-GP, .custom-icon-flag-MQ, .custom-icon-flag-NC, .custom-icon-flag-PF, .custom-icon-flag-PM, .custom-icon-flag-RE, .custom-icon-flag-TF, .custom-icon-flag-WF, .custom-icon-flag-GA, .custom-icon-flag-GB, .custom-icon-flag-GD, .custom-icon-flag-GE, .custom-icon-flag-GG, .custom-icon-flag-GH, .custom-icon-flag-GL, .custom-icon-flag-GM, .custom-icon-flag-GN, .custom-icon-flag-GQ, .custom-icon-flag-GR, .custom-icon-flag-GS, .custom-icon-flag-GT, .custom-icon-flag-GU, .custom-icon-flag-GW, .custom-icon-flag-GY, .custom-icon-flag-HK, .custom-icon-flag-HN, .custom-icon-flag-HR, .custom-icon-flag-HT, .custom-icon-flag-HU, .custom-icon-flag-ID, .custom-icon-flag-IE, .custom-icon-flag-IL, .custom-icon-flag-IM, .custom-icon-flag-IN, .custom-icon-flag-IQ, .custom-icon-flag-IS, .custom-icon-flag-IT, .custom-icon-flag-JE, .custom-icon-flag-JM, .custom-icon-flag-JO, .custom-icon-flag-JP, .custom-icon-flag-KE, .custom-icon-flag-KG, .custom-icon-flag-KH, .custom-icon-flag-KI, .custom-icon-flag-KM, .custom-icon-flag-KN, .custom-icon-flag-KP, .custom-icon-flag-KR, .custom-icon-flag-KV, .custom-icon-flag-KW, .custom-icon-flag-KY, .custom-icon-flag-LA, .custom-icon-flag-LC, .custom-icon-flag-LK, .custom-icon-flag-LR, .custom-icon-flag-LS, .custom-icon-flag-LT, .custom-icon-flag-LU, .custom-icon-flag-LV, .custom-icon-flag-LY, .custom-icon-flag-MA, .custom-icon-flag-ME, .custom-icon-flag-MG, .custom-icon-flag-MH, .custom-icon-flag-ML, .custom-icon-flag-MM, .custom-icon-flag-MP, .custom-icon-flag-MR, .custom-icon-flag-MS, .custom-icon-flag-MT, .custom-icon-flag-MU, .custom-icon-flag-MV, .custom-icon-flag-MW, .custom-icon-flag-MZ, .custom-icon-flag-NA, .custom-icon-flag-NE, .custom-icon-flag-NF, .custom-icon-flag-NG, .custom-icon-flag-NI, .custom-icon-flag-NL, .custom-icon-flag-NO, .custom-icon-flag-NP, .custom-icon-flag-NR, .custom-icon-flag-NZ, .custom-icon-flag-OM, .custom-icon-flag-PA, .custom-icon-flag-PE, .custom-icon-flag-PG, .custom-icon-flag-PH, .custom-icon-flag-PK, .custom-icon-flag-PL, .custom-icon-flag-PN, .custom-icon-flag-PS, .custom-icon-flag-PT, .custom-icon-flag-PW, .custom-icon-flag-PY, .custom-icon-flag-QA, .custom-icon-flag-RS, .custom-icon-flag-RU, .custom-icon-flag-RW, .custom-icon-flag-SA, .custom-icon-flag-SB, .custom-icon-flag-SC, .custom-icon-flag-SD, .custom-icon-flag-SE, .custom-icon-flag-SG, .custom-icon-flag-SH, .custom-icon-flag-SI, .custom-icon-flag-SK, .custom-icon-flag-SM, .custom-icon-flag-SN, .custom-icon-flag-SO, .custom-icon-flag-SR, .custom-icon-flag-SS, .custom-icon-flag-ST, .custom-icon-flag-SV, .custom-icon-flag-SY, .custom-icon-flag-SZ, .custom-icon-flag-TC, .custom-icon-flag-TD, .custom-icon-flag-TG, .custom-icon-flag-TH, .custom-icon-flag-TJ, .custom-icon-flag-TM, .custom-icon-flag-TN, .custom-icon-flag-TP, .custom-icon-flag-TR, .custom-icon-flag-TT, .custom-icon-flag-TV, .custom-icon-flag-TW, .custom-icon-flag-TZ, .custom-icon-flag-UA, .custom-icon-flag-UG, .custom-icon-flag-US, .custom-icon-flag-UY, .custom-icon-flag-UZ, .custom-icon-flag-VC, .custom-icon-flag-VE, .custom-icon-flag-VG, .custom-icon-flag-VI, .custom-icon-flag-VN, .custom-icon-flag-VU, .custom-icon-flag-WS, .custom-icon-flag-YE, .custom-icon-flag-ZA, .custom-icon-flag-ZM, .custom-icon-flag-BF, .custom-icon-flag-CU, .custom-icon-flag-DE, .custom-icon-flag-IR, .custom-icon-flag-KZ, .custom-icon-flag-LB, .custom-icon-flag-LI, .custom-icon-flag-MC, .custom-icon-flag-MD, .custom-icon-flag-MK, .custom-icon-flag-MN, .custom-icon-flag-MO, .custom-icon-flag-MX, .custom-icon-flag-MY, .custom-icon-flag-PR, .custom-icon-flag-RO, .custom-icon-flag-SL, .custom-icon-flag-TO, .custom-icon-flag-VA, .custom-icon-flag-ZW{
+	background: url(../img/bootstrap-formhelpers-countries.flags.png) no-repeat;
+
+}
+
+.selectbox-options > .custom-icon-flag-AD, .custom-icon-flag-AE, .custom-icon-flag-AF, .custom-icon-flag-AG, .custom-icon-flag-AI, .custom-icon-flag-AL, .custom-icon-flag-AM, .custom-icon-flag-AN, .custom-icon-flag-AO, .custom-icon-flag-AQ, .custom-icon-flag-AR, .custom-icon-flag-AS, .custom-icon-flag-AT, .custom-icon-flag-AU, .custom-icon-flag-AW, .custom-icon-flag-AX, .custom-icon-flag-AZ, .custom-icon-flag-BA, .custom-icon-flag-BB, .custom-icon-flag-BD, .custom-icon-flag-BE, .custom-icon-flag-BG, .custom-icon-flag-BH, .custom-icon-flag-BI, .custom-icon-flag-BJ, .custom-icon-flag-BL, .custom-icon-flag-BM, .custom-icon-flag-BN, .custom-icon-flag-BO, .custom-icon-flag-BR, .custom-icon-flag-BS, .custom-icon-flag-BT, .custom-icon-flag-BW, .custom-icon-flag-BY, .custom-icon-flag-BZ, .custom-icon-flag-CA, .custom-icon-flag-CD, .custom-icon-flag-CF, .custom-icon-flag-CG, .custom-icon-flag-CH, .custom-icon-flag-CI, .custom-icon-flag-CL, .custom-icon-flag-CM, .custom-icon-flag-CN, .custom-icon-flag-CO, .custom-icon-flag-CR, .custom-icon-flag-CV, .custom-icon-flag-CY, .custom-icon-flag-CZ, .custom-icon-flag-DJ, .custom-icon-flag-DK, .custom-icon-flag-DM, .custom-icon-flag-DO, .custom-icon-flag-DZ, .custom-icon-flag-EC, .custom-icon-flag-EE, .custom-icon-flag-EG, .custom-icon-flag-EH, .custom-icon-flag-ER, .custom-icon-flag-ES, .custom-icon-flag-ET, .custom-icon-flag-EU, .custom-icon-flag-FI, .custom-icon-flag-FJ, .custom-icon-flag-FK, .custom-icon-flag-FM, .custom-icon-flag-FO, .custom-icon-flag-FR, .custom-icon-flag-FX, .custom-icon-flag-GF, .custom-icon-flag-GP, .custom-icon-flag-MQ, .custom-icon-flag-NC, .custom-icon-flag-PF, .custom-icon-flag-PM, .custom-icon-flag-RE, .custom-icon-flag-TF, .custom-icon-flag-WF, .custom-icon-flag-GA, .custom-icon-flag-GB, .custom-icon-flag-GD, .custom-icon-flag-GE, .custom-icon-flag-GG, .custom-icon-flag-GH, .custom-icon-flag-GL, .custom-icon-flag-GM, .custom-icon-flag-GN, .custom-icon-flag-GQ, .custom-icon-flag-GR, .custom-icon-flag-GS, .custom-icon-flag-GT, .custom-icon-flag-GU, .custom-icon-flag-GW, .custom-icon-flag-GY, .custom-icon-flag-HK, .custom-icon-flag-HN, .custom-icon-flag-HR, .custom-icon-flag-HT, .custom-icon-flag-HU, .custom-icon-flag-ID, .custom-icon-flag-IE, .custom-icon-flag-IL, .custom-icon-flag-IM, .custom-icon-flag-IN, .custom-icon-flag-IQ, .custom-icon-flag-IS, .custom-icon-flag-IT, .custom-icon-flag-JE, .custom-icon-flag-JM, .custom-icon-flag-JO, .custom-icon-flag-JP, .custom-icon-flag-KE, .custom-icon-flag-KG, .custom-icon-flag-KH, .custom-icon-flag-KI, .custom-icon-flag-KM, .custom-icon-flag-KN, .custom-icon-flag-KP, .custom-icon-flag-KR, .custom-icon-flag-KV, .custom-icon-flag-KW, .custom-icon-flag-KY, .custom-icon-flag-LA, .custom-icon-flag-LC, .custom-icon-flag-LK, .custom-icon-flag-LR, .custom-icon-flag-LS, .custom-icon-flag-LT, .custom-icon-flag-LU, .custom-icon-flag-LV, .custom-icon-flag-LY, .custom-icon-flag-MA, .custom-icon-flag-ME, .custom-icon-flag-MG, .custom-icon-flag-MH, .custom-icon-flag-ML, .custom-icon-flag-MM, .custom-icon-flag-MP, .custom-icon-flag-MR, .custom-icon-flag-MS, .custom-icon-flag-MT, .custom-icon-flag-MU, .custom-icon-flag-MV, .custom-icon-flag-MW, .custom-icon-flag-MZ, .custom-icon-flag-NA, .custom-icon-flag-NE, .custom-icon-flag-NF, .custom-icon-flag-NG, .custom-icon-flag-NI, .custom-icon-flag-NL, .custom-icon-flag-NO, .custom-icon-flag-NP, .custom-icon-flag-NR, .custom-icon-flag-NZ, .custom-icon-flag-OM, .custom-icon-flag-PA, .custom-icon-flag-PE, .custom-icon-flag-PG, .custom-icon-flag-PH, .custom-icon-flag-PK, .custom-icon-flag-PL, .custom-icon-flag-PN, .custom-icon-flag-PS, .custom-icon-flag-PT, .custom-icon-flag-PW, .custom-icon-flag-PY, .custom-icon-flag-QA, .custom-icon-flag-RS, .custom-icon-flag-RU, .custom-icon-flag-RW, .custom-icon-flag-SA, .custom-icon-flag-SB, .custom-icon-flag-SC, .custom-icon-flag-SD, .custom-icon-flag-SE, .custom-icon-flag-SG, .custom-icon-flag-SH, .custom-icon-flag-SI, .custom-icon-flag-SK, .custom-icon-flag-SM, .custom-icon-flag-SN, .custom-icon-flag-SO, .custom-icon-flag-SR, .custom-icon-flag-SS, .custom-icon-flag-ST, .custom-icon-flag-SV, .custom-icon-flag-SY, .custom-icon-flag-SZ, .custom-icon-flag-TC, .custom-icon-flag-TD, .custom-icon-flag-TG, .custom-icon-flag-TH, .custom-icon-flag-TJ, .custom-icon-flag-TM, .custom-icon-flag-TN, .custom-icon-flag-TP, .custom-icon-flag-TR, .custom-icon-flag-TT, .custom-icon-flag-TV, .custom-icon-flag-TW, .custom-icon-flag-TZ, .custom-icon-flag-UA, .custom-icon-flag-UG, .custom-icon-flag-US, .custom-icon-flag-UY, .custom-icon-flag-UZ, .custom-icon-flag-VC, .custom-icon-flag-VE, .custom-icon-flag-VG, .custom-icon-flag-VI, .custom-icon-flag-VN, .custom-icon-flag-VU, .custom-icon-flag-WS, .custom-icon-flag-YE, .custom-icon-flag-ZA, .custom-icon-flag-ZM, .custom-icon-flag-BF, .custom-icon-flag-CU, .custom-icon-flag-DE, .custom-icon-flag-IR, .custom-icon-flag-KZ, .custom-icon-flag-LB, .custom-icon-flag-LI, .custom-icon-flag-MC, .custom-icon-flag-MD, .custom-icon-flag-MK, .custom-icon-flag-MN, .custom-icon-flag-MO, .custom-icon-flag-MX, .custom-icon-flag-MY, .custom-icon-flag-PR, .custom-icon-flag-RO, .custom-icon-flag-SL, .custom-icon-flag-TO, .custom-icon-flag-VA, .custom-icon-flag-ZW, .custom-icon-flag-EUR, .custom-icon-flag-XCD{
+	margin-right: 5px;
+}
+
+.custom-icon-flag-AD{
+	background-position: -1921px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AE{
+	background-position: -1904px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AF{
+	background-position: -3689px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AG{
+	background-position: -34px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AI{
+	background-position: -51px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AL{
+	background-position: -68px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AM{
+	background-position: -85px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AN{
+	background-position: -102px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AO{
+	background-position: -119px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AQ{
+	background-position: -136px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AR{
+	background-position: -153px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AS{
+	background-position: -170px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AT{
+	background-position: -187px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AU{
+	background-position: -204px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AW{
+	background-position: -221px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AX{
+	background-position: -238px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-AZ{
+	background-position: -255px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BA{
+	background-position: -272px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BB{
+	background-position: -289px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BD{
+	background-position: -306px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BE{
+	background-position: -323px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BG{
+	background-position: -340px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BH{
+	background-position: -357px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BI{
+	background-position: -374px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BJ{
+	background-position: -391px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BL{
+	background-position: -408px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BM{
+	background-position: -425px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BN{
+	background-position: -442px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BO{
+	background-position: -459px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BR{
+	background-position: -476px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BS{
+	background-position: -493px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BT{
+	background-position: -510px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BW{
+	background-position: -527px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BY{
+	background-position: -544px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BZ{
+	background-position: -561px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CA{
+	background-position: -578px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CD{
+	background-position: -595px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CF{
+	background-position: -612px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CG{
+	background-position: -629px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CH{
+	background-position: -646px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CI{
+	background-position: -663px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CL{
+	background-position: -680px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CM{
+	background-position: -697px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CN{
+	background-position: -714px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CO{
+	background-position: -731px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CR{
+	background-position: -748px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CV{
+	background-position: -765px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CY{
+	background-position: -782px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CZ{
+	background-position: -799px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-DJ{
+	background-position: -816px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-DK{
+	background-position: -833px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-DM{
+	background-position: -850px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-DO{
+	background-position: -867px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-DZ{
+	background-position: -884px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-EC{
+	background-position: -901px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-EE{
+	background-position: -918px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-EG{
+	background-position: -935px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-EH{
+	background-position: -952px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ER{
+	background-position: -969px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ES{
+	background-position: -986px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ET{
+	background-position: -1003px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-EU{
+	background-position: -1020px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-FI{
+	background-position: -1037px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-FJ{
+	background-position: -1054px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-FK{
+	background-position: -1071px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-FM{
+	background-position: -1088px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-FO{
+	background-position: -1105px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-FR, .custom-icon-flag-FX, .custom-icon-flag-GF, .custom-icon-flag-GP, .custom-icon-flag-MQ, .custom-icon-flag-NC, .custom-icon-flag-PF, .custom-icon-flag-PM, .custom-icon-flag-RE, .custom-icon-flag-TF, .custom-icon-flag-WF{
+	background-position: -1122px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GA{
+	background-position: -1139px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GB{
+	background-position: -1156px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GD{
+	background-position: -1173px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GE{
+	background-position: -1190px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GG{
+	background-position: -1207px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GH{
+	background-position: -1224px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GL{
+	background-position: -1241px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GM{
+	background-position: -1258px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GN{
+	background-position: -1275px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GQ{
+	background-position: -1292px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GR{
+	background-position: -1309px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GS{
+	background-position: -1326px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GT{
+	background-position: -1343px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GU{
+	background-position: -1360px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GW{
+	background-position: -1377px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-GY{
+	background-position: -1394px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-HK{
+	background-position: -1411px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-HN{
+	background-position: -1428px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-HR{
+	background-position: -1445px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-HT{
+	background-position: -1462px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-HU{
+	background-position: -1479px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ID{
+	background-position: -1496px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IE{
+	background-position: -1513px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IL{
+	background-position: -1530px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IM{
+	background-position: -1547px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IN{
+	background-position: -1564px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IQ{
+	background-position: -1581px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IS{
+	background-position: -1598px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IT{
+	background-position: -1615px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-JE{
+	background-position: -1632px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-JM{
+	background-position: -1649px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-JO{
+	background-position: -1666px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-JP{
+	background-position: -1683px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KE{
+	background-position: -1700px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KG{
+	background-position: -1717px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KH{
+	background-position: -1734px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KI{
+	background-position: -1751px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KM{
+	background-position: -1768px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KN{
+	background-position: -1785px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KP{
+	background-position: -1802px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KR{
+	background-position: -1819px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KV{
+	background-position: -1836px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KW{
+	background-position: -1853px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KY{
+	background-position: -1870px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LA{
+	background-position: -1887px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LC{
+	background-position: 0 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LK{
+	background-position: -17px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LR{
+	background-position: -1938px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LS{
+	background-position: -1955px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LT{
+	background-position: -1972px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LU{
+	background-position: -1989px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LV{
+	background-position: -2006px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LY{
+	background-position: -2023px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MA{
+	background-position: -2040px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ME{
+	background-position: -2057px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MG{
+	background-position: -2074px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MH{
+	background-position: -2091px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ML{
+	background-position: -2108px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MM{
+	background-position: -2125px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MP{
+	background-position: -2142px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MR{
+	background-position: -2159px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MS{
+	background-position: -2176px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MT{
+	background-position: -2193px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MU{
+	background-position: -2210px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MV{
+	background-position: -2227px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MW{
+	background-position: -2244px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MZ{
+	background-position: -2261px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NA{
+	background-position: -2278px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NE{
+	background-position: -2295px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NF{
+	background-position: -2312px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NG{
+	background-position: -2329px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NI{
+	background-position: -2346px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NL{
+	background-position: -2363px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NO{
+	background-position: -2380px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NP{
+	background-position: -2397px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NR{
+	background-position: -2414px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-NZ{
+	background-position: -2431px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-OM{
+	background-position: -2448px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PA{
+	background-position: -2465px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PE{
+	background-position: -2482px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PG{
+	background-position: -2499px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PH{
+	background-position: -2516px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PK{
+	background-position: -2533px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PL{
+	background-position: -2550px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PN{
+	background-position: -2567px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PS{
+	background-position: -2584px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PT{
+	background-position: -2601px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PW{
+	background-position: -2618px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PY{
+	background-position: -2635px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-QA{
+	background-position: -2652px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-RS{
+	background-position: -2669px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-RU{
+	background-position: -2686px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-RW{
+	background-position: -2703px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SA{
+	background-position: -2720px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SB{
+	background-position: -2737px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SC{
+	background-position: -2754px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SD{
+	background-position: -2771px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SE{
+	background-position: -2788px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SG{
+	background-position: -2805px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SH{
+	background-position: -2822px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SI{
+	background-position: -2839px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SK{
+	background-position: -2856px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SM{
+	background-position: -2873px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SN{
+	background-position: -2890px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SO{
+	background-position: -2907px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SR{
+	background-position: -2924px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SS{
+	background-position: -2941px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ST{
+	background-position: -2958px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SV{
+	background-position: -2975px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SY{
+	background-position: -2992px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SZ{
+	background-position: -3009px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TC{
+	background-position: -3026px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TD{
+	background-position: -3043px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TG{
+	background-position: -3060px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TH{
+	background-position: -3077px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TJ{
+	background-position: -3094px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TM{
+	background-position: -3111px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TN{
+	background-position: -3128px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TP{
+	background-position: -3145px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TR{
+	background-position: -3162px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TT{
+	background-position: -3179px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TV{
+	background-position: -3196px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TW{
+	background-position: -3213px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TZ{
+	background-position: -3230px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-UA{
+	background-position: -3247px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-UG{
+	background-position: -3264px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-US{
+	background-position: -3281px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-UY{
+	background-position: -3298px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-UZ{
+	background-position: -3315px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VC{
+	background-position: -3332px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VE{
+	background-position: -3349px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VG{
+	background-position: -3366px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VI{
+	background-position: -3383px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VN{
+	background-position: -3400px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VU{
+	background-position: -3417px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-WS{
+	background-position: -3434px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-YE{
+	background-position: -3451px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ZA{
+	background-position: -3468px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ZM{
+	background-position: -3485px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-BF{
+	background-position: -3502px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-CU{
+	background-position: -3519px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-DE{
+	background-position: -3536px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-IR{
+	background-position: -3553px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-KZ{
+	background-position: -3570px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LB{
+	background-position: -3587px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-LI{
+	background-position: -3604px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MC{
+	background-position: -3621px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MD{
+	background-position: -3638px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MK{
+	background-position: -3655px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MN{
+	background-position: -3672px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MO{
+	background-position: -3706px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MX{
+	background-position: -3723px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-MY{
+	background-position: -3740px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-PR{
+	background-position: -3757px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-RO{
+	background-position: -3774px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-SL{
+	background-position: -3791px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-TO{
+	background-position: -3808px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-VA{
+	background-position: -3825px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-ZW{
+	background-position: -3842px 0;
+	width: 16px;
+	height: 16px;
+}
+
+.custom-icon-flag-EUR{
+        background: url(../img/eu.png) no-repeat;
+        width: 16px;
+        height: 16px;
+}
+
+.custom-icon-flag-XCD{
+        background: url(../img/xcd.png) no-repeat;
+        width: 16px;
+        height: 16px;
+}

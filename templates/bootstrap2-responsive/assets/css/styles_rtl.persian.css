@@ -1,0 +1,285 @@
+@font-face
+{
+	font-family: 'BYekan';
+	src: url('fonts/BYekan.eot');
+	src: url('fonts/BYekan.eot?#iefix') format('embedded-opentype'),
+	url('fonts/BYekan.woff') format('woff'),
+	url('fonts/BYekan.ttf') format('truetype'),
+	url('fonts/BYekan.svg#WebYekan') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	unicode-range: U+0600–06FF;
+}
+
+body 
+{
+    direction: rtl;
+    unicode-bidi: embed;
+	font-family: "BYekan","Tahoma",sans-serif;
+}
+
+input, button, select, textarea
+{
+    font-family: "BYekan","Tahoma",sans-serif;
+}
+
+.form-horizontal .control-label
+{
+	float:right;
+    text-align: right;
+}
+
+.search-form .bootstrap-select.btn-group,
+.search-form .bootstrap-select.btn-group[class*="span"],
+.search-form input.span6 
+{
+    float: right;
+    margin: 0 0 0 10px;
+}
+
+input.span3.xPrice 
+{
+    margin-right: 0;
+}
+
+
+input.span3.Bathrooms 
+{
+    margin-left: 6px;
+}
+
+.bootstrap-select.btn-group .btn .filter-option 
+{
+    text-align: right;
+}
+
+.wrap-content div.options 
+{
+    height:20px;
+    position: relative;
+}
+
+.options .bootstrap-select.btn-group.pull-right,
+.bootstrap-select.btn-group.pull-right[class*="span"],
+.row-fluid .bootstrap-select.btn-group.pull-right[class*="span"] 
+{
+    float: left;
+	margin-left:none;
+	margin-right:0px;
+
+}
+
+.thumbnail .caption p span 
+{
+    float: left;
+}
+
+.property_options p.bottom-border span 
+{
+    float: left;
+}
+
+ul.menu-onmap li, ul.menu-onmap li.active
+{
+    float:right;
+}
+
+@media (max-width: 767px)
+{
+ul.menu-onmap li, ul.menu-onmap li.active
+{
+    float:none;
+}	
+}
+
+ul.menu-onmap li.list-property-button 
+{
+    float: left;
+}
+
+.pagination ul > li 
+{
+    float:right;
+}
+
+.carousel-control 
+{
+    right: 15px;
+}
+.carousel-control.right 
+{
+    left: 20px;
+    right: auto;
+}
+
+ul.top-small li 
+{
+    float: right;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0;
+    padding: 3px 8px;
+    direction: rtl;
+}
+.navbar .nav>li
+{
+	float:right
+}
+.dropdown-menu
+{
+	float:right;
+	min-width:230px;
+	list-style:none;
+}
+
+.navbar .nav>li>.dropdown-menu:after
+{
+	position:absolute;
+	top:-6px;
+	left:70px;
+	display:inline-block;
+	border-right:6px solid transparent;
+	border-bottom:6px solid #fff;
+	border-left:6px solid transparent;
+	content:''
+}
+
+.pull-left.logo,.navbar.pull-left
+{
+    float:right;
+}
+
+.simple-languages.pull-right
+{
+    float:left;
+}
+
+a.developed_by
+{
+    position: relative;
+    display: inline;
+    top:45px;
+    right:113px;
+    opacity: 0.4;
+}
+
+.res_counter
+{
+    position:absolute;
+    right:10px;
+    bottom:2px;
+    font-size: 10px;
+}
+
+.span12.li-list p.bottom-border span
+{
+    float:left;
+}
+
+.span12.li-list .caption p span
+{
+    float:left;
+}
+
+.prop-button-container .res_counter
+{
+    right:0px;
+    bottom:-4px;
+}
+
+.form-horizontal .controls
+{
+	margin:0 180px 0 0;
+}
+
+.table th,.table td
+{
+	text-align:right;
+}
+
+.prop-description
+{
+    overflow:inherit;
+}
+
+.checkbox input[type="checkbox"]
+{
+	float:right;
+	margin-left:10px
+}
+
+.row-fluid [class*="span"]
+{
+	float:right;
+}
+
+.pull-right
+{
+	float:left;
+}
+
+.container-property .row-fluid .span3
+{
+    margin:0 5px 0 0;
+}
+
+ul.amenities li
+{
+    float:right;
+}
+
+.wrap-bottom .span6 table
+{
+    margin:0 80px 0 0;
+}
+
+div.logo-transparent
+{
+	left: -5px;
+}
+
+div.sketch-bottom
+{
+	background-image: url("../img/sketch-bottom-rtl.png"); 
+}
+
+.files-list li 
+{
+	float: right;
+}
+
+
+.agent .image
+{
+	float:right;
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+.row-fluid .agents-list [class*="span"]:nth-child(3n+1)
+{
+	margin-right: 0;
+	margin-left: 0;
+}
+.row-fluid [class*="span"]:first-child
+{
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.row-fluid [class*="span"]
+{
+	margin-left: 0;
+	margin-right:2.127659574468085%;
+}
+
+.lang_menu_top a {
+    text-align: left;
+    padding-left: 35px !important;
+}
+
+.lang_menu_top a img {
+    left: 12px;
+    top: 6px !important;
+    right: initial !important;
+}

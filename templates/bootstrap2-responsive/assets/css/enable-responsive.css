@@ -1,0 +1,265 @@
+
+/* Large desktop */
+@media (min-width: 1200px) {
+    
+input.span6, textarea.span6, .uneditable-input.span6 {
+    width: 530px;
+}
+
+.property-form input,
+.property-form textarea,
+.property-form .uneditable-input {
+    border-radius: 0;
+    width: 245px;
+}
+    
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 979px) and (max-width: 1199px) {
+    
+input.span6, textarea.span6, .uneditable-input.span6 {
+    width: 430px;
+}
+
+.property-form input,
+.property-form textarea,
+.property-form .uneditable-input {
+    border-radius: 0;
+    width: auto;
+}
+
+.row-fluid .li-list .span8 {
+    width: 65%;
+}
+    
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 978px) {
+    
+.head-wrapper div.navbar.pull-left
+{
+    float:right;
+}
+    
+input.span6, textarea.span6, .uneditable-input.span6 {
+    width: 322px;
+}
+
+.form-horizontal .controls {
+        margin-left: 0px;
+    }
+    
+    #myCarousel img {
+        height: 100%;
+        width: auto;
+    }
+    
+.form-horizontal .control-label {
+    float: none;
+    padding-top: 5px;
+    text-align: left;
+    width: 160px;
+}
+
+.property-form input,
+.property-form textarea,
+.property-form .uneditable-input {
+    border-radius: 0;
+    width: 140px;
+}
+
+.row-fluid .li-list .span8 {
+    width: 65%;
+}
+    
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+    div.simple-languages
+    {
+        padding-bottom:5px;
+    }
+
+    .head-wrapper div.navbar.pull-left
+    {
+        float:right;
+    }
+
+    input.span6, textarea.span6, .uneditable-input.span6 {
+        width: 322px;
+    }
+    
+    #myCarousel img {
+        height: 100%;
+        width: auto;
+    }
+        
+    ul.menu-onmap li {
+        float: none;
+    }
+    
+    ul.menu-onmap li.active
+    {
+        float: none;
+        border:0px;
+        background: #F3A248;
+        margin-top: 5px;
+        padding: 11px 30px;
+    }
+    
+    ul.menu-onmap li a
+    {
+        display:block;
+    }
+    
+    ul.menu-onmap
+    {
+        margin:0px;
+    }
+    
+    .row-fluid .li-list .span8 {
+        width: 65%;
+    }
+    
+    .wrap-search .container
+    {
+        width:90%;
+        display:block;
+    }
+    
+    #search_option_smart, input.span3.mPrice, 
+    input.span3.xPrice, .search-form input, 
+    .search-form select, input.span3.Bathrooms,
+    .search-form div.bootstrap-select.span3.btn-group
+    {
+        width: 100%;
+        margin: 5px auto;
+        float: none;
+        display:block;
+    }
+    
+    .search-form .bootstrap-select.btn-group.nomargin
+    {
+        margin: 5px auto;
+    }
+    
+    .thumbnails.agent-property li.span4
+    {
+        width: 94%;
+    }
+    
+    .row-fluid ul li.span4
+    {
+        -moz-box-sizing: border-box;
+        display: block;
+        float: left;
+        margin-left: 0;
+        width: 47%;
+    }
+    
+    .row-fluid [class*="span"]
+    {
+        -moz-box-sizing: border-box;
+        display: block;
+        float: left;
+        margin-left: 0 !important;
+    }
+    
+    .form-horizontal .controls {
+        margin-left: 0px;
+    }
+    
+    .form-horizontal .control-label {
+        float: none;
+        padding-top: 5px;
+        text-align: left;
+        width: 160px;
+    }
+    
+    .row-fluid .li-list .thumbnail.span4 {
+        width: auto;
+    }
+
+    .row-fluid .li-list .caption.span8 {
+        width: auto;
+    }
+    
+    .row-fluid .span12.li-list
+    {
+        min-width: 305px;
+    }
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+    #myCarousel {
+        height: 260px;
+    }
+    
+    .wrap-map {
+        height: 260px;
+    }
+
+    #pac-input {
+        width: 50%;
+    }
+
+    .row-fluid ul li.span4, .row-fluid [class*="span"]
+    {
+        -moz-box-sizing: border-box;
+        display: block;
+        float: left;
+        margin-left: 0;
+        /* width: 90%; */
+    }
+    
+    .form-horizontal .controls {
+        margin-left: 0px;
+    }
+    
+    .form-horizontal .control-label {
+        float: none;
+        padding-top: 5px;
+        text-align: left;
+        width: 160px;
+    }
+    
+    .row-fluid .li-list .thumbnail.span4 {
+        width: auto;
+    }
+    
+    .row-fluid .li-list .caption.span8 {
+        width: auto;
+    }
+    
+    .row-fluid .span12.li-list
+    {
+        min-width: 305px;
+    }
+    
+    #myCarousel img {
+        height: 100%;
+        width: auto;
+    }
+    
+    div.navbar ul.nav li {
+        line-height: 20px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .navbar .nav > li > a {
+        padding: 10px 0px;
+    }
+    
+    .navbar .nav > li:first-child > a {
+        padding: 15px 25px;
+    }
+
+}

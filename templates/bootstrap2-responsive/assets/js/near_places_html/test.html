@@ -1,0 +1,129 @@
+<!-- Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+
+<!-- Googlr map -->
+<script src="http://maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places,drawing&&key=AIzaSyCto8TKh6h14s0IMyhSb5Uk4Np-40pmJ2w"></script>
+
+<!-- Googlr map Infobox -->
+<script src="js/map_infobox.js"></script>
+
+<!-- Googlr map Markerclusterer -->
+<script src="js/map_infobox.js"></script>
+
+
+<!-- Css -->
+<link rel="stylesheet" href="css/near_places.css">
+
+<!-- Js -->
+<script src="js/near_places.js"></script>
+<div style="padding-bottom:10px;">
+ <button class="btn" id="plugin-add_pizza-marker"> Add Pizza locations </button>
+ <button class="btn" id="plugin-add_shop-marker"> Add Shop locations </button>
+ <button class="btn" id="plugin-remove-marker"> Remove custom location </button>
+ <button class="btn" id="plugin-remove_google-marker"> Remove google location </button>
+</div>
+<div class="" id='property-map-plugin-2'></div>
+
+<script>
+var map_near = $('#property-map-plugin-2');
+map_near.near_places({
+  'mapOptions': {
+            styles: [{ featureType: "poi", stylers: [{ visibility: "off" } ]},{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}],
+        }
+});
+
+map_near.near_places('setMarker', {ltng :[45.812231, 15.920618], 'address':'Ilica 345, HR-10000'});
+
+
+var  markers_array = [
+    {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.813615, 15.916299], 'title':'Panda', 'address':'Rogin ul. 28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.819141, 15.929699], 'title':'Pizza', 'address':'Roginina ul. 15-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'},
+    {ltng:[45.810655, 15.918259], 'title':'Pizza', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}
+];
+ 
+
+var  markers_array2 = [
+    {ltng:[45.811141, 15.926099], 'title':'Shop', 'address':'Roginina ul. 12-28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+    {ltng:[45.813615, 15.915299], 'title':'Shop', 'address':'Rogin ul. 28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+    {ltng:[45.814141, 15.929699], 'title':'Shop', 'address':'Roginina ul. 15-28, HR', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'},
+    {ltng:[45.812655, 15.917259], 'title':'Shop', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'}
+];
+ 
+// add
+$('#plugin-add_pizza-marker').click(function(e){
+    e.preventDefault;
+    //clear custom locatin markers
+    map_near.near_places('clearCustomPlaces');
+    //clear google locatin markers
+    map_near.near_places('clearPlaces');
+    
+    //add one new location
+    map_near.near_places('addLocation', {ltng :[45.820141, 15.934609], 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'});
+    
+    //add new locations via array
+    $.each(markers_array, function(key,val) {
+        map_near.near_places('addLocation', val);
+    })
+})
+// add
+$('#plugin-add_shop-marker').click(function(e){
+    e.preventDefault;
+    //clear custom locatin markers
+    map_near.near_places('clearCustomPlaces');
+    //clear google locatin markers
+    map_near.near_places('clearPlaces');
+    
+    //add new locations via array
+    $.each(markers_array2, function(key,val) {
+        map_near.near_places('addLocation', val);
+    })
+})
+ 
+// remove
+$('#plugin-remove-marker').click(function(e){
+    e.preventDefault;
+    //clear custom locatin markers
+    map_near.near_places('clearCustomPlaces');
+})
+ 
+// remove
+$('#plugin-remove_google-marker').click(function(e){
+    e.preventDefault;
+    //clear google locatin markers
+    map_near.near_places('clearPlaces');
+})
+
+/* Add new category and locations into categories */
+/*
+param.title - Title of category
+param.piza_index - key should be uniq
+param.icon  - (option) url for icon
+*/
+
+// add New category Piza
+map_near.near_places('addCustomCategory',{'title':'Piza', 'index':'piza_index', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'} );
+ 
+ 
+// add lcoation into category with index "piza_index"
+map_near.near_places('addLocationTo',{'index':'piza_index', 'location': {ltng:[45.810141, 15.924699], 'title':'Panda', 'address':'Roginina ul. 12-28, HR', 'icon':'http://iconshow.me/media/images/social/Circle-Icons-Pack-add-on-2/png/32/pizza.png'}});
+ 
+// add lcoation into category with index "piza_index" via array
+$.each(markers_array, function(key,val) {
+    map_near.near_places('addLocationTo',{'index':'piza_index', 'location': val});
+})
+ 
+// add New category Shop
+map_near.near_places('addCustomCategory',{'title':'Shop', 'index':'shop_index', 'icon':'http://picture-cdn.wheretoget.it/gwazxu-i.jpg'} );
+ 
+//add lcoation into category with index "piza_index" via array
+$.each(markers_array2, function(key,val) {
+    map_near.near_places('addLocationTo',{'index':'shop_index', 'location': val});
+})
+
+// Clear  Location from Custom category
+/*map_near.near_places('clearCustomCategory',{'index':'shop_index'} );*/
+ 
+</script>
+
+
