@@ -24,6 +24,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/image_lib.html
  */
+#[AllowDynamicProperties]
 class CI_Image_lib {
 
 	var $image_library		= 'gd2';	// Can be:  imagemagick, netpbm, gd, gd2

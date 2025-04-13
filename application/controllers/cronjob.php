@@ -352,7 +352,7 @@ class Cronjob extends CI_Controller
                 $this->email->message($message);
                 if ( ! $this->email->send() )
                 {
-                    if($this->enable_debug) echo 'Email sanding failed to: '.$user_email.''."\n";
+                    if($this->enable_debug) echo 'Email sanding failed to: '.$row->mail.''."\n";
                 }
                 else
                 {
@@ -400,7 +400,7 @@ class Cronjob extends CI_Controller
                 $this->email->message($message);
                 if ( ! $this->email->send() )
                 {
-                    if($this->enable_debug) echo 'Email sanding failed to: '.$user_email.''."\n";
+                    if($this->enable_debug) echo 'Email sanding failed to: '.$row->mail.''."\n";
                 }
                 else
                 {
@@ -856,7 +856,7 @@ class Cronjob extends CI_Controller
                 }
                 
                 if(!$this->enable_test)
-                    $this->estate_m->delete($id);
+                    $this->estate_m->delete($prop->id);
             }
         }
         
@@ -902,7 +902,7 @@ class Cronjob extends CI_Controller
         
         // Fetch last date from research database
         $research_from_date = date('Y-m-d H:i:s');
-        $row = $this->savedsearch_m->get_by(array('date_last_informed !='=>'NULL'), true, 1, 'date_last_informed');
+        $row = $this->savedsearch_m->get_by(array('date_last_informed IS NOT NULL'=>NULL), true, 1, 'date_last_informed');
         if(!empty($row))
         {
             if($row->date_last_informed != NULL)

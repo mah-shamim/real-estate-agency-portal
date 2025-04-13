@@ -55,7 +55,7 @@
 * - Dead code removal (never used function)
 * - Munge primitives: var WINDOW=window, etc.
 */
-
+#[AllowDynamicProperties]
 class JSqueeze
 {
     const

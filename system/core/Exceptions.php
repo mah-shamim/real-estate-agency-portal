@@ -24,6 +24,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/exceptions.html
  */
+#[AllowDynamicProperties]
 class CI_Exceptions {
 	var $action;
 	var $severity;

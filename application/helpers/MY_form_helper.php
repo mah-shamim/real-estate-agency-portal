@@ -451,6 +451,8 @@ if ( ! function_exists('form_treefield'))
             
             $attribute_id = $CI->$model_name->get_primary_key();
         }
+
+        $attr_field_id = $name.'_'.$called;
         
         if(!empty($def_attribute_id)) {
             $attribute_id = $def_attribute_id;
@@ -459,7 +461,7 @@ if ( ! function_exists('form_treefield'))
         if(empty($selected))
             $selected='';
         
-		$form = '<input name="'.$name.'" value="'.$selected.'" type="text" id="'.$name.'" '.$extra.' readonly/>';
+		$form = '<input name="'.$name.'" value="'.$selected.'" type="text" id="'.$attr_field_id.'" '.$extra.' readonly/>';
         
         $skip_id = '';
 //        if(isset($_GET['id']))
@@ -493,7 +495,7 @@ if ( ! function_exists('form_treefield'))
 <script>
 
 jQuery(document).ready(function($) {
-    $('#<?php echo $name;?>').winterTreefield({
+    $('#<?php echo $attr_field_id;?>').winterTreefield({
         ajax_url: '<?php echo site_url('api/treefieldid');?>',
         ajax_param: { 
                       "page": 'frontendajax_treefieldid',
@@ -509,7 +511,7 @@ jQuery(document).ready(function($) {
         empty_value: ' - ',
         text_search: '<?php echo lang_check('Search term');?>',
         callback_selected: function(key) {
-            $('#search_option_<?php echo $field_id;?>').trigger("change");
+            $('#search_option_<?php echo $attr_field_id;?>').trigger("change");
         }
     });
 });
@@ -545,11 +547,13 @@ if ( ! function_exists('form_treefield_alt'))
         if(!empty($def_attribute_id)) {
             $attribute_id = $def_attribute_id;
         }
+
+        $attr_field_id = $name.'_'.$called;
         
         if(empty($selected))
             $selected='';
         
-		$form = '<input name="'.$name.'" value="'.$selected.'" type="text" id="'.$name.'" '.$extra.' readonly/>';
+		$form = '<input name="'.$name.'" value="'.$selected.'" type="text" id="'.$attr_field_id.'" '.$extra.' readonly/>';
         
         $skip_id = '';
 //        if(isset($_GET['id']))
@@ -583,7 +587,7 @@ if ( ! function_exists('form_treefield_alt'))
 <script>
             
 jQuery(document).ready(function($) {
-    $('#<?php echo $name;?>').winterTreefieldAlt({
+    $('#<?php echo $attr_field_id;?>').winterTreefieldAlt({
         ajax_url: '<?php echo site_url('api/treefieldidalt');?>',
         ajax_url_second: '<?php echo site_url('api/treefieldidalt');?>',
         ajax_param: { 
@@ -603,7 +607,7 @@ jQuery(document).ready(function($) {
         empty_value: ' - ',
         text_search: '<?php echo lang_check('Search term');?>',
         callback_selected: function(key) {
-            $('#<?php echo $name;?>').trigger("change");
+            $('#<?php echo $attr_field_id;?>').trigger("change");
         }
     });
 });

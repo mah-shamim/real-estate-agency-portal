@@ -5239,6 +5239,12 @@ class Frontend extends Frontend_Controller
             
             $this->data['template_data'] = $this->customtemplates_m->get($template_id);
             $this->data['widgets_order'] = json_decode($this->data['template_data']->widgets_order);
+
+            if($this->data['template_data']->theme != $this->data['settings_template'] ) {
+                show_error('<a href="'.site_url('admin/page/edit/'.$this->data['page_id']).'" style="text-decoration: none;">'.sprintf(lang_check('Template %1$s doesn\'t exists, please select different template for page %2$s'), 'custom_'.$template_id, $this->data['page_title']).'</a>', 500, lang_check('Missing tempalte'));
+                $this->temp_data['page']->template = 'page_homepage-filters'; 
+            }
+
         }
         
         if(isset($this->data['widget_preview']) && $this->data['widget_preview']) {

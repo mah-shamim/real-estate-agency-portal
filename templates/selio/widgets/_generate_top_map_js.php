@@ -20,6 +20,35 @@ foreach ($check_option as $key => $value) {
 var markers = new Array();
 var map;
 var marker_clusterer ;
+
+
+if(typeof mapStyle == 'undefined') {
+    var mapStyle = [
+  {
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#fcf4dc"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#c0c0c0"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  }
+];
+}
+
+
 $(document).ready(function(){
     var myLocationEnabled = true;
     var style_map = mapStyle;

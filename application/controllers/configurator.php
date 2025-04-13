@@ -163,8 +163,9 @@ class Configurator extends MY_Controller
                            } 
                         }  
                         
+                        /*
                         $sql = "set global sql_mode= REPLACE(@@SQL_MODE, 'ONLY_FULL_GROUP_BY', '')";
-                        $this->db->query($sql);
+                        $this->db->query($sql);*/
                         
                         // Update agent, admin, other passwords
                         $data_db_update = array(
