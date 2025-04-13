@@ -133,6 +133,7 @@ class Updater extends MY_Controller
             $this->data['script_version_db'] = '1.7.1';
             $this->data['script_version_db'] = '1.7.2';
             $this->data['script_version_db'] = '1.7.3';
+            $this->data['script_version_db'] = '1.7.4';
         }
         
         /* [END] Define db version */

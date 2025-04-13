@@ -4,6 +4,35 @@
 var markers = new Array();
 var map;
 var marker_clusterer ;
+
+
+if(typeof mapStyle == 'undefined') {
+    var mapStyle = [
+  {
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#fcf4dc"
+      }
+    ]
+  },
+  {
+    "featureType": "landscape",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      {
+        "color": "#c0c0c0"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  }
+];
+}
+
+
 $(document).ready(function(){
     var myLocationEnabled = true;
     var style_map = mapStyle;
@@ -61,7 +90,7 @@ $(document).ready(function(){
                 }
             )/*.addTo(map)*/;
 
-            marker.bindPopup("<!--Widget-preview-category-path: Restaurant--><div class=\"infobox map-box\">    <a href=\"http://localhost/themes-customization/index.php/property/12/en/retro_house\" class=\"listing-img-container\">        <div class=\"infoBox-close\"><i class=\"fa fa-times\"></i>        </div><img src=\"http://localhost/themes-customization/strict_image_speed.php?d=575x500&f=5388057701_5a618e8a9e_b.jpg&cut=true\" alt=\"Retro House\">        <div class=\"rate-info\">                    <h5>                                                $60.000                                        </h5>                    <span class=\"purpose-Sale\">                Sale            </span>         </div>        <div class=\"listing-item-content\">            <h3>Retro House</h3>            <span><i class=\"la la-map-marker\"></i>Zeleni put 21, Croatia</span>        </div>    </a></div>", jpopup_customOptions);
+            marker.bindPopup("<!--Widget-preview-category-path: Restaurant--><div class=\"infobox map-box\">    <a href=\"http://localhost/themes-customization/index.php/property/12/en/retro_house\" class=\"listing-img-container\">        <div class=\"infoBox-close\"><i class=\"fa fa-times\"></i>        </div><img src=\"http://localhost/themes-customization/files/strict_cache/575x5005388057701_5a618e8a9e_b.webp\" alt=\"Retro House\">        <div class=\"rate-info\">                    <h5>                                                $60.000                                        </h5>                    <span class=\"purpose-Sale\">                Sale            </span>         </div>        <div class=\"listing-item-content\">            <h3>Retro House</h3>            <span><i class=\"la la-map-marker\"></i>Zeleni put 21, Croatia</span>        </div>    </a></div>", jpopup_customOptions);
             clusters.addLayer(marker);
             markers.push(marker);
                                            

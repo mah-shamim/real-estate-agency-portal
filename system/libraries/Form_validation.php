@@ -24,6 +24,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/form_validation.html
  */
+#[AllowDynamicProperties]
 class CI_Form_validation {
 
 	protected $CI;

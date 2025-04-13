@@ -5,7 +5,7 @@ Widget-preview-image: /assets/img/widgets_preview/top_contact_body.jpg
 */
 ?>
 
-<div class="contact-sec">
+<div class="contact-sec widget_edit_enabled">
     <div class="container">
         <div class="contact-details-sec">
             <div class="row">

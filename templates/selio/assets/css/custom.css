@@ -8446,4 +8446,34 @@ select.form-control:not([size]):not([multiple]) {
     display: block;
     font-size: 14px;
   }
+
+  .bottom-list .nav {
+    flex-direction: column;
+  }
+
+
+  .copyright .menu.nav {
+    display: inline-block;
+  }
+
+  .copyright .menu.nav li {
+    display: inline-block;
+  }
+
+  .copyright .menu.nav li:not(:last-child):after {
+    content: '|';
+    margin-left: 5px;
+  }
 /* End Footer */
+
+.form_sec .top-search #form-addittional .checkbox-field label b.count, .top-search #form-addittional .checkbox-field label b.count,
+.form_sec .top-search #form-addittional .input-field input[type="radio"] + label span::before, 
+.form_sec .top-search #form-addittional .input-field input[type="checkbox"] + label span::before,
+.form_sec .top-search #form-addittional .input-field > label small {
+    color: #67686c;
+}
+
+.form_sec .top-search #form-addittional .input-field input[type="radio"] + label span, 
+.form_sec .top-search #form-addittional .input-field input[type="checkbox"] + label span {
+    border-color: #67686c;
+}

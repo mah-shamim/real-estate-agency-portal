@@ -56,11 +56,11 @@
                         if(!empty($item['option_'.$elem->f_id]) && $i++<3)
                         if($elem->type == 'DROPDOWN' || $elem->type == 'INPUTBOX'):
                          ?>
-                            <li class=""><i class="fa <?php _che($elem->f_class); ?>"></i><?php echo _ch($item['option_'.$elem->f_id], '-'); ?> <?php echo _ch(${"options_suffix_$elem->f_id"}, ''); ?> <span style="<?php _che($elem->f_style); ?>"><?php echo _ch(${"optionssw_name_$elem->f_id"}, '-'); ?></span></li>
+                            <li class=""><i class="fa <?php _che($elem->f_class); ?>"></i><?php echo _ch($item['option_'.$elem->f_id], '-'); ?> <?php echo _ch(${"options_suffix_$elem->f_id"}, ''); ?> <span style="<?php _che($elem->f_style); ?>"><?php echo _ch(${"options_name_$elem->f_id"}, '-'); ?></span></li>
                          <?php 
                         elseif($elem->type == 'CHECKBOX'):
                          ?>
-                            <li class=""><i class="fa <?php _che($elem->f_class); ?>"></i><span class="<?php echo (!empty($item['option_'.$elem->f_id])) ? 'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';  ?>"></span> <?php echo _ch(${"optionssw_name_$elem->f_id"}, '-'); ?></li>
+                            <li class=""><i class="fa <?php _che($elem->f_class); ?>"></i><span class="<?php echo (!empty($item['option_'.$elem->f_id])) ? 'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';  ?>"></span> <?php echo _ch(${"options_name_$elem->f_id"}, '-'); ?></li>
                          <?php 
                         endif;                    
                         endforeach;  

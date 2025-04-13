@@ -2542,3 +2542,7 @@ margin-top: 10px;
     left: 50%;
     margin-left: -6px;
 }
+
+.cke_dialog_body a.cke_dialog_tab[title="Upload"] {
+    display: none !important;
+}

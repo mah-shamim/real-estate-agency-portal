@@ -9,32 +9,35 @@
     }
     
     $CI = &get_instance();
-    function _get_purpose($CI)
-    {
-        if(isset($CI->select_tab_by_title))
-        if($CI->select_tab_by_title != '')
+
+    if(!function_exists('_get_purpose')) {
+        function _get_purpose($CI)
         {
-            $CI->data['purpose_defined'] = $CI->select_tab_by_title;
-            return $CI->select_tab_by_title;
+            if(isset($CI->select_tab_by_title))
+            if($CI->select_tab_by_title != '')
+            {
+                $CI->data['purpose_defined'] = $CI->select_tab_by_title;
+                return $CI->select_tab_by_title;
+            }
+            
+            if(isset($CI->data['is_purpose_sale'][0]['count']))
+            {
+                $CI->data['purpose_defined'] = lang('Sale');
+                return lang('Sale');
+            }
+            
+            if(isset($CI->data['is_purpose_rent'][0]['count']))
+            {
+                $CI->data['purpose_defined'] = lang('Rent');
+                return lang('Rent');
+            }
+            
+            if(search_value(4))
+                return search_value(4);
+            
+            return '';
+            
         }
-        
-        if(isset($CI->data['is_purpose_sale'][0]['count']))
-        {
-            $CI->data['purpose_defined'] = lang('Sale');
-            return lang('Sale');
-        }
-        
-        if(isset($CI->data['is_purpose_rent'][0]['count']))
-        {
-            $CI->data['purpose_defined'] = lang('Rent');
-            return lang('Rent');
-        }
-        
-        if(search_value(4))
-            return search_value(4);
-        
-        return '';
-        
     }
     
     $purpose = _get_purpose($CI);

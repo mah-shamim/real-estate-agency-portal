@@ -30,6 +30,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/general/profiling.html
  */
+#[AllowDynamicProperties]
 class CI_Profiler {
 
 	protected $_available_sections = array(

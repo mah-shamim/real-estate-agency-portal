@@ -643,7 +643,7 @@ if ( ! function_exists('form_prep'))
 			return $str;
 		}
 
-		$str = htmlspecialchars($str);
+		$str = htmlspecialchars((string)$str);
 
 		// In case htmlspecialchars misses these.
 		$str = str_replace(array("'", '"'), array("&#39;", "&quot;"), $str);

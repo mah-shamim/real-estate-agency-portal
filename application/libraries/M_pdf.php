@@ -347,8 +347,8 @@ class M_pdf {
         // map
         $html['map_img'] ='';
         if (!empty($api_key) && !empty($_listing->gps)) {
-            $src = $this->set_image_by_link('http://www.mapquestapi.com/staticmap/v4/getmap?key=' . $api_key . '&zoom=13&center=' . str_replace(' ', '', $_listing->gps) . '&zoom=10&size=715,300&type=map&imagetype=jpeg&pois=1,' . str_replace(' ', '', $_listing->gps) . '', $_listing->gps);
-            
+            $src = $this->set_image_by_link('https://www.mapquestapi.com/staticmap/v5/map?key=' . $api_key . '&zoom=10&size=715,300&center=' . str_replace(' ', '', $_listing->gps) . '&imagetype=jpeg&locations=' . str_replace(' ', '', $_listing->gps) . '');
+
             $html['map_img'] = '<img src="'.$src.'" class="map-img" alt="">';
         }
         
@@ -396,6 +396,7 @@ class M_pdf {
             $mpdf->SetDirectionality('rtl');
         }
         
+        $mpdf->curlAllowUnsafeSslRequests = true;
         $mpdf->autoScriptToLang = true;
         $mpdf->baseScript = 1;
         $mpdf->autoVietnamese = true;

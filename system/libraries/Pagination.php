@@ -24,6 +24,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/pagination.html
  */
+#[AllowDynamicProperties]
 class CI_Pagination {
 
 	var $base_url			= ''; // The page we are linking to

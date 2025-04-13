@@ -1189,7 +1189,13 @@ class Privateapi extends CI_Controller
             // Set form
             $rules = array();
             foreach($_POST as $field => $value){
-                $rules [] = array('field'=>$field, 'label'=>'lang:'.$field, 'rules'=>'trim|xss_clean');
+
+                if($field == 'is_featured') {
+                    $rules [] = array('field'=>$field, 'label'=>'lang:'.$field, 'rules'=>'trim|callback_featured_limitation_check');
+                } else {
+                    $rules [] = array('field'=>$field, 'label'=>'lang:'.$field, 'rules'=>'trim|xss_clean');
+                }
+
             }
             
             $this->form_validation->set_rules($rules);
@@ -1225,7 +1231,7 @@ class Privateapi extends CI_Controller
                     
                     if(isset($listing_num[$user->id]))
                     {
-                        if($listing_num[$user->id] >= $package->num_listing_limit && !$id)
+                        if($listing_num[$user->id] >= $package->num_listing_limit && !$property_id)
                         {
                             $error .= lang_check('Num listings max. reached for your package');
                         }
@@ -1264,4 +1270,31 @@ class Privateapi extends CI_Controller
         echo json_encode($this->data);
         exit();
     }
+
+	public function featured_limitation_check($str)
+	{
+        if($str=='1')
+        {
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+            {
+                // Get exception property_id
+                $exception_property_id = NULL;
+                if(isset($this->data['estate']))
+                    $exception_property_id = $this->data['estate']->id;
+                
+                $this->load->model('user_m');
+                $user = $this->user_m->get($this->session->userdata('id'));
+                if(empty($user->package_id)) return TRUE;
+                
+                if($this->packages_m->get_available_featured(NULL, $exception_property_id) == 0)
+                {
+                	$this->form_validation->set_message('featured_limitation_check', 
+                                                        lang_check('Featured limitation reached in your package!'));
+                	return FALSE;
+                }
+            }
+        }
+        
+        return TRUE;
+	}
 }

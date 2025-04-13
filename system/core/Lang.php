@@ -24,6 +24,7 @@
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/language.html
  */
+#[AllowDynamicProperties]
 class CI_Lang {
 
 	/**

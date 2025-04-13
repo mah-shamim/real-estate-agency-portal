@@ -3,6 +3,10 @@ body {
     unicode-bidi: embed;
 }
 
+a[href^="tel"] {
+    direction: ltr;
+}
+
 .form-horizontal .control-label {
     text-align: right;
 }

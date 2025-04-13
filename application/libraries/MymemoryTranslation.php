@@ -61,6 +61,8 @@ class MymemoryTranslation
         
         $json_url = "http://api.mymemory.translated.net/get?$params";
        
+        $json_url = "https://api.mymemory.translated.net/get?$params";
+
         // Initializing curl
         $ch = curl_init( $json_url );
         

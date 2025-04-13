@@ -4,7 +4,7 @@ Widget-title: Contacts data
 Widget-preview-image: /assets/img/widgets_preview/top_contacts.jpg
  */
 ?>
-<section class="sect-contact-featured section-padding">
+<section class="widget_edit_enabled sect-contact-featured section-padding">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-6">

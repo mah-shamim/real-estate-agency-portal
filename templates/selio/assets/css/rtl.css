@@ -3,6 +3,14 @@ body {
     text-align: right;
 }
 
+a[href^="tel"] {
+	direction: ltr;
+}
+
+.footer-list a[href^="tel"] {
+	display: inline-block;
+}
+
 .header-social {
     text-align: left;
 }
@@ -95,7 +103,7 @@ body {
 
 .header .navbar-brand {
     margin-right: 0;
-    margin-left: 69px;
+    margin-left: 10px;
 }
 
 .dropdown-toggle::after {
